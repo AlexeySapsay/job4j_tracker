@@ -13,8 +13,8 @@ public class Student {
         petya.song();
     }
 
-    public void music(String lyrics) {
-        System.out.println("I can sign a song: " + lyrics);
+    public void music(String innerVariable) {
+        System.out.println("I can sign a song: " + innerVariable);
     }
 
     public void song() {
