@@ -5,8 +5,15 @@ public class StartUI {
         Item item = new Item();
         Tracker tracker = new Tracker();
 
+        Item item1 = new Item();
+        item1.setName("TestName");
+
         tracker.add(item);
 
         System.out.println(tracker.findById(item.getId()));
+
+        tracker.replace(1,item);
+
+        System.out.println(tracker.findAll());
     }
 }
