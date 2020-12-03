@@ -46,7 +46,7 @@ public class Tracker {
     public Item findById(int id) {
         // looking for index
         int index = indexOf(id);
-        // if index wiil not be finde returne item, in the other hand
+        // if index will not be finds return item, in the other hand
         // return null
         return index != -1 ? items[index] : null;
     }
