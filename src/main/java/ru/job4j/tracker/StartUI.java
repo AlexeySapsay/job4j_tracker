@@ -20,8 +20,7 @@ public class StartUI {
 
             } else if (select == 1) {
                 //Show all items
-                Item[] itemsArray = new Item[100];
-                itemsArray = tracker.findAll();
+                Item[] itemsArray = tracker.findAll();
                 for (Item elements : itemsArray) {
                     System.out.println(elements);
                 }
@@ -33,7 +32,6 @@ public class StartUI {
                 System.out.println("Enter name : ");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
-                tracker.replace(id, item);
 
                 //2. Для методов replace/delete сделать вывод в виде:
                 if (tracker.replace(id, item)) {
@@ -50,8 +48,7 @@ public class StartUI {
                 //3. Delete item
                 System.out.println("Введите id элемента для удаления : ");
                 int id = Integer.parseInt(scanner.nextLine());
-                tracker.delete(id);
-                if (!tracker.delete(id)) {
+                if (tracker.delete(id)) {
                     // вывод об успешности операции
                     System.out.println("Удаление элемента по id выполненно успешно");
                 } else {
