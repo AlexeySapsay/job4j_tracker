@@ -16,4 +16,15 @@ public class StartUITest {
         Item expected = new Item("Fix PC");
         assertThat(created.getName(),is(expected.getName()));
     }
+
+    @Test
+    public void whenReplaceItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("new item");
+        tracker.add(item);
+        String[] answers = {String.valueOf(item.getId()),"replace item"};
+        StartUI.replaceItem(new StubInput(answers), tracker);
+        Item replace = tracker.findById(item.getId());
+        assertThat(replace.getName(), is("replace item"));
+    }
 }

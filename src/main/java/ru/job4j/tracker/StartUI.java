@@ -12,6 +12,7 @@ public class StartUI {
 
     // select == 1
     public static void showItems(Input input, Tracker tracker) {
+        System.out.println(" === Show all items === ");
         Item[] itemsArray = tracker.findAll();
         for (Item elements : itemsArray) {
             System.out.println(elements);
@@ -19,12 +20,12 @@ public class StartUI {
     }
 
     // select == 2;
-    public static void editItem(Input input, Tracker tracker) {
-        System.out.println("Enter id : ");
-        int id = Integer.parseInt(input.askStr("Enter name : "));
-        System.out.println("Enter name : ");
-        String name = input.askStr("Enter name : ");
+    public static void replaceItem(Input input, Tracker tracker) {
+        System.out.println(" ==== Update item ==== ");
+        int id = Integer.parseInt(input.askStr("Enter id : "));
+        String name = input.askStr("Enter a new name of item : ");
         Item item = new Item(name);
+        item.setId(id);
 
         //2. Для методов replace/delete сделать вывод в виде:
         if (tracker.replace(id, item)) {
@@ -40,8 +41,7 @@ public class StartUI {
 
     // select == 3
     public static void deleteItem(Input input, Tracker tracker) {
-        System.out.println("Введите id элемента для удаления : ");
-        int id = Integer.parseInt(input.askStr("Enter name : "));
+        int id = Integer.parseInt(input.askStr("Введите id элемента для удаления : "));
         if (tracker.delete(id)) {
             // вывод об успешности операции
             System.out.println("Удаление элемента по id выполненно успешно");
@@ -54,8 +54,7 @@ public class StartUI {
     }
     // select == 4
     public static void findItemById(Input input, Tracker tracker) {
-        System.out.println("Введите id элемента для поиска : ");
-        int id = Integer.parseInt(input.askStr("Enter name : "));
+        int id = Integer.parseInt(input.askStr("Введите id элемента для поиска : "));
         Item item = tracker.findById(id);
         if (item == null) {
             System.out.println("Заявка с таким id не найдена");
@@ -83,8 +82,7 @@ public class StartUI {
         boolean run = true;
         while (run) {
             this.showMenu();
-            System.out.println("Select : ");
-            int select = Integer.parseInt(input.askStr("Enter name : "));
+            int select = Integer.parseInt(input.askStr("Select action : "));
 
             if (select == 0) {
                 StartUI.createItem(input, tracker);
@@ -93,7 +91,7 @@ public class StartUI {
                 StartUI.showItems(input, tracker);
 
             } else if (select == 2) {
-                StartUI.editItem(input, tracker);
+                StartUI.replaceItem(input, tracker);
 
             } else if (select == 3) {
                 StartUI.deleteItem(input, tracker);
@@ -126,6 +124,6 @@ public class StartUI {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         new StartUI().init(input, tracker);
-        StartUI.createItem(input, tracker);
+//        StartUI.createItem(input, tracker);
     }
 }
