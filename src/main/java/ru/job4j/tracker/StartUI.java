@@ -1,20 +1,19 @@
 package ru.job4j.tracker;
 
-import java.util.Scanner;
 
 public class StartUI {
 
-    public void init(Scanner scanner, Tracker tracker) {
+    public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
             this.showMenu();
             System.out.println("Select : ");
-            int select = Integer.parseInt(scanner.nextLine());
+            int select = Integer.parseInt(input.askStr(msg));
 
             if (select == 0) {
                 System.out.println(" === Create a new Item === ");
                 System.out.println("Enter name : ");
-                String name = scanner.nextLine();
+                String name = input.askStr(msg);
                 Item item = new Item(name);
                 tracker.add(item);
 
@@ -28,9 +27,9 @@ public class StartUI {
             } else if (select == 2) {
                 //2. Edit item
                 System.out.println("Enter id : ");
-                int id = Integer.parseInt(scanner.nextLine());
+                int id = Integer.parseInt(input.askStr(msg));
                 System.out.println("Enter name : ");
-                String name = scanner.nextLine();
+                String name = input.askStr(msg);
                 Item item = new Item(name);
 
                 //2. Для методов replace/delete сделать вывод в виде:
@@ -47,7 +46,7 @@ public class StartUI {
             } else if (select == 3) {
                 //3. Delete item
                 System.out.println("Введите id элемента для удаления : ");
-                int id = Integer.parseInt(scanner.nextLine());
+                int id = Integer.parseInt(input.askStr(msg));
                 if (tracker.delete(id)) {
                     // вывод об успешности операции
                     System.out.println("Удаление элемента по id выполненно успешно");
@@ -61,7 +60,7 @@ public class StartUI {
             } else if (select == 4) {
                 //4. Find item by Id
                 System.out.println("Введите id элемента для поиска : ");
-                int id = Integer.parseInt(scanner.nextLine());
+                int id = Integer.parseInt(input.askStr(msg));
                 Item item = tracker.findById(id);
                 if (item == null) {
                     System.out.println("Заявка с таким id не найдена");
@@ -72,7 +71,7 @@ public class StartUI {
             } else if (select == 5) {
                 //5. Find items by name
                 System.out.println("Введите имя для поиске в списке заявок");
-                String name = scanner.nextLine();
+                String name = input.askStr(msg);
                 Item[] itemArray = tracker.findByName(name);
 
                 if (itemArray.length == 0) {
@@ -102,8 +101,9 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        //String msg = "Inter id:";
+        Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        new StartUI().init(scanner, tracker);
+        new StartUI().init(input, tracker);
     }
 }
