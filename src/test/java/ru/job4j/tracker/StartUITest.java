@@ -34,9 +34,8 @@ public class StartUITest {
         Item item = new Item("new item");
         tracker.add(item);
         String[] answer = {String.valueOf(item.getId()),"Item for deletion"};
-        //tracker.delete(0);
         StartUI.deleteItem(new StubInput(answer), tracker);
         Item deleted = tracker.findById(item.getId());
-        assertThat(deleted.getId(), is("null"));
+        assertThat(String.valueOf(deleted), is("null"));
     }
 }
