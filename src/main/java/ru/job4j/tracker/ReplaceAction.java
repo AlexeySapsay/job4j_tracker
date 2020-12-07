@@ -1,8 +1,6 @@
 package ru.job4j.tracker;
 
-import org.w3c.dom.ls.LSOutput;
-
-public class ReplaceItemAction implements UserAction{
+public class ReplaceAction implements UserAction{
     @Override
     public String name() {
         return " === Update item === ";
