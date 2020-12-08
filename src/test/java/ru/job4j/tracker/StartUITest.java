@@ -22,7 +22,7 @@ public class StartUITest {
         Item item = tracker.add(new Item("Replace item"));
         /* Входные данные должны содержать ID добавленной заявки item.getId() */
         String replaceName = "New item name";
-        Input in = new StubInput(new String[]{"0" /* входные параметры для ReplaceAction */, "1"});
+        Input in = new StubInput(new String[]{"0", "1", "New item name", "1"});
         UserAction[] actions = {new ReplaceAction(), new Exit()};
         new StartUI().init(in, tracker, actions);
         assertThat(tracker.findById(item.getId()).getName(), is(replaceName));
@@ -33,10 +33,9 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Delete item"));
         /* Входные данные должны содержать ID добавленной заявки item.getId() */
-        Input in = new StubInput(new String[] {"0" /* входные параметры для DeleteAction */, "1"});
-        UserAction[] actions = {new DeleteAction(),new Exit()};
+        Input in = new StubInput(new String[]{"0", "1", "1"});
+        UserAction[] actions = {new DeleteAction(), new Exit()};
         new StartUI().init(in, tracker, actions);
         assertThat(tracker.findById(item.getId()), is(nullValue()));
-
     }
 }
