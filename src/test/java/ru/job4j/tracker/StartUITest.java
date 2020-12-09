@@ -52,8 +52,12 @@ public class StartUITest {
         Input in = new StubInput(new String[]{"0", "1"});
         UserAction[] actions = {new ShowItemAction(out), new Exit()};
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("Menu.\r\n0 .  Show \r\n1 . Exit\r\n " +
-                "=== Show all items === \r\nMenu.\r\n0 .  Show \r\n1 . Exit\r\n"));
+
+        assertThat(out.toString(), is("Menu." + System.lineSeparator() + "0 .  Show "
+                + System.lineSeparator() + "1 . Exit" + System.lineSeparator() + " " +
+                "=== Show all items === " + System.lineSeparator() + "Menu."
+                + System.lineSeparator() + "0 .  Show " + System.lineSeparator()
+                + "1 . Exit" + System.lineSeparator() + ""));
     }
 
     @Test
@@ -65,21 +69,25 @@ public class StartUITest {
         tracker.add(item);
         UserAction[] actions = {new FindByIdAction(out), new Exit()};
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("Menu.\r\n0 .  Find item by Id\r\n1 . Exit\r\n === Find item by Id === \r\nMenu.\r\n0 .  Find item by Id\r\n1 . Exit\r\n"));
+        assertThat(out.toString(), is("Menu." + System.lineSeparator() + "0 .  Find item by Id" +
+                System.lineSeparator() + "1 . Exit" + System.lineSeparator() + " === Find item by Id === "
+                + System.lineSeparator() + "Menu." + System.lineSeparator() + "0 .  Find item by Id"
+                + System.lineSeparator() + "1 . Exit" + System.lineSeparator() + ""));
     }
 
     @Test
     public void whenFindByNameAction() {
         Item item = new Item("Item");
         Output out = new StubOutput();
-        Input in = new StubInput(new String[]{"0","Item","1"});
+        Input in = new StubInput(new String[]{"0", "Item", "1"});
         Tracker tracker = new Tracker();
         tracker.add(item);
         UserAction[] actions = {new FindByNameAction(out), new Exit()};
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("Menu.\r\n0 . Find item by Name\r\n1 " +
-                ". Exit\r\n === Find item by Name === \r\nMenu.\r\n0 " +
-                ". Find item by Name\r\n1 . Exit\r\n"));
+        assertThat(out.toString(), is("Menu." + System.lineSeparator() + "0 . Find item by Name" +
+                System.lineSeparator() + "1 " + ". Exit" + System.lineSeparator() + " === Find item by Name === "
+                + System.lineSeparator() + "Menu." + System.lineSeparator() + "0 " +
+                ". Find item by Name" + System.lineSeparator() + "1 . Exit" + System.lineSeparator() + ""));
     }
 
     @Test
