@@ -55,10 +55,10 @@ public class StartUITest {
         UserAction[] actions = {new ShowItemAction(out), new Exit()};
         new StartUI(out).init(in, tracker, actions);
 
-        assertThat(out.toString(), is("Menu." + LN + "0 .  Show "
+        assertThat(out.toString(), is("Menu." + LN + "0 . Show "
                 + LN + "1 . Exit" + LN + " === Show all items === "
                 + LN + "Item{id=1, name='Item1'}" + LN + "Item{id=2, name='Item2'}"
-                + LN + "Menu." + LN + "0 .  Show " + LN + "1 . Exit" + LN + ""));
+                + LN + "Menu." + LN + "0 . Show " + LN + "1 . Exit" + LN + ""));
     }
 
     @Test
@@ -70,10 +70,10 @@ public class StartUITest {
         tracker.add(item);
         UserAction[] actions = {new FindByIdAction(out), new Exit()};
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("Menu." + LN + "0 .  Find item by Id"
+        assertThat(out.toString(), is("Menu." + LN + "0 . Find item by Id"
                 + LN + "1 . Exit" + LN + " === Find item by Id === "
                 + LN + "Item" + LN + "Menu." + LN
-                + "0 .  Find item by Id" + LN + "1 . Exit" + LN));
+                + "0 . Find item by Id" + LN + "1 . Exit" + LN));
     }
 
     @Test
