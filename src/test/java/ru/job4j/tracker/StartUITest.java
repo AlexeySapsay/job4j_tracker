@@ -56,10 +56,9 @@ public class StartUITest {
         new StartUI(out).init(in, tracker, actions);
 
         assertThat(out.toString(), is("Menu." + LN + "0 .  Show "
-                + LN + "1 . Exit" + LN + " " +
-                "=== Show all items === " + LN + "Menu."
-                + LN + "0 .  Show " + LN
-                + "1 . Exit" + LN + ""));
+                + LN + "1 . Exit" + LN + " === Show all items === "
+                + LN + "Item{id=1, name='Item1'}" + LN + "Item{id=2, name='Item2'}"
+                + LN + "Menu." + LN + "0 .  Show " + LN + "1 . Exit" + LN + ""));
     }
 
     @Test
@@ -71,10 +70,10 @@ public class StartUITest {
         tracker.add(item);
         UserAction[] actions = {new FindByIdAction(out), new Exit()};
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("Menu." + LN + "0 .  Find item by Id" +
-                LN + "1 . Exit" + LN + " === Find item by Id === "
-                + LN + "Menu." + LN + "0 .  Find item by Id"
-                + LN + "1 . Exit" + LN + ""));
+        assertThat(out.toString(), is("Menu." + LN + "0 .  Find item by Id"
+                + LN + "1 . Exit" + LN + " === Find item by Id === "
+                + LN + "Item" + LN + "Menu." + LN
+                + "0 .  Find item by Id" + LN + "1 . Exit" + LN));
     }
 
     @Test
@@ -86,11 +85,10 @@ public class StartUITest {
         tracker.add(item);
         UserAction[] actions = {new FindByNameAction(out), new Exit()};
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("Menu." + LN + "0 . Find item by Name" +
-                LN + "1 " + ". Exit" + LN + " === Find item by Name === "
-                + LN + "Menu." + LN + "0 " +
-                ". Find item by Name" + LN + "1 . Exit" +
-                LN + ""));
+        assertThat(out.toString(), is("Menu." + LN + "0 . Find item by Name"
+                + LN + "1 . Exit" + LN + " === Find item by Name === " + LN
+                + "Item{id=1, name='Item'}" + LN + "Menu." + LN
+                + "0 . Find item by Name" + LN + "1 . Exit" + LN));
     }
 
     @Test
