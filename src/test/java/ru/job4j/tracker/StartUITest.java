@@ -7,6 +7,8 @@ import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 
 public class StartUITest {
+    private static final String LN = System.lineSeparator();
+
     @Test
     public void whenCreateItem() {
         Output out = new StubOutput();
@@ -53,11 +55,11 @@ public class StartUITest {
         UserAction[] actions = {new ShowItemAction(out), new Exit()};
         new StartUI(out).init(in, tracker, actions);
 
-        assertThat(out.toString(), is("Menu." + System.lineSeparator() + "0 .  Show "
-                + System.lineSeparator() + "1 . Exit" + System.lineSeparator() + " " +
-                "=== Show all items === " + System.lineSeparator() + "Menu."
-                + System.lineSeparator() + "0 .  Show " + System.lineSeparator()
-                + "1 . Exit" + System.lineSeparator() + ""));
+        assertThat(out.toString(), is("Menu." + LN + "0 .  Show "
+                + LN + "1 . Exit" + LN + " " +
+                "=== Show all items === " + LN + "Menu."
+                + LN + "0 .  Show " + LN
+                + "1 . Exit" + LN + ""));
     }
 
     @Test
@@ -69,10 +71,10 @@ public class StartUITest {
         tracker.add(item);
         UserAction[] actions = {new FindByIdAction(out), new Exit()};
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("Menu." + System.lineSeparator() + "0 .  Find item by Id" +
-                System.lineSeparator() + "1 . Exit" + System.lineSeparator() + " === Find item by Id === "
-                + System.lineSeparator() + "Menu." + System.lineSeparator() + "0 .  Find item by Id"
-                + System.lineSeparator() + "1 . Exit" + System.lineSeparator() + ""));
+        assertThat(out.toString(), is("Menu." + LN + "0 .  Find item by Id" +
+                LN + "1 . Exit" + LN + " === Find item by Id === "
+                + LN + "Menu." + LN + "0 .  Find item by Id"
+                + LN + "1 . Exit" + LN + ""));
     }
 
     @Test
@@ -84,10 +86,11 @@ public class StartUITest {
         tracker.add(item);
         UserAction[] actions = {new FindByNameAction(out), new Exit()};
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("Menu." + System.lineSeparator() + "0 . Find item by Name" +
-                System.lineSeparator() + "1 " + ". Exit" + System.lineSeparator() + " === Find item by Name === "
-                + System.lineSeparator() + "Menu." + System.lineSeparator() + "0 " +
-                ". Find item by Name" + System.lineSeparator() + "1 . Exit" + System.lineSeparator() + ""));
+        assertThat(out.toString(), is("Menu." + LN + "0 . Find item by Name" +
+                LN + "1 " + ". Exit" + LN + " === Find item by Name === "
+                + LN + "Menu." + LN + "0 " +
+                ". Find item by Name" + LN + "1 . Exit" +
+                LN + ""));
     }
 
     @Test
@@ -97,7 +100,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         UserAction[] actions = {new Exit()};
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("Menu." + System.lineSeparator() +
-                "0 . Exit" + System.lineSeparator()));
+        assertThat(out.toString(), is("Menu." + LN +
+                "0 . Exit" + LN));
     }
 }
