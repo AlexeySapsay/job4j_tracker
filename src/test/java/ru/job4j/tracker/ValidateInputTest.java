@@ -7,6 +7,7 @@ import static org.junit.Assert.assertThat;
 
 public class ValidateInputTest {
 
+    // невалидный ввод
     @Test
     public void whenInvalidInput() {
         Output out = new StubOutput();
@@ -18,8 +19,33 @@ public class ValidateInputTest {
     }
 
     //правильный ввод
+    @Test
+    public void whenValidInput() {
+        Output out = new StubOutput();
+        Input in = new StubInput(new String[]{"1"});
+        ValidateInput input = new ValidateInput(out, in);
+        int selected = input.askInt("Enter menu:");
+        assertThat(selected, is(1));
+
+    }
 
     //многократный правильный ввод
+    @Test
+    public void whenValidInputMoreTimes() {
+        Output out = new StubOutput();
+        Input in = new StubInput(new String[] {"1","2","3"});
+        ValidateInput input = new ValidateInput(out, in);
+        int selected = input.askInt("Enter menu:");
+        assertThat(selected, is(1));
+    }
 
     //ввод отрицательного числа
+    @Test
+    public void whenInvalidInputMinusOne() {
+        Output out = new StubOutput();
+        Input in = new StubInput(new String[]{"-1"});
+        ValidateInput input = new ValidateInput(out, in);
+        int selected = input.askInt("Enter menu:");
+        assertThat(selected, is(-1));
+    }
 }
