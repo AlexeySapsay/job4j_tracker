@@ -4,8 +4,8 @@ import ru.job4j.tracker.Item;
 
 public class TrackerSingle2 {
     private static TrackerSingle2 instance;
-
-    private TrackerSingle2() {
+    /* статичная ленивая загрузка через поля*/
+    TrackerSingle2() {
     }
 
     public static TrackerSingle2 getInstance() {
@@ -13,9 +13,5 @@ public class TrackerSingle2 {
             instance = new TrackerSingle2();
         }
         return instance;
-    }
-
-    public Item add(Item model) {
-        return model;
     }
 }

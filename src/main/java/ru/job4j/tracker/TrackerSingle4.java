@@ -7,18 +7,16 @@ public class TrackerSingle4 {
     }
 
     public static TrackerSingle4 getInstance() {
-        return Holder.INSTANCE;
-    }
 
-    public Item add(Item model) {
-        return model;
+        return Holder.instance;
     }
 
     private static final class Holder {
-        private static final TrackerSingle4 INSTANCE = new TrackerSingle4();
+        private static final TrackerSingle4 instance = new TrackerSingle4();
     }
 
     public static void main(String[] args) {
+        
         TrackerSingle4 tracker = TrackerSingle4.getInstance();
     }
 }
