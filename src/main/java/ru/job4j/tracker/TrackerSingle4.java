@@ -6,17 +6,17 @@ public class TrackerSingle4 {
     private TrackerSingle4() {
     }
 
-    public static TrackerSingle4 getInstance() {
+    public static Tracker getInstance() {
 
         return Holder.instance;
     }
 
     private static final class Holder {
-        private static final TrackerSingle4 instance = new TrackerSingle4();
+        private static final Tracker instance = new Tracker();
     }
 
     public static void main(String[] args) {
         
-        TrackerSingle4 tracker = TrackerSingle4.getInstance();
+        Tracker tracker = TrackerSingle4.getInstance();
     }
 }

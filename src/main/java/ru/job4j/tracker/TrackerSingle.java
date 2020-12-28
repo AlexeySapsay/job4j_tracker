@@ -1,11 +1,11 @@
 package ru.job4j.tracker;
 
-import ru.job4j.tracker.Item;
-
 public enum TrackerSingle {
-    instance;
+    INSTANCE;
 
-    public static TrackerSingle getInstance() {
-        return instance;
+    private final Tracker tracker = new Tracker();
+
+    public Tracker getTracker() {
+        return tracker;
     }
 }
