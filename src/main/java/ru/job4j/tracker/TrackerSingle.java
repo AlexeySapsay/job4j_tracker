@@ -1,7 +1,7 @@
 package ru.job4j.tracker;
 
 public enum TrackerSingle {
-    INSTANCE;
+     INSTANCE;
 
     private final Tracker tracker = new Tracker();
 
