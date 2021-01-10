@@ -29,6 +29,7 @@ public class GeomProgression {
             buffer = (int) (first * Math.pow(denominator, index - 1));
             sum += buffer;
         }
+
         return sum;
     }
 }

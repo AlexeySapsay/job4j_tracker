@@ -12,6 +12,7 @@ public class GeomProgressionTest {
         assertThat(rsl,is(29524));
     }
 
+
     @Test
     public void generateAndSumIs0(){
         int rsl = GeomProgression.generateAndSum(1,-1,10);
