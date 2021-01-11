@@ -12,7 +12,6 @@ import static org.junit.Assert.*;
 public class NotifyAccountTest {
 
 
-
     @Test
     public void sent() {
         List<Account> accounts = Arrays.asList(
@@ -54,20 +53,12 @@ public class NotifyAccountTest {
     public void sent3() {
         List<Account> accounts = Arrays.asList(
                 new Account("1111", "Alex Sapsay", "0007-0007"),
-                new Account("1111", "Alex Sapsay", "0007-0007")
+                new Account("1112", "Alex Sapsay", "0007-0007")
         );
 
         HashSet<Account> expect = new HashSet<>(Arrays.asList(
                 new Account("1111", "Alex Sapsay", "0007-0007"),
-                new Account("1111", "Alex Sapsay", "0007-0007"),
-                new Account("1111", "Alex Sapsay", "0007-0007"),
-                new Account("1111", "Alex Sapsay", "0007-0007"),
-                new Account("1111", "Alex Sapsay", "0007-0007"),
-                new Account("1111", "Alex Sapsay", "0007-0007"),
-                new Account("1111", "Alex Sapsay", "0007-0007"),
-                new Account("1111", "Alex Sapsay", "0007-0007"),
-                new Account("1111", "Alex Sapsay", "0007-0007"),
-                new Account("1111", "Alex Sapsay", "0007-0007")
+                new Account("1112", "Vasily Pupkin", "9999-6666")
         ));
         assertThat(NotifyAccount.sent(accounts), is(expect));
     }
