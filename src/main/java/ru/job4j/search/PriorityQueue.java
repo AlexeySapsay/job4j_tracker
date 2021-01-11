@@ -34,9 +34,16 @@ public class PriorityQueue {
         for (Task element : tasks) {
             // первый случай: элементов нет то индекс равен 0,
             // и вставляем элемент на 0 позицию
-            if (element.getPriority() < task.getPriority()) {
-                index++;
+//            if (element.getPriority() < task.getPriority()) {
+//                index++;
+//            }
+//            else {
+//                break;
+//            }
+            if (element.getPriority() > task.getPriority()) {
+                break;
             }
+            index++;
         }
         // вставляем элемент по индексу, значению
         this.tasks.add(index, task);
