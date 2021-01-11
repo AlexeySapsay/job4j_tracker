@@ -11,6 +11,8 @@ import static org.junit.Assert.*;
 
 public class NotifyAccountTest {
 
+
+
     @Test
     public void sent() {
         List<Account> accounts = Arrays.asList(
