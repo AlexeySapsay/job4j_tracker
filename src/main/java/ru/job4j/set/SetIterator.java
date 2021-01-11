@@ -28,6 +28,7 @@ public class SetIterator {
         while (iterator.hasNext()) {
             System.out.println(String.format("Next element exist? - %s.", iterator.hasNext()));
             System.out.println(iterator.next());
+
         }
     }
 }

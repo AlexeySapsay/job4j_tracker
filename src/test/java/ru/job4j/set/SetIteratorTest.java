@@ -26,5 +26,6 @@ public class SetIteratorTest {
                 + "Next element exist? - true." + ln
                 + "two" + ln;
         assertThat(out.toString(), is(expected));
+
     }
 }
