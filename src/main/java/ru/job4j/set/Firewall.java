@@ -15,7 +15,6 @@ import java.util.HashSet;
 public class Firewall {
     public static String checkName(String s, Set<String> words) {
         String[] strArr = s.split(" ");
-        Set<String> strSet = new HashSet<String>();
 
         for (String str : strArr) {
             for (String word : words) {
