@@ -8,7 +8,6 @@ package ru.job4j.set;
  * Метод должен вернуть булево значение - если слово является изограммой - то метод вернет true, иначе - false.
  */
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
