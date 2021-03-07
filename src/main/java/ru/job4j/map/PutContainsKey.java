@@ -10,7 +10,6 @@ public class PutContainsKey {
         Map<Integer, User> rsl = new HashMap<>();
         for (User user : list) {
             rsl.put(user.id, user);
-            //System.out.println("That is work! addNewElementWithoutCheck");
         }
 
         for (int index = 0; index < list.size(); index++) {
@@ -23,15 +22,6 @@ public class PutContainsKey {
         Map<Integer, User> rsl = new HashMap<>();
 
         for(User user : list){
-//            if(rsl.containsKey(user.getId())){
-//                flag = true;
-//
-////                if (flag){
-////                    rsl.put(user.id, user);
-////                }
-//                //continue;
-//
-//            }
             rsl.put(user.id, user);
         }
 
