@@ -18,11 +18,19 @@ public class ComputeIfAbsentTest {
         List<User> users = List.of(
                 new User(1, "name1"),
                 new User(2, "name2"),
+                // new User(3, "name3"),
+
+                new User(4, "name4"),
                 new User(3, "name3"),
-                new User(4, "name4")
+                new User(5,"name5"),
+                new User(7,"name7"),
+                new User(6,"name6")
+                //new User(6, "name6")
         );
         Map<Integer, String> rsl = ComputeIfAbsent.collectData(names, users);
-        Map<Integer, String> expected = Map.of(4, "name4", 1, "name1", 2, "name2", 3, "name3");
+        Map<Integer, String> expected = Map.of(4, "name4", 1, "name1",
+                2, "name2", 3, "name3",5,"name5",
+                7,"name7", 6,"name6");
         assertThat(rsl, is(expected));
     }
 }

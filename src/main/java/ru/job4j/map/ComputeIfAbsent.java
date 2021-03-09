@@ -9,14 +9,12 @@ public class ComputeIfAbsent {
     public static Map<Integer, String> collectData(Map<Integer, String> names, List<User> users) {
         //1. Если такой ключ уже есть в отображении - метод должен обновить
         // ассоциацию(используйте computeIfPresent()).
-
         for (Integer keyVar : names.keySet()) {
             names.computeIfPresent(keyVar, (key, value) -> value + users.get(key - 1).getName());
         }
 
         //2. Если такого ключа нет - метод должен добавить
         // ассоциацию(используйте computeIfAbsent()).
-
         for (User keyVarUser : users) {
             names.computeIfAbsent(keyVarUser.id, key -> "name" + key);
         }
