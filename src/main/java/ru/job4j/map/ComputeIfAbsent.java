@@ -10,17 +10,29 @@ public class ComputeIfAbsent {
         //1. Если такой ключ уже есть в отображении - метод должен обновить
         // ассоциацию(используйте computeIfPresent()).
 
-        names.computeIfPresent(1, (key, value) -> value + users.get(key - 1).getName());
-        names.computeIfPresent(2, (key, value) -> value + users.get(key - 1).getName());
-        names.computeIfPresent(3, (key, value) -> value + users.get(key - 1).getName());
-        names.computeIfPresent(4, (key, value) -> value + users.get(key - 1).getName());
+//        names.computeIfPresent(1, (key, value) -> value + users.get(key - 1).getName());
+//        names.computeIfPresent(2, (key, value) -> value + users.get(key - 1).getName());
+//        names.computeIfPresent(3, (key, value) -> value + users.get(key - 1).getName());
+//        names.computeIfPresent(4, (key, value) -> value + users.get(key - 1).getName());
+
+        for (Integer keyVar : names.keySet()) {
+            names.computeIfPresent(keyVar, (key, value) -> value + users.get(key - 1).getName());
+        }
 
         //2. Если такого ключа нет - метод должен добавить
         // ассоциацию(используйте computeIfAbsent()).
-        names.computeIfAbsent(1, key -> "name" + key);
-        names.computeIfAbsent(2, key -> "name" + key);
-        names.computeIfAbsent(3, key -> "name" + key);
-        names.computeIfAbsent(4, key -> "name" + key);
+//        names.computeIfAbsent(1, key -> "name" + key);
+//        names.computeIfAbsent(2, key -> "name" + key);
+//        names.computeIfAbsent(3, key -> "name" + key);
+//        names.computeIfAbsent(4, key -> "name" + key);
+
+//        for (Integer keyVar : !names.keySet()) {
+//            names.computeIfAbsent(keyVar, key -> "name" + key);
+//        }
+
+        for (User keyVarUser : users) {
+            names.computeIfAbsent(keyVarUser.id, key -> "name" + key);
+        }
 
         return names;
     }
