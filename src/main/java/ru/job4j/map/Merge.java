@@ -17,9 +17,9 @@ public class Merge {
         // При решении используйте методы putIfAbsent() и merge().
 
         for (User user : users) {
-            names.putIfAbsent(user.getId(), "" + user.name);
+            names.putIfAbsent(user.getId(), user.name);
         }
-        System.out.println("New HashMap + name" + names);
+        //System.out.println("New HashMap + name" + names);
 
         for (User user : users) {
             names.merge(user.getId(), user.getSurname(), (oldValue, newValue) ->
