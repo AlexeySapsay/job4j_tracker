@@ -11,12 +11,9 @@ public class RemoveElements {
                                                      List<User> users) {
         //1. Удалить все пары ключ-значение которые соответствуют
         // каждому id из списка id
-        //System.out.println("older data map : " + data);
-
-        for (int i = 0; i < ids.size(); i++) {
-            data.remove(ids.get(i));
+        for (Integer integer : ids) {
+            data.remove((integer));
         }
-        //System.out.println(" data map after first removing: " + data);
 
         //2. Удалить все пары ключ значения, которые соответствуют
         // списку пользователей(тут будет необходимо использовать геттеры,
@@ -24,7 +21,6 @@ public class RemoveElements {
         for (User user : users) {
             data.remove(user.getId());
         }
-        //System.out.println(" data map after second removing: " + data);
 
         return data;
     }
