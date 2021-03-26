@@ -15,7 +15,7 @@ public class User {
         return passport;
     }
 
-    public void setPassport() {
+    public void setPassport(String passport) {
         this.passport = passport;
     }
 
