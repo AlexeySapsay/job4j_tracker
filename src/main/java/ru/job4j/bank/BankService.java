@@ -125,48 +125,7 @@ public class BankService {
      */
     public void addUser(User user) {
         ArrayList<Account> accounts = new ArrayList<Account>();
-
-        //+ users.putIfAbsent(user, accounts);
-        // нужно добавить проверку юзера по одинаковому паспорту в мапе,
-        // проверку по одинаковому имени выполнять не нужно, т.к
-        // в реальности могут быть однофамильцы и одноименцы
-
-        // подумать, стоит ли добавлять таким образом юзера
-//        for (Map.Entry<User, List<Account>> entry : users.entrySet()) {
-//            if (entry.getKey().getPassport().equals(user.getPassport())) {
-//                users.put(user, accounts);
-//            }
-//        }
-//        System.out.println(user + "user :" +
-//                "accounts :" + accounts +
-//                "getPassport() : " + user.getPassport() +
-//                "getUsername() :" + user.getUsername() + "\n");
-
         users.putIfAbsent(user, accounts);
-
-
-        //- тупо добавляем нового пользователя без проверки
-        // так не стоит делать, т.к можно затереть уже
-        // существуюещго пользователя
-        //users.put(user, accounts);
-
-
-        //- делаем проверку, если
-        // пользователь уже существует,
-        // то нового не добавляем
-        //if(user.getPassport().equals(users.putIfAbsent(user.getPassport(), accounts))){
-        //}
-
-
-        //- не работает, перепроверить реализацию
-        // возможно ошибка не так далеко как может показаться изначально
-//        if (user.getPassport() == null) {
-//            users.putIfAbsent(user, accounts);
-//            System.out.println("User is absent! that is new user");
-//        }
-
-        //users.putIfAbsent(user, accounts);
-        //System.out.println(users + "that is new user");
     }
 
 
