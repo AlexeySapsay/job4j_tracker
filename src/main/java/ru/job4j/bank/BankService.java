@@ -1,9 +1,6 @@
 package ru.job4j.bank;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class BankService {
     public static void main(String[] args) {
@@ -49,12 +46,24 @@ public class BankService {
 //
 //    }
 
+        // create account
         List<Account> accounts = new ArrayList<>();
         String requisite = "3fdsbb9";
         accounts.add(new Account("3fdsbb9", 140));
+//        int index = accounts.indexOf(new Account(requisite, -1));
+//        Account find = accounts.get(index);
+//        System.out.println(find.getRequisite() + " -> " + find.getBalance());
+//
         int index = accounts.indexOf(new Account(requisite, -1));
         Account find = accounts.get(index);
-        System.out.println(find.getRequisite() + " -> " + find.getBalance());
+        System.out.println(find.getRequisite() + " = " + find.getBalance());
+
+        //create account2
+        String requisite2 = "6660666";
+        accounts.add(new Account(requisite2, 100_000_000));
+        int index2 = accounts.indexOf(new Account(requisite2, -1));
+        Account find2 = accounts.get(index2);
+        System.out.println(find2.getRequisite() + " = " + find2.getBalance());
 
 
         //test findByPassport
@@ -100,11 +109,25 @@ public class BankService {
 
 
         //System.out.println(users.findByPassport());
-        for (User user : bank.users.keySet()) {
-            System.out.println("user: " + user +
-                    "user.getUsername(): " + user.getUsername() +
-                    "user.getPassport()" + user.getPassport() + "\n");
-        }
+//        for (User user : bank.users.keySet()) {
+//            System.out.println("user: " + user +
+//                    "user.getUsername(): " + user.getUsername() +
+//                    "user.getPassport()" + user.getPassport() + "\n");
+//        }
+
+
+        // test for addAccount
+        //bank.addAccount("0000 0000", new Account("6660666", 1000));
+        //bank.addAccount("0000 0000", new Account("0000001", 1));
+        // account is absent
+        //bank.addAccount("1111 1111",null);
+
+        // take list of accounts from user
+//        String requisite = "3fdsbb9";
+//        accounts.add(new Account("3fdsbb9", 140));
+//
+//        System.out.println("accounts" + accounts+
+//                accounts.get(0));
 
     }
 
@@ -137,16 +160,30 @@ public class BankService {
      * После этого мы получим список всех счетов пользователя и
      * добавим новый счет к ним.
      * В этом методе должна быть проверка, что такого счета у пользователя еще нет.
+     * <p>
+     * //+1. Нашли юзера по паспорту
+     * //+2. Проверяем найденного юзера на null
+     * //+3. Получаем список аккаунтов по найденному юзеру
+     * //+4. Если список не содержит аккаунт
+     * // который мы хотим добавить - то добавляем его с помощью add
+     *
+     * @param passport
+     * @param account
      */
     public void addAccount(String passport, Account account) {
-        // пишем поиск по паспорту, если юзер есть
-        // то добавляем ему аккаунт
+        User user = findByPassport(passport);
+        if (user != null) {
+            List<Account> userAccount = users.get(user);
+            if (!userAccount.contains(account)) {
+                userAccount.add(account);
+            }
+        }
     }
 
 
     /**
      * Это метод ищет пользователя по номеру паспорта. Здесь нужно
-     * использовать перебор всех элементов через цикл for-earch и метод Map.keySet.
+     * использовать перебор всех элементов через цикл for-each и метод Map.keySet.
      */
     public User findByPassport(String passport) {
         for (Map.Entry<User, List<Account>> entry : users.entrySet()) {
@@ -161,9 +198,19 @@ public class BankService {
     /**
      * Этот метод ищет счет пользователя по реквизитам.
      * Сначала нужно найти пользователя.
-     * Потом получить список счетов этого пользователя и в нем найти нужный счет.
+     * Потом получить список счетов этого пользователя
+     * и в нем найти нужный счет.
      */
     public Account findByRequisite(String passport, String requisite) {
+        User user = findByPassport(passport);
+        if (user != null) {
+            List<Account> userAccount = users.get(user);
+            for (Account account : userAccount) {
+                if (account.getRequisite().equals(requisite)) {
+                    return account;
+                }
+            }
+        }
 
         return null;
     }
