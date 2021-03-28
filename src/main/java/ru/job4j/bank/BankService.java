@@ -6,143 +6,15 @@ import java.util.Map;
 import java.util.ArrayList;
 
 public class BankService {
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
+//        // test for transfer money
 //        User user = new User("3434", "Petr Arsentev");
 //        BankService bank = new BankService();
 //        bank.addUser(user);
-//        System.out.println("Passport is : " + user.getPassport()
-//                + " User name : " + user.getUsername());
-//
-//
-//        User user1 = new User("3434", "Alex Navalniy");
-//        bank.addUser(user1);
-//        System.out.println("Passport is : " + user1.getPassport()
-//                + " User name : " + user1.getUsername());
-//
-//
-//        System.out.println("Passport is : " + user.getPassport()
-//                + " User name : " + user.getUsername());
-//
-//        System.out.println("Passport is : " + user1.getPassport()
-//                + " User name : " + user1.getUsername());
-
-
-//    public static void main(String[] args) {
-//        List<Account> accounts = new ArrayList<>();
-//        String requisite = "3fdsbb9";
-//        accounts.add(new Account("3fdsbb9", 140));
-//        int index = accounts.indexOf(new Account(requisite, -1));
-//        Account find = accounts.get(index);
-//        System.out.println(find.getRequisite() + " -> " + find.getBalance());
+//        bank.addAccount(user.getPassport(), new Account("5546", 150D));
+//        bank.addAccount(user.getPassport(), new Account("113", 50D));
+//        System.out.println((bank.transferMoney(user.getPassport(), "5546", user.getPassport(), "113", 150D)));
 //    }
-
-
-//    public static void main(String[] args) {
-//        List<Account> accounts = new ArrayList<>();
-//        String requisite = "q32alasdf";
-//        accounts.add(new Account("q32alasdf",1000));
-//        int index = accounts.indexOf(new Account(requisite,1));
-//        Account find = accounts.get(index);
-//        System.out.println(find.getRequisite()+" has: "+ find.getBalance()+" dollars");
-//
-//       // System.out.println(users.entrySet());
-//
-//    }
-
-        // create account
-//        List<Account> accounts = new ArrayList<>();
-//        String requisite = "3fdsbb9";
-//        accounts.add(new Account("3fdsbb9", 140));
-//        int index = accounts.indexOf(new Account(requisite, -1));
-//        Account find = accounts.get(index);
-//        System.out.println(find.getRequisite() + " -> " + find.getBalance());
-//
-//        int index = accounts.indexOf(new Account(requisite, -1));
-//        Account find = accounts.get(index);
-//        System.out.println(find.getRequisite() + " = " + find.getBalance());
-
-        //create account2
-//        String requisite2 = "6660666";
-//        accounts.add(new Account(requisite2, 100_000_000));
-//        int index2 = accounts.indexOf(new Account(requisite2, -1));
-//        Account find2 = accounts.get(index2);
-//        System.out.println(find2.getRequisite() + " = " + find2.getBalance());
-
-
-        //test findByPassport
-//        User user1 = new User("6006 155555", "Alex Saps");
-//        BankService bank = new BankService();
-//        bank.addUser(user1);
-//        System.out.println("user1 изначальный : " + user1);
-//        System.out.println("user1 после помещения его в  bank.users" + bank.users);
-//        System.out.println("результат поиска user1 " +
-//                "через findByPassport" + bank.findByPassport("6006 155555") + "\n");
-
-//        User user2 = new User("0000 0000", "Alex Navalniy");
-//        bank.addUser(user2);
-//        System.out.println("user2 изначальный : " + user2);
-//        System.out.println("user2 после помещения его в  bank.users" + bank.users);
-//        System.out.println("user2 passport: " + user2.getPassport()
-//                + "user2 username : " + user2.getUsername() + "\n");
-
-        // нужно добавить проверку на уже существющего юзера, что бы
-        // его невозможно было перезаписать, если он существует
-        // перезаписили юзера к которого был номер пасспорта 0000 0000 и имя "Alex Navalniy"
-        // которого совпадает номер паспорта 0000 0000 и имя "Alex Ovalniy"
-//        User user3 = new User("0000 0000", "Alex Ovalniy");
-//        bank.addUser(user3);
-//        System.out.println("user3 изначальный : " + user3);
-//        System.out.println("user3 после помещения его в  bank.users" + bank.users);
-//        System.out.println("результат поиска user3 " +
-//                "через findByPassport" + bank.findByPassport("0000 0000"));
-//        System.out.println("user3 passport: " + user3.getPassport()
-//                + "user3 username : " + user3.getUsername() + "\n");
-
-//        System.out.println("результат поиска user1 " +
-//                "через findByPassport : " + bank.findByPassport("6006 155555").getUsername() + "\n");
-
-//        User user4 = new User("0000 0000", "Alex Ivanov");
-//        bank.addUser(user4);
-//        System.out.println("результат поиска user4 " +
-//                "через findByPassport" + bank.findByPassport("0000 0000"));
-//        System.out.println("user4 passport: " + user4.getPassport()
-//                + "user4 username : " + user4.getUsername() + "\n");
-//
-//        System.out.println(user4);
-
-
-        //System.out.println(users.findByPassport());
-//        for (User user : bank.users.keySet()) {
-//            System.out.println("user: " + user +
-//                    "user.getUsername(): " + user.getUsername() +
-//                    "user.getPassport()" + user.getPassport() + "\n");
-//        }
-
-
-        // test for addAccount
-        //bank.addAccount("0000 0000", new Account("6660666", 1000));
-        //bank.addAccount("0000 0000", new Account("0000001", 1));
-        // account is absent
-        //bank.addAccount("1111 1111",null);
-
-        // take list of accounts from user
-//        String requisite = "3fdsbb9";
-//        accounts.add(new Account("3fdsbb9", 140));
-//
-//        System.out.println("accounts" + accounts+
-//                accounts.get(0));
-
-
-        // test for transfer money
-
-        User user = new User("3434", "Petr Arsentev");
-        BankService bank = new BankService();
-        bank.addUser(user);
-        bank.addAccount(user.getPassport(), new Account("5546", 150D));
-        bank.addAccount(user.getPassport(), new Account("113", 50D));
-        System.out.println((bank.transferMoney(user.getPassport(), "5546", user.getPassport(), "113", 150D)));
-
-    }
 
 
     /**
@@ -290,9 +162,8 @@ public class BankService {
         srcAccount.setBalance(srcBalanceWithoutAmount);
         destAccount.setBalance(destBalanceWithAmount);
 
-        System.out.println("srcAccount balance : " + srcAccount.getBalance());
-        System.out.println("destAccount balance : " + destAccount.getBalance());
-
+//        System.out.println("srcAccount balance : " + srcAccount.getBalance());
+//        System.out.println("destAccount balance : " + destAccount.getBalance());
 
         boolean rsl = true;
         return rsl;
