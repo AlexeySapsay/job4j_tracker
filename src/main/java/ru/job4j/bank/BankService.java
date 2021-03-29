@@ -70,10 +70,21 @@ public class BankService {
      * Это метод ищет пользователя по номеру паспорта. Здесь нужно
      * использовать перебор всех элементов через цикл for-each и метод Map.keySet.
      */
+//    public User findByPassport(String passport) {
+//        for (Map.Entry<User, List<Account>> entry : users.entrySet()) {
+//            if (entry.getKey().getPassport().equals(passport)) {
+//                return entry.getKey();
+//            }
+//        }
+//        return null;
+//    }
+
+    // упрощенная часть кода, где перебираем только keySet()
+    // рефакторинг провел Стас Коробейников.
     public User findByPassport(String passport) {
-        for (Map.Entry<User, List<Account>> entry : users.entrySet()) {
-            if (entry.getKey().getPassport().equals(passport)) {
-                return entry.getKey();
+        for (User user : users.keySet()) {
+            if (user.getPassport().equals(passport)) {
+                return user;
             }
         }
         return null;
@@ -110,62 +121,15 @@ public class BankService {
                                  String destPassport,
                                  String destRequisite,
                                  double amount) {
-        //1.1 проверить существование источника по паспорту и реквизитам
-        //1.2 проверить существование принимающего по паспорту и реквизитам
-        if ((findByPassport(srcPassport) == null) ||
-                (findByRequisite(srcPassport, srcRequisite) == null) ||
-                (findByPassport(destPassport) == null) ||
-                (findByRequisite(destPassport, destRequisite) == null)) {
-            return false;
+
+        Account srcAccount = findByRequisite(srcPassport, srcRequisite);
+        Account destAccount = findByRequisite(destPassport, destRequisite);
+
+        if (srcAccount != null && destAccount != null && srcAccount.getBalance() >= amount) {
+            srcAccount.setBalance(srcAccount.getBalance() - amount);
+            destAccount.setBalance(destAccount.getBalance() + amount);
+            return true;
         }
-
-        //2 несли не хватает денег на счете с которого переводят
-        // то возвращаем false
-        // проверка существование src account
-        Account srcAccount = new Account(null, -1);
-        User user1 = findByPassport(srcPassport);
-        if (user1 != null) {
-            List<Account> userAccount = users.get(user1);
-            for (Account account : userAccount) {
-                if (account.getRequisite().equals(srcRequisite)) {
-                    srcAccount = account;
-                }
-            }
-        }
-        // проверяем достаточно ли денег на счете, с которого выполняем перевод
-        // если не достаточно, то возвращаем false
-        if (srcAccount.getBalance() < amount) {
-            return false;
-        }
-
-        // проверка существование dest account
-        Account destAccount = new Account(null, -1);
-        User user2 = findByPassport(destPassport);
-        if (user2 != null) {
-            List<Account> userAccount = users.get(user2);
-            for (Account account : userAccount) {
-                if (account.getRequisite().equals(destRequisite)) {
-                    destAccount = account;
-                }
-            }
-        }
-
-
-        // 3 выполнить перевод с одного аккаунта на другой
-        // уменьшить значение в первом и прибавить значение во втором
-        double srcBalanceRaw = srcAccount.getBalance();
-        double srcBalanceWithoutAmount = srcBalanceRaw - amount;
-
-        double destBalanceRaw = destAccount.getBalance();
-        double destBalanceWithAmount = destBalanceRaw + amount;
-
-        srcAccount.setBalance(srcBalanceWithoutAmount);
-        destAccount.setBalance(destBalanceWithAmount);
-
-//        System.out.println("srcAccount balance : " + srcAccount.getBalance());
-//        System.out.println("destAccount balance : " + destAccount.getBalance());
-
-        boolean rsl = true;
-        return rsl;
+        return false;
     }
 }
