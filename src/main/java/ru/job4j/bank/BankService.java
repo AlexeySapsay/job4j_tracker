@@ -68,19 +68,8 @@ public class BankService {
 
     /**
      * Это метод ищет пользователя по номеру паспорта. Здесь нужно
-     * использовать перебор всех элементов через цикл for-each и метод Map.keySet.
+     * использовать перебор всех элементов через цикл for-each и keySet()
      */
-//    public User findByPassport(String passport) {
-//        for (Map.Entry<User, List<Account>> entry : users.entrySet()) {
-//            if (entry.getKey().getPassport().equals(passport)) {
-//                return entry.getKey();
-//            }
-//        }
-//        return null;
-//    }
-
-    // упрощенная часть кода, где перебираем только keySet()
-    // рефакторинг провел Стас Коробейников.
     public User findByPassport(String passport) {
         for (User user : users.keySet()) {
             if (user.getPassport().equals(passport)) {
