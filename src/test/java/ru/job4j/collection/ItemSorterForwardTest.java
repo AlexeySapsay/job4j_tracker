@@ -18,16 +18,13 @@ public class ItemSorterForwardTest {
                 new Item("Bolvan"),
                 new Item("Alex")
         );
-        //System.out.println(items);
         Collections.sort(items, new ItemSorterForward());
-        //System.out.println(items);
 
         List<Item> sortedItems = Arrays.asList(
                 new Item("Alex"),
                 new Item("Bolvan"),
                 new Item("Ivan"));
 
-        //assertThat(items,is(sortedItems));
         assertThat(sortedItems, is(items));
     }
 }
