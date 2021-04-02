@@ -29,7 +29,7 @@ public class User implements Comparable<User> {
         //если имена совпадают, используем стандартную реализацию
         // compareTo из Integer
         if (res == 0) {
-            res = Integer.valueOf(this.age).compareTo(o.age);
+            res = Integer.compare(this.age, o.age);
         }
         return res;
     }
