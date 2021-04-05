@@ -23,4 +23,25 @@ public class LexSortTest {
         Arrays.sort(input, new LexSort());
         assertThat(input, is(out));
     }
+
+    @Test
+    public void sortNum0and1and2and10and1000() {
+        String[] input = {
+                "10. Task.",
+                "1. Task.",
+                "1000. Task.",
+                "2. Task.",
+                "0. Task."
+        };
+        String[] out = {
+                "0. Task.",
+                "1. Task.",
+                "2. Task.",
+                "10. Task.",
+                "1000. Task."
+        };
+        Arrays.sort(input, new LexSort());
+        assertThat(input, is(out));
+    }
+
 }
