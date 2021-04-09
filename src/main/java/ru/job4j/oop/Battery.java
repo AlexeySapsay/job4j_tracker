@@ -8,7 +8,7 @@ public class Battery {
     }
 
     public void exchange(Battery another) {
-        another.load = this.load + another.load ;
+        another.load = this.load + another.load;
         this.load = 0;
     }
 
@@ -24,14 +24,18 @@ public class Battery {
         Battery ninth = new Battery(50);
         Battery tenth = new Battery(55);
 
-
-        System.out.println("first : " + first.load + ". second : " + second.load + ". third : " + third.load);
+        System.out.println("first : " + first.load + ". second : "
+                + second.load + ". third : " + third.load);
         first.exchange(second);
-        System.out.println("first : " + first.load + ". second : " + second.load + ". third : " + third.load);
+        System.out.println("first : " + first.load + ". second : "
+                + second.load + ". third : " + third.load);
         second.exchange(third);
-        System.out.println("first : " + first.load + ". second : " + second.load + ". third : " + third.load);
+        System.out.println("first : " + first.load + ". second : "
+                + second.load + ". third : " + third.load);
         third.exchange(fourth);
-        System.out.println("first : " + first.load + ". second : " + second.load + ". third : " + third.load + ". fourth : " + fourth.load);
+        System.out.println("first : " + first.load + ". second : "
+                + second.load + ". third : " + third.load
+                + ". fourth : " + fourth.load);
         fourth.exchange(fifth);
         fifth.exchange(sixth);
         sixth.exchange(second);
@@ -40,7 +44,5 @@ public class Battery {
         ninth.exchange(tenth);
         System.out.println("... ... ...");
         System.out.println("tenth : " + tenth.load);
-
-
     }
 }

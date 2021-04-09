@@ -3,16 +3,18 @@ package ru.job4j.set;
 import java.util.*;
 
 /**
- * Панграмма - короткий текст, который использует все буквы алфавита, по возможности не повторяя их.
- *
- * Метод принимает строку(на английском языке). Необходимо реализовать его так, чтобы метод определил является ли входящая строка панграммой. Строчные и прописные буквы являются одинаковыми символами, пробелы необходимо игнорировать.
- *
+ * Панграмма - короткий текст, который использует все буквы алфавита,
+ * по возможности не повторяя их.
+ * <p>
+ * Метод принимает строку(на английском языке). Необходимо реализовать его так,
+ * чтобы метод определил является ли входящая строка панграммой.
+ * Строчные и прописные буквы являются одинаковыми символами, пробелы необходимо игнорировать.
+ * <p>
  * Напомню, что в английском алфавите 26 букв.
- *
  */
 
-
 public class Pangram {
+
     public static boolean checkString(String s) {
         s = s.toLowerCase();
         String[] strArr = s.replaceAll("\\s", "").split("");
@@ -24,11 +26,9 @@ public class Pangram {
             charArray[index] = buffer.charAt(0);
         }
 
-        Set<Character> chaSet = new HashSet<Character>(Arrays.asList(charArray));
-        if (chaSet.size() == 26) {
-            return true;
-        } else {
-            return false;
-        }
+        Set<Character> chaSet;
+        chaSet = new HashSet<Character>(Arrays.asList(charArray));
+
+        return chaSet.size() == 26;
     }
 }

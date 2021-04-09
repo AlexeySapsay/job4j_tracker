@@ -2,7 +2,7 @@ package ru.job4j.tracker;
 
 public class LoadOrder {
 
-    private static String static_field = echo("static field");
+    private static String staticField = echo("static field");
 
     private static final String STATIC_FINAL_FIELD = echo("static final field");
 
@@ -28,7 +28,7 @@ public class LoadOrder {
     }
 
     public static void main(String[] args) {
-       // LoadOrder order = new LoadOrder("main");
+        // LoadOrder order = new LoadOrder("main");
 
     }
 }

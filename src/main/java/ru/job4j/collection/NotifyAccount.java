@@ -17,12 +17,9 @@ public class NotifyAccount {
 
         /* for-each accounts to HashSet; */
 
-
 //        for(Account element : accounts){
 //            System.out.println(rsl);
 //        }
-
-
         return rsl;
     }
 }

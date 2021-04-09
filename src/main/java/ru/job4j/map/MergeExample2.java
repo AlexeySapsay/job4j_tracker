@@ -3,7 +3,6 @@ package ru.job4j.map;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class MergeExample2 {
     public static void main(String[] args) {
         Map<Integer, String> map = new HashMap<>();

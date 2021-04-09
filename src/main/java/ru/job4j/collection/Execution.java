@@ -1,10 +1,7 @@
 package ru.job4j.collection;
 
-import ru.job4j.collection.User;
-
 import java.util.Set;
 import java.util.TreeSet;
-
 
 public class Execution {
     public static void main(String[] args) {

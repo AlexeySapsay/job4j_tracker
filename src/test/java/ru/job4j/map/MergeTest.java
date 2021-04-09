@@ -33,7 +33,6 @@ public class MergeTest {
         assertThat(rsl, is(expected));
     }
 
-
     @Test
     public void collectData2() {
         Map<Integer, String> names = new HashMap<>(Map.of(1, "name1", 2, "name2", 3, "name3"));
@@ -81,7 +80,6 @@ public class MergeTest {
         );
         assertThat(rsl, is(expected));
     }
-
 
     @Test
     public void collectData4() {

@@ -1,7 +1,7 @@
 package ru.job4j.oop;
 
 public class Hare {
-    public void tryEat(Ball ball){
+    public void tryEat(Ball ball) {
 
     }
 
@@ -9,11 +9,11 @@ public class Hare {
 
     }
 
-    public void hunting(Fox fox){
+    public void hunting(Fox fox) {
 
     }
 
-    public void eat(Wolf wolf){
+    public void eat(Wolf wolf) {
 
     }
 

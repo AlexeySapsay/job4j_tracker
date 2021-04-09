@@ -5,7 +5,8 @@ package ru.job4j.map;
 import java.util.Map;
 import java.util.Objects;
 
-/**Задание: вам необходимо реализовать метод
+/**
+ * Задание: вам необходимо реализовать метод
  * boolean addNewElement(User u), который осуществит
  * добавление нового элемента только при условии,
  * что такого ключа в отображении еще нет.
@@ -24,9 +25,9 @@ public class PutIfAbsent {
     }
 
     public boolean addNewElement(User u) {
-        users.putIfAbsent(u.getId(),u);
+        users.putIfAbsent(u.getId(), u);
 
-        if(users.containsValue(u)){
+        if (users.containsValue(u)) {
             return true;
         }
         return false;
@@ -47,8 +48,12 @@ public class PutIfAbsent {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
             User user = (User) o;
             return Objects.equals(name, user.name);
         }

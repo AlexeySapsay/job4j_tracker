@@ -1,5 +1,6 @@
 package ru.job4j.bank;
 //https://job4j.ru/edu/task?action=task&taskId=0873958f758d0d5301758d8a582a2e57&number=402128
+
 import java.util.Objects;
 
 public class Account {
@@ -29,14 +30,19 @@ public class Account {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
         Account account = (Account) o;
-        return Objects.equals(requisite,account.requisite);
+        return Objects.equals(requisite, account.requisite);
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return Objects.hash(requisite);
     }
 }

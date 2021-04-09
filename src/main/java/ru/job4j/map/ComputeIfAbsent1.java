@@ -19,7 +19,7 @@ public class ComputeIfAbsent1 {
         map.computeIfAbsent(3, key -> "third" + " " + key);
         System.out.println(map.get(3));
 
-        map.computeIfAbsent(4,key-> "four" + " " + key);
+        map.computeIfAbsent(4, key -> "four" + " " + key);
         System.out.println(map.get(4));
     }
 }

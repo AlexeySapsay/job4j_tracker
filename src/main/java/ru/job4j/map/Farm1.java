@@ -5,9 +5,9 @@ import java.util.Objects;
 
 public class Farm1 {
     public static void main(String[] args) {
-        Animal Animal1 = new Animal("chiken",2);
+        Animal animal1 = new Animal("chiken", 2);
 
-        System.out.println(Animal1.getLegs() + " legs has " + Animal1.getName());
+        System.out.println(animal1.getLegs() + " legs has " + animal1.getName());
     }
 
     public static class Animal {
@@ -29,8 +29,12 @@ public class Farm1 {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
             Animal animal = (Animal) o;
             return Objects.equals(name, animal.name);
         }
@@ -40,6 +44,4 @@ public class Farm1 {
             return Objects.hash(name);
         }
     }
-
-
 }

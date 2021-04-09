@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-public class ReplaceAction implements UserAction{
+public class ReplaceAction implements UserAction {
     private final Output out;
 
     public ReplaceAction(Output out) {
@@ -25,9 +25,9 @@ public class ReplaceAction implements UserAction{
             out.println("замена элемента по id выполненна успешно");
         } else {
             // вывод об ошибке
-            out.println("возникла ошибка при попытке замены элемента" +
-                    "возможно элемента с таким id не существует" +
-                     "попробуйте снова");
+            out.println("возникла ошибка при попытке замены элемента"
+                    + "возможно элемента с таким id не существует"
+                    + "попробуйте снова");
         }
         return true;
     }

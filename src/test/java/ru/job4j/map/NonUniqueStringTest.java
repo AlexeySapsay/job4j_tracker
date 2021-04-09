@@ -8,7 +8,6 @@ import java.util.Map;
 
 import static org.hamcrest.core.Is.is;
 
-
 public class NonUniqueStringTest {
     @Test
     public void checkData() {
@@ -38,7 +37,7 @@ public class NonUniqueStringTest {
     public void checkData4() {
         String[] data = {"a"};
         Map<String, Boolean> rsl = NonUniqueString.checkData(data);
-        Map<String, Boolean> expected = Map.of("a",false);
+        Map<String, Boolean> expected = Map.of("a", false);
         assertThat(rsl, is(expected));
     }
 }

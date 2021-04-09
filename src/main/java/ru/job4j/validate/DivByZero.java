@@ -3,10 +3,10 @@ package ru.job4j.validate;
 public class DivByZero {
     public static int div(int first, int second) {
         int rsl = -1;
-        if( second == 0) {
+        if (second == 0) {
             System.out.println("Div by 0, return der value -1!");
         } else {
-            rsl = first/second;
+            rsl = first / second;
         }
         return rsl;
     }

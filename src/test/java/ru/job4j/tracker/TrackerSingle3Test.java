@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 public class TrackerSingle3Test {
     @Test
-    public void whenTestSingletonLazyFieldLoading(){
+    public void whenTestSingletonLazyFieldLoading() {
         Tracker tracker = TrackerSingle3.getInstance();
         Tracker tracker1 = TrackerSingle3.getInstance();
 

@@ -18,7 +18,6 @@ public class TriangleTest {
         assertThat(rsl, closeTo(8, 0.001));
     }
 
-
     @Test
     public void periodWhenNotExistThenMinusOne() {
         Point a = new Point(0, 0);
@@ -29,5 +28,4 @@ public class TriangleTest {
         double rsl = triangle.area();
         assertThat(rsl, closeTo(-1, 0.001));
     }
-
 }

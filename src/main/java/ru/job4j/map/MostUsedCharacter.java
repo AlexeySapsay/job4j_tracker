@@ -27,7 +27,7 @@ public class MostUsedCharacter {
         // 4. return most popular character
         Integer max = 0;
         Character keyMax;
-        char rsl=' ';
+        char rsl = ' ';
 
         //4.1 looking for max value and return
         // equivalent max key

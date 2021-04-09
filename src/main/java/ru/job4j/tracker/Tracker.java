@@ -3,7 +3,6 @@ package ru.job4j.tracker;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-
 public class Tracker {
     private final Item[] items = new Item[100];
     //private final ArrayList<Item> items = new ArrayList<Item>(100);
@@ -24,7 +23,6 @@ public class Tracker {
 //        //items[size++] = item;
 //        return item;
 //    }
-
 
     public Item[] findAll() {
         return Arrays.copyOf(items, size);

@@ -5,7 +5,6 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-
 public class UniqueTextTest {
 
     @Test
@@ -21,5 +20,4 @@ public class UniqueTextTest {
         String text = "A mouse is eaten by a cat";
         assertThat(UniqueText.isEquals(origin, text), is(false));
     }
-
 }

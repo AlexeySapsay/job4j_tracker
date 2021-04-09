@@ -21,7 +21,7 @@ public class PutContainsKey {
     public static Map<Integer, User> addNewElementWithCheck(List<User> list) {
         Map<Integer, User> rsl = new HashMap<>();
 
-        for(User user : list){
+        for (User user : list) {
             rsl.put(user.id, user);
         }
 
@@ -47,8 +47,12 @@ public class PutContainsKey {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
             User user = (User) o;
             return id == user.id;
         }

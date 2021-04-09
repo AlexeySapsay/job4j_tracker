@@ -6,16 +6,18 @@ import java.util.Map;
 import java.util.ArrayList;
 
 public class BankService {
-//    public static void main(String[] args) {
-//        // test for transfer money
-//        User user = new User("3434", "Petr Arsentev");
-//        BankService bank = new BankService();
-//        bank.addUser(user);
-//        bank.addAccount(user.getPassport(), new Account("5546", 150D));
-//        bank.addAccount(user.getPassport(), new Account("113", 50D));
-//        System.out.println((bank.transferMoney(user.getPassport(), "5546", user.getPassport(), "113", 150D)));
-//    }
-
+/**
+ public static void main(String[] args) {
+ // test for transfer money
+ User user = new User("3434", "Petr Arsentev");
+ BankService bank = new BankService();
+ bank.addUser(user);
+ bank.addAccount(user.getPassport(), new Account("5546", 150D));
+ bank.addAccount(user.getPassport(), new Account("113", 50D));
+ System.out.println((bank.transferMoney(user.getPassport(),
+ "5546", user.getPassport(), "113", 150D)));
+ }
+ **/
 
     /**
      * Это поле содержит всех пользователей
@@ -35,7 +37,6 @@ public class BankService {
         ArrayList<Account> accounts = new ArrayList<Account>();
         users.putIfAbsent(user, accounts);
     }
-
 
     /**
      * Метод добавляет новый счет пользователю.
@@ -65,7 +66,6 @@ public class BankService {
         }
     }
 
-
     /**
      * Это метод ищет пользователя по номеру паспорта. Здесь нужно
      * использовать перебор всех элементов через цикл for-each и keySet()
@@ -79,13 +79,12 @@ public class BankService {
         return null;
     }
 
-
     /**
      * Этот метод ищет счет пользователя по реквизитам.
      * Сначала нужно найти пользователя.
      * Потом получить список счетов этого пользователя
      * и в нем найти нужный счет.
-     */
+     **/
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
         if (user != null) {
@@ -99,12 +98,11 @@ public class BankService {
         return null;
     }
 
-
     /**
      * Метод для перечисления денег с одного счёта на другой счёт.
      * Если счёт не найден или не хватает денег на счёте srcAccount
      * (с которого переводят), то метод должен вернуть false.
-     */
+     **/
     public boolean transferMoney(String srcPassport,
                                  String srcRequisite,
                                  String destPassport,

@@ -1,6 +1,7 @@
 package ru.job4j.list;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -9,10 +10,10 @@ import java.io.PrintStream;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-
 public class ListIteratorUsageTest {
+
     @Test
-    public void main(){
+    public void main() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
         ListIteratorUsage.main(null);

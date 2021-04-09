@@ -8,6 +8,7 @@ public class PassportOffice {
     private Map<String, Citizen> citizens = new HashMap<>();
     //Метод add вернет true, если пользователя еще
     //нет в HashMap. Если он уже есть, то вернуть false.
+
     public boolean add(Citizen citizen) {
         boolean rsl = false;
         if (!citizens.containsKey(citizen.getPassport())) {

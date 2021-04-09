@@ -9,15 +9,14 @@ public class PhoneDictionary {
         this.person.add(person);
     }
 
-
     public ArrayList<Person> find(String key) {
         ArrayList<Person> result = new ArrayList<>();
         //realise function
         for (Person personInstance : person) {
-            if (personInstance.getPhone().equals(key) ||
-                    personInstance.getSurname().equals(key) ||
-                    personInstance.getAddress().equals(key) ||
-                    personInstance.getName().equals(key)) {
+            if (personInstance.getPhone().equals(key)
+                    || personInstance.getSurname().equals(key)
+                    || personInstance.getAddress().equals(key)
+                    || personInstance.getName().equals(key)) {
                 result.add(personInstance);
             }
         }

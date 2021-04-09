@@ -7,7 +7,7 @@ public class Dendy {
         Scanner input = new Scanner(System.in);
         boolean run = true;
 
-        while(run) {
+        while (run) {
             System.out.println("Игры.");
             System.out.println("1. Танки");
             System.out.println("2. Супер Марио");
@@ -15,7 +15,7 @@ public class Dendy {
             System.out.println("Выберите пункт меню, чтобы начать игру: ");
 
             int select = Integer.valueOf(input.nextLine());
-            if(select == 3) {
+            if (select == 3) {
                 System.out.println("Игра завершена.");
                 run = false;
             } else if (select == 1) {

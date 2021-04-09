@@ -1,6 +1,5 @@
 package ru.job4j.collection;
 
-
 import org.junit.Test;
 
 import java.util.Iterator;
@@ -10,7 +9,6 @@ import java.util.TreeSet;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
-
 
 public class UserTest {
     @Test
@@ -30,5 +28,4 @@ public class UserTest {
         int rsl = new User("Petr", 32).compareTo(new User("Ivan", 31));
         assertThat(rsl, greaterThan(0));
     }
-
 }

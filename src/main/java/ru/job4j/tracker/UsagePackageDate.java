@@ -5,7 +5,6 @@ import java.time.LocalTime;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-
 public class UsagePackageDate {
     public static void main(String[] args) {
         LocalDate currentDate = LocalDate.now();
@@ -24,6 +23,5 @@ public class UsagePackageDate {
         DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("dd -MM - yyyy HH ");
         String currentDateTimeFormat1 = currentDateTime.format(formatter1);
         System.out.println("Date and time after formatting2 : " + currentDateTimeFormat1);
-
     }
 }

@@ -33,7 +33,7 @@ public class ValidateInputTest {
     @Test
     public void whenValidInputMoreTimes() {
         Output out = new StubOutput();
-        Input in = new StubInput(new String[] {"1","2","3"});
+        Input in = new StubInput(new String[]{"1", "2", "3"});
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
         assertThat(selected, is(1));

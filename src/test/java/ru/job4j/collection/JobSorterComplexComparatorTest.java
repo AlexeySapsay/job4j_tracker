@@ -8,7 +8,6 @@ import static org.hamcrest.CoreMatchers.is;
 
 import java.util.*;
 
-
 public class JobSorterComplexComparatorTest {
     @Test
     public void whenJobsIsExist() {
@@ -29,7 +28,6 @@ public class JobSorterComplexComparatorTest {
         assertThat(iterator.next(), is(new Job("X task", 0)));
     }
 
-
     @Test
     public void whenSortByNameAndAscendingAndPriorityAscending() {
         List<Job> jobs = Arrays.asList(
@@ -47,7 +45,6 @@ public class JobSorterComplexComparatorTest {
         Collections.sort(jobs, comb1);
         //System.out.println(jobs);
 
-
         List<Job> sortedJobs = Arrays.asList(
                 new Job("Fix bug", 1),
                 new Job("Fix bug", 2),
@@ -57,7 +54,6 @@ public class JobSorterComplexComparatorTest {
         );
         assertThat("failure - jobs is not sorted by comparator!", sortedJobs, is(jobs));
     }
-
 
     @Test
     public void whenNameAscendingAndPriorityDescending() {
@@ -86,7 +82,6 @@ public class JobSorterComplexComparatorTest {
         assertThat("failure - jobs is not sorted by comparator!", sortedJobs, is(jobs));
     }
 
-
     @Test
     public void nameDescendingAndPriorityAscending() {
         List<Job> jobs = Arrays.asList(
@@ -113,7 +108,6 @@ public class JobSorterComplexComparatorTest {
         );
         assertThat("failure - jobs is not sorted by comparator!", sortedJobs, is(jobs));
     }
-
 
     @Test
     public void nameDescendingAndPriorityDescending() {

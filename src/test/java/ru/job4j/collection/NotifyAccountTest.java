@@ -11,7 +11,6 @@ import static org.junit.Assert.*;
 
 public class NotifyAccountTest {
 
-
     @Test
     public void sent() {
         List<Account> accounts = Arrays.asList(
@@ -26,7 +25,6 @@ public class NotifyAccountTest {
         );
         assertThat(NotifyAccount.sent(accounts), is(expect));
     }
-
 
     @Test
     public void sent2() {
@@ -48,7 +46,6 @@ public class NotifyAccountTest {
         assertThat(NotifyAccount.sent(accounts), is(expect));
     }
 
-
     @Test
     public void sent3() {
         List<Account> accounts = Arrays.asList(
@@ -63,7 +60,6 @@ public class NotifyAccountTest {
         assertThat(NotifyAccount.sent(accounts), is(expect));
     }
 
-
     @Test
     public void sent4() {
         List<Account> accounts = Arrays.asList(
@@ -77,7 +73,6 @@ public class NotifyAccountTest {
         ));
         assertThat(NotifyAccount.sent(accounts), is(expect));
     }
-
 
     @Test
     public void sent5() {

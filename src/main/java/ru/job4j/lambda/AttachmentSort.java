@@ -24,7 +24,5 @@ public class AttachmentSort {
 
         attachments.sort(comparator);
         System.out.println(attachments);
-
-
     }
 }

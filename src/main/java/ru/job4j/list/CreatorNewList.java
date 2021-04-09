@@ -3,6 +3,9 @@ package ru.job4j.list;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ */
 public class CreatorNewList {
     public static void main(String[] args) {
         System.out.println("Создаем список с пустым конструктором.");
@@ -14,7 +17,7 @@ public class CreatorNewList {
         System.out.println("Создаем список - в конструктор передаем коллекцию.");
         List<String> second = new ArrayList<>(first);
         System.out.println("Выводим все элементы в списке.");
-        for (String element : second){
+        for (String element : second) {
             System.out.println(element);
         }
     }

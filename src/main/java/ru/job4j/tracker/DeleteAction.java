@@ -1,8 +1,8 @@
 package ru.job4j.tracker;
 
 public class DeleteAction implements UserAction {
+    private static String lN = System.lineSeparator();
     private final Output out;
-    private static String LN = System.lineSeparator();
 
     public DeleteAction(Output out) {
         this.out = out;
@@ -22,8 +22,8 @@ public class DeleteAction implements UserAction {
             out.println("Удаление элемента по id выполненно успешно");
         } else {
             out.println("Возникла ошибка при попытке удаления элемента"
-                    + LN + "Возможно элемента с таким id не существует"
-                    + LN + "Попробуйте снова");
+                    + lN + "Возможно элемента с таким id не существует"
+                    + lN + "Попробуйте снова");
         }
         return true;
     }

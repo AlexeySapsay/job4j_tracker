@@ -47,7 +47,6 @@ public class StringCompareTest {
         assertThat(rst, lessThan(0));
     }
 
-
     @Test
     public void whenLeftAndRightIsPalindromm() {
         StringCompare compare = new StringCompare();
@@ -57,14 +56,12 @@ public class StringCompareTest {
         assertThat(rst, lessThan(0));
     }
 
-
     @Test
     public void whenStringIsEmptyThenBeSero() {
         StringCompare compare = new StringCompare();
         int rsl = compare.compare("", "");
         assertThat(rsl, is(0));
     }
-
 
     @Test
     public void whenCompareNonEmptyWithEmptyStringShouldBeNagatie() {

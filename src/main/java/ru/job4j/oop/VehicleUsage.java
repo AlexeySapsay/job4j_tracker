@@ -7,7 +7,7 @@ public class VehicleUsage {
         Vehicle bus = new Bus();
 
         Vehicle[] vehicles = new Vehicle[]{airplane, train, bus};
-        for(Vehicle element : vehicles) {
+        for (Vehicle element : vehicles) {
             element.move();
             element.sound();
         }
