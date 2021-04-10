@@ -28,7 +28,7 @@ public class LoadOrder {
     }
 
     public static void main(String[] args) {
-        // LoadOrder order = new LoadOrder("main");
+         LoadOrder order = new LoadOrder("main");
 
     }
 }
