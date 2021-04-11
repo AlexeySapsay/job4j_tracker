@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Tracker {
     //private final Item[] items = new Item[100];
-    private final List<Item> items = new ArrayList<Item>(100);
+    private final List<Item> items = new ArrayList<Item>();
 
     private int ids = 1;
     private int size = 0;
@@ -41,7 +41,8 @@ public class Tracker {
 
     // I refactored that method
     public List<Item> findAll() {
-        return items.subList(0, size);
+        //return items.subList(0, size);
+        return List.copyOf(items);
     }
 
     //maybe remove it
@@ -60,25 +61,56 @@ public class Tracker {
 //    }
 
     // I refactored that method
+    // remove that
+//    public List<Item> findByName(String key) {
+//        Item[] itemsWithoutNull = new Item[items.size()];
+//        int size = 0;
+//        for (int index = 0; index < this.size; index++) {
+//            //Item itemBuffer = items[index];
+//            Item itemBuffer = items.get(index);
+//            if (itemBuffer.getName().equals(key)) {
+//                itemsWithoutNull[size] = itemBuffer;
+//                size++;
+//            }
+//        }
+//        itemsWithoutNull = Arrays.copyOf(itemsWithoutNull, size);
+//        //return itemsWithoutNull;
+//        return List.of(itemsWithoutNull);
+//    }
+
+    // I refactored that method
     public List<Item> findByName(String key) {
-        Item[] itemsWithoutNull = new Item[items.size()];
-        int size = 0;
-        for (int index = 0; index < this.size; index++) {
-            //Item itemBuffer = items[index];
-            Item itemBuffer = items.get(index);
-            if (itemBuffer.getName().equals(key)) {
-                itemsWithoutNull[size] = itemBuffer;
+        //Item[] itemsWithoutNull = new Item[items.size()];
+        List<Item> itemsWithoutNull = new ArrayList<Item>(items.size());
+        //int size = 0;
+
+//        for (int index = 0; index < this.size; index++) {
+//            //Item itemBuffer = items[index];
+//            Item itemBuffer = items.get(index);
+//            if (itemBuffer.getName().equals(key)) {
+//                itemsWithoutNull[size] = itemBuffer;
+//                size++;
+//            }
+//        }
+
+        for (Item item : items) {
+            if (item.getName().equals(key)) {
+                //itemsWithoutNull[size] = item;
+                itemsWithoutNull.add(item);
                 size++;
             }
         }
-        itemsWithoutNull = Arrays.copyOf(itemsWithoutNull, size);
+        //itemsWithoutNull = Arrays.copyOf(itemsWithoutNull, size);
+        //itemsWithoutNull.addAll(itemsWithoutNull); //Arrays.copyOf(itemsWithoutNull, size);
         //return itemsWithoutNull;
-        return List.of(itemsWithoutNull);
+        //return List.of(itemsWithoutNull);
+        return itemsWithoutNull;
     }
 
     private int indexOf(int id) {
         int rsl = -1;
-        for (int index = 0; index < size; index++) {
+        //for (int index = 0; index < size; index++) {
+        for (int index = 0; index < items.size(); index++) {
             //if (items[index].getId() == id) {
             if (items.get(index).getId() == id) {
                 rsl = index;
@@ -103,9 +135,9 @@ public class Tracker {
         if (result) {
 //            items[index] = item;
 //            items[index].setId(id);
-            items.add(index, item);
+            //items.add(index, item);
+            items.set(index, item);
             items.get(index).setId(id);
-
         }
         return result;
     }
@@ -117,14 +149,23 @@ public class Tracker {
         int length = size - index;
         boolean result = index != -1;
 
-        if (result) {
-            System.arraycopy(items.toArray(), start, items.toArray(),
-                    distPos, length - 1);
-            //items[size - 1] = null;
-            //items.add((size - 1), null);
-            items.add((size), null);
-            size--;
-            return true;
+        //if (result) {
+//            System.arraycopy(items.toArray(), start, items.toArray(),
+//                    distPos, length - 1);
+        //items[size - 1] = null;
+        //items.add((size - 1), null);
+        //items.add(size, null);
+
+        //items.set(distPos, null);
+        //size--;
+        //return true;
+        //}
+
+        for (Item item : items) {
+            if (item.getId() == id) {
+                items.remove(item);
+                return true;
+            }
         }
         return result;
     }
