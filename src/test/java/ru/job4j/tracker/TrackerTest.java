@@ -50,4 +50,24 @@ public class TrackerTest {
         tracker.delete(id);
         assertThat(tracker.findById(id), is(nullValue()));
     }
+
+    @Test
+    public void whenDeleteTwoElements() {
+        Tracker tracker = new Tracker();
+
+        Item bug1 = new Item();
+        bug1.setName("Bug1");
+        tracker.add(bug1);
+        int id1 = bug1.getId();
+        tracker.delete(id1);
+
+        Item bug2 = new Item();
+        bug2.setName("Bug2");
+        tracker.add(bug2);
+        int id2 = bug2.getId();
+        tracker.delete(id2);
+
+        assertThat(tracker.findById(id1), is(nullValue()));
+        assertThat(tracker.findById(id2), is(nullValue()));
+    }
 }

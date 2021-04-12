@@ -12,12 +12,6 @@ public class CreateAction implements UserAction {
         return "Create";
     }
 
-    // заглушка удалить и переписать метод ниже
-//    @Override
-//    public boolean execute(Input input, Tracker tracker) {
-//        return false;
-//    }
-
     @Override
     public boolean execute(Input input, Tracker tracker) {
         out.println("=== Create a new Item ====");

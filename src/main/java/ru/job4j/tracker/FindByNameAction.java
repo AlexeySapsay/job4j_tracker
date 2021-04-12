@@ -19,9 +19,7 @@ public class FindByNameAction implements UserAction {
         out.println(" === Find item by Name === ");
         String name = input.askStr(" Введите имя для поиске в списке заявок "
                 + " Enter name : ");
-        //Item[] itemArray = tracker.findByName(name);
         List<Item> itemArray = tracker.findByName(name);
-        //if (itemArray.length == 0) {
         if (itemArray.size() == 0) {
             out.println("Заявки с таким именем не найдены");
         } else {
