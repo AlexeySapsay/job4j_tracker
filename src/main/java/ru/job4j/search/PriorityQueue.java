@@ -1,32 +1,16 @@
 package ru.job4j.search;
+//https://job4j.ru/edu/task?action=task&taskId=0873958f758d0d5301758d8a565b2e40&number=402105
 
 import java.util.LinkedList;
 
 /**
- * В Java коллекции представляют собой фреймворк. То есть набор классов,
- * которые можно легко расширить.
- * <p>
- * Все коллекции можно разбить по группам интерфейсов.
- * <p>
- * В предыдущем уроке мы говорили про коллекцию java.util.ArrayList.
- * Этот класс реализует java.util.List.
- * <p>
- * У интерфейса java.util.List есть другая реализация java.util.LinkedList.
- * Этот класс внутри использует связанные списки.
- * <p>
- * Основное отличие этих коллекций - это организация вставки и удаления элементов.
- * Детально про отличия этих реализаций мы поговорим в следующем уровне.
- * <p>
- * Интерфейс java.util.List имеет метод add(index, value).
- * То есть мы можем добавить элемент в нужный индекс.
- * <p>
- * У этого метода интересное поведение. Если ячейка уже занята,
- * то элементы сдвигаются вправо, а не заменяются, как в массиве.
+ * Класс описывает работу простейшей очереди по приоритету, которая работает
+ * по принципу FIFO (first in - first out)
+ *
+ * @author STAS KOROBEYNIKOV
+ * @version 1.0
  */
-
 public class PriorityQueue {
-    private LinkedList<Task> tasks = new LinkedList<>();
-
     /**
      * Метод должен вставлять в нужную позицию элемент.
      * Позиция определяется по полю приоритет.
@@ -34,6 +18,7 @@ public class PriorityQueue {
      *
      * @param task задача
      */
+    private LinkedList<Task> tasks = new LinkedList<>();
 
     public void put(Task task) {
         int index = 0;
