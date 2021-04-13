@@ -14,7 +14,7 @@ import java.util.List;
  * Для того, чтобы добавить одну коллекцию
  * в другую можно использовать метод addAll():
  * <p>
- * boolean addAll​(Collection<? extends E> c) -
+ * boolean addAll​() -
  * метод добавляет коллекцию с (в нашем случае - список)
  * в список, на котором мы вызываем этот метод. Стоит
  * упомянуть что так можно добавить все типы
@@ -39,8 +39,8 @@ import java.util.List;
  * удалить элемент из первого списка. Потом второй список
  * нужно добавить в первый. Метод должен вернуть индекс
  * элемента, который пришел в параметрах метода из общего списка.
- **/
-@SuppressWarnings("checkstyle:EmptyLineSeparator")
+ */
+
 public class AddAllElementsList {
     public static int containsElement(List<String> left, List<String> right, String str) {
         // if element contains in left and right list, then remove element from left

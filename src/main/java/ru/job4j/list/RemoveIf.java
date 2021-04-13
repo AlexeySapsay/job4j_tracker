@@ -9,7 +9,7 @@ import java.util.List;
  * Collection(наследником которого является интерфейс List)
  * определен метод removeIf():
  * <p>
- * default boolean removeIf​(Predicate<? super E> filter) -
+ * default boolean removeIf​(Predicate filter) -
  * метод удаляет все элементы из коллекции, которые
  * удовлетворяют условию определенному в предикате
  * filter(передается в виде лямбда выражения).

@@ -19,16 +19,11 @@ public class PriorityQueue {
     /**
      * первый случай: элементов нет то индекс равен 0,
      * и вставляем элемент на 0 позицию
+     * @param task - задача помещаемая в колецию
      */
     public void put(Task task) {
         int index = 0;
         for (Task element : tasks) {
-//            if (element.getPriority() < task.getPriority()) {
-//                index++;
-//            }
-//            else {
-//                break;
-//            }
             if (element.getPriority() > task.getPriority()) {
                 break;
             }

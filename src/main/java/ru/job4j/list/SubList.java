@@ -10,7 +10,7 @@ import java.util.List;
  * делать в данной ситуации? Не отчаиваться, не
  * усложнять, а просто применить метод subList():
  * <p>
- * List<E> subList(int fromIndex, int toIndex) -
+ * List subList(int fromIndex, int toIndex) -
  * метод возвращает список, который содержит все
  * элементы исходного списка начиная с индекса
  * fromIndex(включительно) и до toIndex(значение исключается).
