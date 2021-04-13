@@ -12,19 +12,17 @@ import java.util.LinkedList;
  */
 public class PriorityQueue {
     /**
-     * Метод должен вставлять в нужную позицию элемент.
-     * Позиция определяется по полю приоритет.
-     * Для вставки использовать add(int index, E value)
-     *
-     * @param task задача
+     * хранение задания task осуществляется в коллекции типа LinkedList
      */
     private LinkedList<Task> tasks = new LinkedList<>();
 
+    /**
+     * первый случай: элементов нет то индекс равен 0,
+     * и вставляем элемент на 0 позицию
+     */
     public void put(Task task) {
         int index = 0;
         for (Task element : tasks) {
-            // первый случай: элементов нет то индекс равен 0,
-            // и вставляем элемент на 0 позицию
 //            if (element.getPriority() < task.getPriority()) {
 //                index++;
 //            }
@@ -40,7 +38,13 @@ public class PriorityQueue {
         this.tasks.add(index, task);
     }
 
-    // возвращает первый элемент из списка и удаляет его
+    /**
+     * Метод возвращает первый элемент из списка и удаляет его.
+     *
+     * @return возвращает задачу из головы очереди или null
+     * если очередь пуста
+     */
+
     public Task take() throws NullPointerException {
         try {
             return tasks.poll();

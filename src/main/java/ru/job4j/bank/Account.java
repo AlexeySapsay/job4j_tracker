@@ -3,6 +3,14 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Модел данных Account. Банковский счет,
+ * принадлежащий пользователю User.
+ * У одного User может не быть Accounts.
+ * Или быть в наличии больше одного Accounts
+ *
+ */
+
 public class Account {
     private String requisite;
     private double balance;
