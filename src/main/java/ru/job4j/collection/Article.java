@@ -1,8 +1,8 @@
 package ru.job4j.collection;
 //https://job4j.ru/edu/task_code?topicId=5&taskCodeId=16&solutionId=new_task
 
-import java.util.Map;
-import java.util.HashMap;
+import java.util.Arrays;
+import java.util.HashSet;
 
 /**
  * Задан большой текст. Из него вырезают слова и предложения.
@@ -39,59 +39,31 @@ public class Article {
     }
 
     /**
-     *
      * @param origin строка исходного текста
-     * @param line строка текста получаенная из слов исходного тектса origin
+     * @param line   строка текста получаенная из слов исходного тектса origin
      * @return - true - в случае если возможно составить line из слов origin
-     *              false - если не возможно составить
+     * false - если не возможно составить
      */
     public static boolean generateBy(String origin, String line) {
         /*
-          Испульзую HashMap для хранения строк.
+          Испульзую HashSet для хранения строк.
           в качестве ключа беру слово, а значение- количество повторений
           слова в исходной строке
          */
-        Map<String, Integer> originMap = new HashMap<String, Integer>();
-        Map<String, Integer> lineMap = new HashMap<String, Integer>();
+        HashSet<String> setLeft = new HashSet<String>();
+        HashSet<String> setRight = new HashSet<String>();
 
         /*
         Разбиваю строки origin and line по прбелам на слова
         удаляю не буквенные символы
-        заношу пары ключь- слово, значение- количество повторов слова  HashMap
+        заношу слова в HashSet
          */
-        for (String word : origin.replaceAll("[-+.^:,!]", "").
-                toLowerCase().trim().split("\\s")) {
-            originMap.computeIfPresent(word, (key, value) -> value += 1);
-            originMap.putIfAbsent(word, 1);
-        }
+        setLeft.addAll(Arrays.asList(origin.replaceAll("[-+.^:,!]", "").
+                toLowerCase().trim().split("\\s")));
 
-        for (String word : line.replaceAll("[-+.^:,!]", "").
-                toLowerCase().trim().split("\\s")) {
-            lineMap.computeIfPresent(word, (key, value) -> value += 1);
-            lineMap.putIfAbsent(word, 1);
-
-        }
-
-        /*
-        Проверяю, присутствет ли данное слово в originMap and lineMap
-        перебираею слова по lineMap, т.к она обычно меньшего размера и удобнее
-        для перебора.
-
-        Возвращаем false если количество повторений слова
-        в исходном тексте меньше чем количество повтоений этого слова
-        в составной строке
-         */
-        for (String word : lineMap.keySet()) {
-            if (originMap.containsKey(word) && lineMap.containsKey(word)) {
-                if (originMap.get(word) - lineMap.get(word) >= 0) {
-                    continue;
-                } else {
-                    return false;
-                }
-            } else {
-                return false;
-            }
-        }
-        return true;
+        setRight.addAll(Arrays.asList(line.replaceAll("[-+.^:,!]", "").
+                toLowerCase().trim().split("\\s")));
+        // возвращаю true- если setRight содержится в setLeft
+        return setLeft.containsAll(setRight);
     }
 }
