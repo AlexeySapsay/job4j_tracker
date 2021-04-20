@@ -69,4 +69,52 @@ public class ThenComparingMethodTest {
         input.sort(ThenComparingMethod.descByName());
         assertEquals(expect, input);
     }
+
+    //sort by ascendingName and ascending age
+    @Test
+    public void ascNameAscAgeTest() {
+        ThenComparingMethod.User user1 = new ThenComparingMethod.User("C", 10);
+        ThenComparingMethod.User user2 = new ThenComparingMethod.User("B", 20);
+        ThenComparingMethod.User user3 = new ThenComparingMethod.User("A", 15);
+        ThenComparingMethod.User user4 = new ThenComparingMethod.User("B", 11);
+        ThenComparingMethod.User user5 = new ThenComparingMethod.User("A", 12);
+
+        List<ThenComparingMethod.User> input = Arrays.asList(user1, user2, user3, user4, user5);
+        List<ThenComparingMethod.User> expect = Arrays.asList(user5, user3, user4, user2, user1);
+        input.sort(ThenComparingMethod.ascByName().
+                thenComparing(ThenComparingMethod.ascByAge()));
+        assertEquals(expect, input);
+    }
+
+    // sort ascName and descAge
+    @Test
+    public void ascNameDescAgeTest() {
+        ThenComparingMethod.User user1 = new ThenComparingMethod.User("C", 10);
+        ThenComparingMethod.User user2 = new ThenComparingMethod.User("B", 20);
+        ThenComparingMethod.User user3 = new ThenComparingMethod.User("A", 15);
+        ThenComparingMethod.User user4 = new ThenComparingMethod.User("B", 11);
+        ThenComparingMethod.User user5 = new ThenComparingMethod.User("A", 12);
+
+        List<ThenComparingMethod.User> input = Arrays.asList(user1, user2, user3, user4, user5);
+        List<ThenComparingMethod.User> expect = Arrays.asList(user3, user5, user2, user4, user1);
+        input.sort(ThenComparingMethod.ascByName().
+                thenComparing(ThenComparingMethod.descByAge()));
+        assertEquals(expect, input);
+    }
+
+    // sort descName and ascAge
+    @Test
+    public void descNameAscAgeTest() {
+        ThenComparingMethod.User user1 = new ThenComparingMethod.User("C", 10);
+        ThenComparingMethod.User user2 = new ThenComparingMethod.User("B", 20);
+        ThenComparingMethod.User user3 = new ThenComparingMethod.User("A", 15);
+        ThenComparingMethod.User user4 = new ThenComparingMethod.User("B", 11);
+        ThenComparingMethod.User user5 = new ThenComparingMethod.User("A", 12);
+
+        List<ThenComparingMethod.User> input = Arrays.asList(user1, user2, user3, user4, user5);
+        List<ThenComparingMethod.User> expect = Arrays.asList(user1, user4, user2, user5, user3);
+        input.sort(ThenComparingMethod.descByName().
+                thenComparing(ThenComparingMethod.ascByAge()));
+        assertEquals(expect, input);
+    }
 }
