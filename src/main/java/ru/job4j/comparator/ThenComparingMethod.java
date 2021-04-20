@@ -6,9 +6,14 @@ import java.util.*;
 
 public class ThenComparingMethod {
     public static void main(String[] args) {
+//        User user1 = new User("Alex", 100);
+//        User user2 = new User("Bichail", 200);
+//        User user3 = new User("Catia", 300);
+//        User user4 = new User("Blexander", 400);
+
         User user1 = new User("Alex", 100);
-        User user2 = new User("Bichail", 200);
-        User user3 = new User("Catia", 300);
+        User user2 = new User("Alex", 200);
+        User user3 = new User("Alex", 300);
         User user4 = new User("Blexander", 400);
 
         List<User> users = new ArrayList<User>();
@@ -26,6 +31,11 @@ public class ThenComparingMethod {
         //users.sort(Comparator.reverseOrder());
 //        Collections.sort(users, );
         //Comparator<User> comb =
+        Comparator<User> comparator = Comparator.naturalOrder();
+        Comparator<User> merged = comparator.thenComparing(ascByName().
+                thenComparing(descByAge()));
+        Collections.sort(users, merged);
+
         System.out.println("users after : " + users);
     }
 
@@ -79,12 +89,9 @@ public class ThenComparingMethod {
     }
 
     public static Comparator<User> thenComparing() {
-        return new Comparator<User>() {
-            @Override
-            public int compare(User o1, User o2) {
-                return Integer.compare(o2.getAge(), o1.getAge());
-            }
-        };
+        Comparator<User> comparator = Comparator.naturalOrder();
+        Comparator<User> merged = comparator.thenComparing(ascByName().thenComparing(descByAge()));
+        return merged;
     }
 
     public static Comparator<User> ascByName() {
