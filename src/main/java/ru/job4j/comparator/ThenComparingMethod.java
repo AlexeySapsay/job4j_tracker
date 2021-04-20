@@ -1,10 +1,34 @@
 package ru.job4j.comparator;
 //https://job4j.ru/edu/task_code?topicId=30&taskCodeId=144&solutionId=new_task
 
-import java.util.Comparator;
-import java.util.Objects;
+import java.io.OutputStream;
+import java.util.*;
 
 public class ThenComparingMethod {
+    public static void main(String[] args) {
+        User user1 = new User("Alex", 100);
+        User user2 = new User("Bichail", 200);
+        User user3 = new User("Catia", 300);
+        User user4 = new User("Blexander", 400);
+
+        List<User> users = new ArrayList<User>();
+        users.add(user1);
+        users.add(user2);
+        users.add(user3);
+        users.add(user4);
+
+        System.out.println("original users : " + users);
+
+//        Collections.sort(users, Comparator.reverseOrder());
+//        System.out.println("users after : " + users + "\n");
+
+        //Collections.sort(users, Comparator.naturalOrder());
+        //users.sort(Comparator.reverseOrder());
+//        Collections.sort(users, );
+        //Comparator<User> comb =
+        System.out.println("users after : " + users);
+    }
+
     public static class User implements Comparable<User> {
         private String name;
         private int age;
@@ -20,6 +44,14 @@ public class ThenComparingMethod {
 
         public int getAge() {
             return age;
+        }
+
+        @Override
+        public String toString() {
+            return "User{"
+                    + "name='" + name + '\''
+                    + ", age=" + age
+                    + '}';
         }
 
         @Override
@@ -39,26 +71,57 @@ public class ThenComparingMethod {
             return Objects.hash(name, age);
         }
 
+        // метод- затычка, т.к его переопределяем уже в компараторах
         @Override
-        public int compareTo(User o) {
+        public int compareTo(User anotherUser) {
             return 0;
         }
     }
 
     public static Comparator<User> thenComparing() {
-        //return Comparator.naturalOrder().thenComparing();
-        //return Comparator.naturalOrder().thenComparing();
-        //return User::compareTo;
-        //return Comparator.naturalOrder().thenComparing(Comparator.reverseOrder().);
-
-        return null;
+        return new Comparator<User>() {
+            @Override
+            public int compare(User o1, User o2) {
+                return Integer.compare(o2.getAge(), o1.getAge());
+            }
+        };
     }
 
     public static Comparator<User> ascByName() {
-        return Comparator.naturalOrder();
+        return new Comparator<User>() {
+            @Override
+            public int compare(User o1, User o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        };
+    }
+
+    // remove it after all
+    public static Comparator<User> descByName() {
+        return new Comparator<User>() {
+            @Override
+            public int compare(User o1, User o2) {
+                return o2.getName().compareTo(o1.getName());
+            }
+        };
+    }
+
+    // remove it after all
+    public static Comparator<User> ascByAge() {
+        return new Comparator<User>() {
+            @Override
+            public int compare(User o1, User o2) {
+                return Integer.compare(o1.getAge(), o2.getAge());
+            }
+        };
     }
 
     public static Comparator<User> descByAge() {
-        return Comparator.reverseOrder();
+        return new Comparator<User>() {
+            @Override
+            public int compare(User o1, User o2) {
+                return Integer.compare(o2.getAge(), o1.getAge());
+            }
+        };
     }
 }
