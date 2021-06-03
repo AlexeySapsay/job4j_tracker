@@ -8,8 +8,8 @@ import java.util.function.Predicate;
  */
 public class PredicateCheckPositive {
     public static boolean check(int num) {
-        //return check(s -> s.compareTo(num), num);
-        return num > 0;
+        Predicate<Integer> a = x -> x > 0;
+        return check(a, num);
     }
 
     private static boolean check(Predicate<Integer> predicate, int num) {
