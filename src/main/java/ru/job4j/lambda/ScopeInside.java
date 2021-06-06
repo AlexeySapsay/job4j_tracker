@@ -13,7 +13,6 @@ public class ScopeInside {
         System.out.println(total);
     }
 
-    @SuppressWarnings("checkstyle:EmptyLineSeparator")
     private static Integer add(Supplier<Integer> calc) {
         return calc.get();
     }
