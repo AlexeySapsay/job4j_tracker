@@ -11,7 +11,6 @@ public class FunctionInterfaceUsage {
     public static void main(String[] args) {
 //        Supplier<String> sup = () -> "New String for Interface";
 //        System.out.println(sup.get());
-
         // example for consumer
 //        Supplier<String> sup = () -> "New String For Interface";
 //        Consumer<String> consumer = (s) -> System.out.println(s);
@@ -22,7 +21,6 @@ public class FunctionInterfaceUsage {
 //        BiConsumer<String, String> consumer = (s, s1) -> System.out.println(s + s1);
 //        String str = " and Second String";
 //        consumer.accept(sup.get(), str);
-
 
 //        Supplier<String> sup2 = () -> "String number2 for interface";
 //        System.out.println(sup2.get());
@@ -35,7 +33,6 @@ public class FunctionInterfaceUsage {
 //
 //        Supplier<String> sup5 = () -> "Practice make perfect";
 //        System.out.println(sup5.get());
-
 
 //        List<String> list = List.of("one", "two", "three", "one", "two", "three");
 //        Supplier<Set<String>> supSet = () -> new HashSet<>(list);

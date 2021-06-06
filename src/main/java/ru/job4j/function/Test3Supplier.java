@@ -23,9 +23,9 @@ public class Test3Supplier {
         System.out.println("my cars: " + ourCars);
 
         changeCar(ourCars.get(0), car -> {
-            car.color = "red";
-            car.engine = 200;
-            car.model = "BMW";
+            car.setColor("red");
+            car.setEngine(200);
+            car.setModel("BMW");
             System.out.println("Upgraded car: " + car);
             System.out.println("My cars: " + ourCars);
         });
@@ -33,9 +33,9 @@ public class Test3Supplier {
 }
 
 class Car {
-    String model;
-    String color;
-    double engine;
+    private String model;
+    private String color;
+    private double engine;
 
     public Car(String model, String color, double engine) {
         this.model = model;
@@ -53,5 +53,29 @@ class Car {
                 + ", engine=" + engine
                 +
                 '}';
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getEngine() {
+        return engine;
+    }
+
+    public void setEngine(double engine) {
+        this.engine = engine;
     }
 }
