@@ -1,5 +1,9 @@
 package ru.job4j.tracker;
 
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class StartUI {
@@ -18,6 +22,7 @@ public class StartUI {
                 tracker.add(item);
                 System.out.println("Добавленная заявка: " + item);
             } else if (select == 6) {
+                //System.out.println("Пользователь выбрал: " + select);
                 run = false;
             }
         }
@@ -31,6 +36,7 @@ public class StartUI {
         for (int i = 0; i < menu.length; i++) {
             System.out.println(i + ". " + menu[i]);
         }
+
     }
 
     public static void main(String[] args) {
