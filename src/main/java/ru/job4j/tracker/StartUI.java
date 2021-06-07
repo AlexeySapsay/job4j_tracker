@@ -4,37 +4,48 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import java.util.Scanner;
-
 public class StartUI {
-    public void init(Scanner scanner, Tracker tracker) {
+    private final Output out;
+
+    public StartUI(Output out) {
+        this.out = out;
+    }
+
+    public void init(Input input, Tracker tracker, List<UserAction> actions) {
         boolean run = true;
         while (run) {
-            showMenu();
-            System.out.println("Select: ");
-            int select = Integer.parseInt(scanner.nextLine());
-            if (select != 6) {
-                System.out.println("Пользователь выбрал: " + select);
-            } else {
-                run = false;
+            this.showMenu(actions);
+            int select = input.askInt("Select : ");
+            if (select < 0 || select >= actions.size()) {
+                out.println("Wrong input, you can select: 0 .. " + (actions.size() - 1));
+                continue;
             }
+            UserAction action = actions.get(select);
+            run = action.execute(input, tracker);
         }
     }
 
-    private void showMenu() {
-        String[] menu = {
-                "Add new Item", "Show all items", "Edit item", "Delete item",
-                "Find item by id", "Find items by name", "Exit Program"};
-        System.out.println("Menu: ");
-        for (int i = 0; i < menu.length; i++) {
-            System.out.println(i + ". " + menu[i]);
+    public void showMenu(List<UserAction> actions) {
+        out.println("Menu.");
+        for (int index = 0; index < actions.size(); index++) {
+            out.println(index + " . " + actions.get(index).name());
         }
-
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Output output = new ConsoleOutput();
+        Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();
-        new StartUI().init(scanner, tracker);
+
+        UserAction[] bufferActions = {new CreateAction(output),
+                new ShowItemAction(output),
+                new ReplaceAction(output),
+                new DeleteAction(output),
+                new FindByIdAction(output),
+                new FindByNameAction(output),
+                new Exit()};
+
+        List<UserAction> actions = new ArrayList<UserAction>(Arrays.asList(bufferActions));
+        new StartUI(output).init(input, tracker, actions);
     }
 }
