@@ -4,7 +4,7 @@ import java.util.function.Consumer;
 
 public class MethodReference {
     public void applyByInstance() {
-        // запись через ссылки на метод.
+        // запись через не статический метод
         // Т.е создается объект класса и у него вызывается необходимый метод
         Consumer<String> consumer = new MethodReference()::consumerByInstance;
         consumer.accept("Hello");

@@ -1,7 +1,5 @@
 package ru.job4j.lambda;
 
-import ru.job4j.function.ForEach;
-
 import java.util.List;
 import java.util.Optional;
 

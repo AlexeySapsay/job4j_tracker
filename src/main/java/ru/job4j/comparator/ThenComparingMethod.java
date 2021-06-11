@@ -24,13 +24,6 @@ public class ThenComparingMethod {
 
         System.out.println("original users : " + users);
 
-//        Collections.sort(users, Comparator.reverseOrder());
-//        System.out.println("users after : " + users + "\n");
-
-        //Collections.sort(users, Comparator.naturalOrder());
-        //users.sort(Comparator.reverseOrder());
-//        Collections.sort(users, );
-        //Comparator<User> comb =
         Comparator<User> comparator = Comparator.naturalOrder();
         Comparator<User> merged = comparator.thenComparing(ascByName().
                 thenComparing(descByAge()));

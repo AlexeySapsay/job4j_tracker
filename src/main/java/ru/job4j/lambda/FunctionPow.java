@@ -8,8 +8,8 @@ import java.util.function.Function;
  */
 public class FunctionPow {
     public static double calculate(double x) {
-        Function<Double, Double> powCalculate = c -> Math.pow(x, 2);
-        return calculate(powCalculate, 2);
+        Function<Double, Double> powCal = f -> Math.pow(x, 2);
+        return calculate(powCal, 2);
     }
 
     private static double calculate(Function<Double, Double> y, double x) {
