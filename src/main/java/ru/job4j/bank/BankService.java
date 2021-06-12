@@ -14,18 +14,17 @@ import java.util.ArrayList;
 
 public class BankService {
     // блок кода для ручного тестирования и отладки программы
-/**
- public static void main(String[] args) {
- // test for transfer money
- User user = new User("3434", "Petr Arsentev");
- BankService bank = new BankService();
- bank.addUser(user);
- bank.addAccount(user.getPassport(), new Account("5546", 150D));
- bank.addAccount(user.getPassport(), new Account("113", 50D));
- System.out.println((bank.transferMoney(user.getPassport(),
- "5546", user.getPassport(), "113", 150D)));
- }
- **/
+
+// public static void main(String[] args) {
+    // test for transfer money
+// User user = new User("3434", "Petr Arsentev");
+// BankService bank = new BankService();
+// bank.addUser(user);
+// bank.addAccount(user.getPassport(), new Account("5546", 150D));
+// bank.addAccount(user.getPassport(), new Account("113", 50D));
+// System.out.println((bank.transferMoney(user.getPassport(),
+// "5546", user.getPassport(), "113", 150D)));
+// }
 
     /**
      * Это поле содержит всех пользователей
@@ -45,7 +44,7 @@ public class BankService {
      * @param user - пользователь системы
      */
     public void addUser(User user) {
-        ArrayList<Account> accounts = new ArrayList<Account>();
+        ArrayList<Account> accounts = new ArrayList<>();
         users.putIfAbsent(user, accounts);
     }
 
@@ -65,7 +64,7 @@ public class BankService {
      * // который мы хотим добавить - то добавляем его с помощью add
      *
      * @param passport - паспорт user
-     * @param account - счет, аккаунт user
+     * @param account  - счет, аккаунт user
      */
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
@@ -87,47 +86,51 @@ public class BankService {
      * по заданному @param passport
      */
 
+    //maked method findByPassport like a pro by stream!
     public User findByPassport(String passport) {
-        for (User user : users.keySet()) {
-            if (user.getPassport().equals(passport)) {
-                return user;
-            }
-        }
-        return null;
+        return users.keySet()
+                .stream()
+                .filter(user -> user.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
     }
 
     /**
-     *  Этот метод ищет счет пользователя по реквизитам.
-     *  Сначала нужно найти пользователя.
-     *  Потом получить список счетов этого пользователя
-     *  и в нем найти нужный счет.
-     * @param passport passport - паспорт user
+     * Этот метод ищет счет пользователя по реквизитам.
+     * Сначала нужно найти пользователя.
+     * Потом получить список счетов этого пользователя
+     * и в нем найти нужный счет.
+     *
+     * @param passport  passport - паспорт user
      * @param requisite - реквизиты user, его
      * @return Account or null если пользователь с таким
      * passport or requisite не найден
      */
+
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
         if (user != null) {
             List<Account> userAccount = users.get(user);
-            for (Account account : userAccount) {
-                if (account.getRequisite().equals(requisite)) {
-                    return account;
-                }
-            }
+            return users.get(user)
+                    .stream()
+                    .filter(account ->
+                            account.getRequisite().equals(requisite))
+                    .findFirst()
+                    .orElse(null);
         }
         return null;
     }
 
     /**
-     *  Метод для перечисления денег с одного счёта на другой счёт.
-     *  Если счёт не найден или не хватает денег на счёте srcAccount
-     *  (с которого переводят), то метод должен вернуть false.
-     * @param srcPassport - паспорт счета источника денег
-     * @param srcRequisite - реквизиты источника денег
-     * @param destPassport -паспорт счета получателя денег
+     * Метод для перечисления денег с одного счёта на другой счёт.
+     * Если счёт не найден или не хватает денег на счёте srcAccount
+     * (с которого переводят), то метод должен вернуть false.
+     *
+     * @param srcPassport   - паспорт счета источника денег
+     * @param srcRequisite  - реквизиты источника денег
+     * @param destPassport  -паспорт счета получателя денег
      * @param destRequisite - реквизиты получателя денег
-     * @param amount -количество денег для перевода
+     * @param amount        -количество денег для перевода
      * @return true - если перевод выполнен учпешно и false-
      * когда перевод не выполнен
      */

@@ -8,7 +8,6 @@ import java.util.Objects;
  * принадлежащий пользователю User.
  * У одного User может не быть Accounts.
  * Или быть в наличии больше одного Accounts
- *
  */
 
 public class Account {
