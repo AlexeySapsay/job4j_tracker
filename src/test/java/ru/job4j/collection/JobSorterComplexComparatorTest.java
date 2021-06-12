@@ -11,7 +11,7 @@ import java.util.*;
 public class JobSorterComplexComparatorTest {
     @Test
     public void whenJobsIsExist() {
-        List<Job> jobs = Arrays.asList(
+        List<Job> jobs = List.of(
                 new Job("Fix bug", 1),
                 new Job("Fix bug", 4),
                 new Job("Fix bug", 2),
@@ -42,7 +42,7 @@ public class JobSorterComplexComparatorTest {
         // name ascending and priority ascending
         Comparator<Job> comb1 = new SortJobByNameAndAscending()
                 .thenComparing(new SortJobByPriorityAndAscending());
-        Collections.sort(jobs, comb1);
+        jobs.sort(comb1);
         //System.out.println(jobs);
 
         List<Job> sortedJobs = Arrays.asList(
@@ -69,7 +69,7 @@ public class JobSorterComplexComparatorTest {
         // name ascending and priority descending
         Comparator<Job> comb2 = new SortJobByNameAndAscending()
                 .thenComparing(new SortJobByPriorityAndDescending());
-        Collections.sort(jobs, comb2);
+        jobs.sort(comb2);
         //System.out.println(jobs);
 
         List<Job> sortedJobs = Arrays.asList(
@@ -96,7 +96,7 @@ public class JobSorterComplexComparatorTest {
         // name descending  and priority ascending
         Comparator<Job> comb3 = new SortJobByNameAndDescending()
                 .thenComparing(new SortJobByPriorityAndAscending());
-        Collections.sort(jobs, comb3);
+        jobs.sort(comb3);
         //System.out.println(jobs);
 
         List<Job> sortedJobs = Arrays.asList(
@@ -123,7 +123,7 @@ public class JobSorterComplexComparatorTest {
         // name descending  and priority ascending
         Comparator<Job> comb4 = new SortJobByNameAndDescending()
                 .thenComparing(new SortJobByPriorityAndDescending());
-        Collections.sort(jobs, comb4);
+        jobs.sort(comb4);
         System.out.println(jobs);
 
         List<Job> sortedJobs = Arrays.asList(
