@@ -29,33 +29,33 @@ public class StarCraftUnit {
 
         private short timeBuild;
 
-        ru.job4j.stream.StarCraftUnit.Builder buildName(String name) {
+        StarCraftUnit.Builder buildName(String name) {
             this.name = name;
             return this;
         }
 
-        ru.job4j.stream.StarCraftUnit.Builder buildRace(String race) {
+        StarCraftUnit.Builder buildRace(String race) {
             this.race = race;
             return this;
         }
 
-        ru.job4j.stream.StarCraftUnit.Builder buildGasCost(short gasCost) {
+        StarCraftUnit.Builder buildGasCost(short gasCost) {
             this.gasCost = gasCost;
             return this;
         }
 
-        ru.job4j.stream.StarCraftUnit.Builder buildMineralCost(short mineralCost) {
+        StarCraftUnit.Builder buildMineralCost(short mineralCost) {
             this.mineralCost = mineralCost;
             return this;
         }
 
-        ru.job4j.stream.StarCraftUnit.Builder buildTimeBuild(short timeBuild) {
+        StarCraftUnit.Builder buildTimeBuild(short timeBuild) {
             this.timeBuild = timeBuild;
             return this;
         }
 
-        ru.job4j.stream.StarCraftUnit build() {
-            ru.job4j.stream.StarCraftUnit unit = new ru.job4j.stream.StarCraftUnit();
+        StarCraftUnit build() {
+            StarCraftUnit unit = new StarCraftUnit();
             unit.name = name;
             unit.race = race;
             unit.gasCost = gasCost;
