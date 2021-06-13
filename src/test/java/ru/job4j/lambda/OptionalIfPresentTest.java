@@ -1,46 +1,52 @@
 package ru.job4j.lambda;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
+import ru.job4j.lambda.exercise.OptionalIfPresent;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Optional;
 
+import static org.junit.Assert.*;
 public class OptionalIfPresentTest {
     @Test
-    public void whenExists() {
-//        PrintStream before = System.out;
-//        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-//        PrintStream out = new PrintStream(buffer);
-//        System.setOut(out);
-//        OptionalIfPresent.ifPresent(new int[]{1, 2, 3});
-//        assertEquals("Max: 3" + System.lineSeparator(),
-//                buffer.toString());
-//        System.setOut(before);
+    public void whenExist() {
+        PrintStream before = System.out;
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        PrintStream out = new PrintStream(buffer);
+        System.setOut(out);
+        OptionalIfPresent.ifPresent(new int[]{2, 3, 1});
+        assertEquals(
+                "Max: 3" + System.lineSeparator(),
+                buffer.toString()
+        );
+        System.setOut(before);
     }
 
     @Test
-    public void whenNotExists() {
+    public void whenNotExist() {
         PrintStream before = System.out;
         ByteArrayOutputStream buffer = new ByteArrayOutputStream();
         PrintStream out = new PrintStream(buffer);
         System.setOut(out);
         OptionalIfPresent.ifPresent(new int[]{});
-        assertEquals("", buffer.toString());
+        assertEquals(
+                "",
+                buffer.toString()
+        );
         System.setOut(before);
     }
 
     @Test
     public void whenMax5() {
-//        PrintStream before = System.out;
-//        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-//        PrintStream out = new PrintStream(buffer);
-//        System.setOut(out);
-//        OptionalIfPresent.ifPresent(new int[]{1, 2, 5, 3, 4});
-//        assertEquals("Max: 5" + System.lineSeparator(),
-//                buffer.toString());
-//        System.setOut(before);
+        PrintStream before = System.out;
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        PrintStream out = new PrintStream(buffer);
+        System.setOut(out);
+        OptionalIfPresent.ifPresent(new int[]{1, 2, 5, 3, 4});
+        assertEquals(
+                "Max: 5" + System.lineSeparator(),
+                buffer.toString()
+        );
+        System.setOut(before);
     }
 }
