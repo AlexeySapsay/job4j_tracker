@@ -38,8 +38,7 @@ public class Deck {
     public static void main(String[] args) {
         Stream.of(Suit.values())
                 .flatMap(suit -> Stream.of(Value.values())
-                        //.map(value -> value + " " + suit))
-                        .map(value -> new Card(suit, value).toString()))
+                        .map(value -> new Card(suit, value)))
                 .forEach(System.out::println);
     }
 }
