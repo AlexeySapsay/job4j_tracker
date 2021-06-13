@@ -66,7 +66,7 @@ public class StarCraftUnit {
     }
 
     public static void main(String[] args) {
-        ru.job4j.stream.StarCraftUnit unit = new Builder()
+        StarCraftUnit unit = new Builder()
                 .buildName("SiegeTank")
                 .buildRace("Terran")
                 .buildGasCost((short) 125)
