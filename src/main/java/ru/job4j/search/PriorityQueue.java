@@ -2,7 +2,6 @@ package ru.job4j.search;
 //https://job4j.ru/edu/task?action=task&taskId=0873958f758d0d5301758d8a565b2e40&number=402105
 
 import java.util.LinkedList;
-
 /**
  * Класс описывает работу простейшей очереди по приоритету, которая работает
  * по принципу FIFO (first in - first out)
