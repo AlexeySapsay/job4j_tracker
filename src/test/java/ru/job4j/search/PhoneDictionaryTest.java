@@ -15,7 +15,7 @@ public class PhoneDictionaryTest {
         PhoneDictionary phones = new PhoneDictionary();
         phones.add(new Person("Petr", "Arsentev",
                 "534872", "Bryansk"));
-        ArrayList<Person> persons = phones.find("Petr");
+        var persons = phones.find("Petr");
         assertThat(persons.get(0).getSurname(), is("Arsentev"));
     }
 
@@ -24,7 +24,7 @@ public class PhoneDictionaryTest {
         PhoneDictionary phones = new PhoneDictionary();
         phones.add(new Person("Petr", "Arsentev",
                 "534872", "Bryansk"));
-        ArrayList<Person> persons = phones.find("Arsentev");
+        var persons = phones.find("Arsentev");
         assertThat(persons.get(0).getName(), is("Petr"));
     }
 
@@ -33,7 +33,7 @@ public class PhoneDictionaryTest {
         PhoneDictionary phones = new PhoneDictionary();
         phones.add(new Person("Petr", "Arsentev",
                 "534872", "Bryansk"));
-        ArrayList<Person> persons = phones.find("534872");
+        var persons = phones.find("534872");
         assertThat(persons.get(0).getSurname(), is("Arsentev"));
     }
 
@@ -42,7 +42,7 @@ public class PhoneDictionaryTest {
         PhoneDictionary phones = new PhoneDictionary();
         phones.add(new Person("Petr", "Arsentev",
                 "534872", "Bryansk"));
-        ArrayList<Person> persons = phones.find("Bryansk");
+        var persons = phones.find("Bryansk");
         assertThat(persons.get(0).getSurname(), is("Arsentev"));
     }
 }

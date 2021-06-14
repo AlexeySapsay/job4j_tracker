@@ -19,11 +19,12 @@ public class PriorityQueue {
     /**
      * первый случай: элементов нет то индекс равен 0,
      * и вставляем элемент на 0 позицию
+     *
      * @param task - задача помещаемая в колецию
      */
     public void put(Task task) {
         int index = 0;
-        for (Task element : tasks) {
+        for (var element : tasks) {
             if (element.getPriority() > task.getPriority()) {
                 break;
             }
@@ -50,11 +51,11 @@ public class PriorityQueue {
     }
 
     public static void main(String[] args) {
-        LinkedList<String> names = new LinkedList<String>();
+        LinkedList<String> names = new LinkedList<>();
         names.add(0, "Petr");
         names.add(0, "Ivan");
         names.add(0, "Stepan");
-        for (String value : names) {
+        for (var value : names) {
             System.out.println(value);
         }
     }
