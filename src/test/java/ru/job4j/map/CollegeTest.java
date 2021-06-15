@@ -10,6 +10,7 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
 public class CollegeTest {
+
     @Test
     public void whenAccountIsOptionalEmpty() {
         Map<Student, Set<Subject>> students = Map.of(
