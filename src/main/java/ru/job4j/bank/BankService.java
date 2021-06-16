@@ -10,19 +10,6 @@ import java.util.*;
  */
 
 public class BankService {
-    // блок кода для ручного тестирования и отладки программы
-
-// public static void main(String[] args) {
-    // test for transfer money
-// User user = new User("3434", "Petr Arsentev");
-// BankService bank = new BankService();
-// bank.addUser(user);
-// bank.addAccount(user.getPassport(), new Account("5546", 150D));
-// bank.addAccount(user.getPassport(), new Account("113", 50D));
-// System.out.println((bank.transferMoney(user.getPassport(),
-// "5546", user.getPassport(), "113", 150D)));
-// }
-
     /**
      * Это поле содержит всех пользователей
      * системы с привязанными к ним счетами.
@@ -89,26 +76,7 @@ public class BankService {
                 .stream()
                 .filter(user -> user.getPassport().equals(passport))
                 .findFirst();
-        //return users.keySet()
-        //                .stream()
-        //                .filter(user -> user.getPassport().equals(passport))
-        //                .findFirst();
-        //.orElse(null);
-        //.orElse((User)(Optional.empty()).get());
-        //.orElse(Optional.empty());
     }
-
-    //solution with Optional
-//    public Optional<User> findByPassport(String passport) {
-//        Optional<User> rsl = Optional.empty();
-//        for (User user : users.keySet()) {
-//            if (user.getPassport().equals(passport)) {
-//                rsl = Optional.of(user);
-//                break;
-//            }
-//        }
-//        return rsl;
-//    }
 
     /**
      * Этот метод ищет счет пользователя по реквизитам.
@@ -122,27 +90,13 @@ public class BankService {
      * passport or requisite не найден
      */
 
-    //public Account findByRequisite(String passport, String requisite) {
     public Optional<Account> findByRequisite(String passport, String requisite) {
-        //Optional<User> user = findByPassport(passport);
-//        User user = findByPassport(passport).get();
-//        if (user != null) {
-//            //if (user.isPresent()) {
-//            return users.get(user)
-//                    .stream()
-//                    .filter(account ->
-//                            account.getRequisite().equals(requisite))
-//                    .findFirst()
-//                    .orElse(null);
-//        }
-//        return null;
-
         Optional<User> user = findByPassport(passport);
-        return users.get(user.get())
+        return user.flatMap(value -> users.get(value)
                 .stream()
                 .filter(account ->
                         account.getRequisite().equals(requisite))
-                .findFirst();
+                .findFirst());
     }
 
     /**
@@ -167,8 +121,6 @@ public class BankService {
         Optional<Account> srcAccount = findByRequisite(srcPassport, srcRequisite);
         Optional<Account> destAccount = findByRequisite(destPassport, destRequisite);
 
-        //if (srcAccount != null && destAccount != null &&
-        //        srcAccount.getBalance() >= amount) {
         if (srcAccount.isPresent() && destAccount.isPresent()
                 && srcAccount.get().getBalance() >= amount) {
 
@@ -178,13 +130,4 @@ public class BankService {
         }
         return false;
     }
-
-//    public static void main(String[] args) {
-//        BankService bank = new BankService();
-//        bank.addUser(new User("321", "Petr Arsentev"));
-//        Optional<User> opt = bank.findByPassport("321");
-//        if (opt.isPresent()) {
-//            System.out.println(opt.get().getUsername());
-//        }
-//    }
 }
