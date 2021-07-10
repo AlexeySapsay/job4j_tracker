@@ -1,5 +1,6 @@
 package ru.job4j.stream.exercise;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -37,12 +38,19 @@ public class CountingMethod {
         }
     }
 
+    /**
+     *
+     * @param workers
+     * @return
+     */
+
     public static Map<String, Long> groupAndCount(List<Worker> workers) {
-//        return workers.stream()
-//                .collect(Collectors.groupingBy(Function.identity(),
-//                        Collectors.counting()))
-//                .forEach((worker, count) ->
-//                        System.out.println(worker + " " + count));
-        return null;
+        return workers.stream()
+                .map(Worker::getCompany)
+                .map(Company::getName)
+                .collect(Collectors.groupingBy(
+                        Function.identity(),
+                        Collectors.counting()
+                ));
     }
 }
