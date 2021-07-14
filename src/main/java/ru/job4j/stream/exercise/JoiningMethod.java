@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 
 /**
  * Этот метод собирает строки в текст и добавляет Prefix and Suffix
+ * В joining  в качестве разделителей принимается
+ * lineSeparator, Prefix, Suffix
  */
 
 public class JoiningMethod {
