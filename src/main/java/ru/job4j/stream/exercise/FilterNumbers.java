@@ -1,0 +1,15 @@
+package ru.job4j.stream.exercise;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+/**
+ * Method to filter even numbers
+ */
+public class FilterNumbers {
+    public static List<Integer> filter(List<Integer> data) {
+        return data.stream()
+                .filter(n -> n % 2 == 0)
+                .collect(Collectors.toList());
+    }
+}
