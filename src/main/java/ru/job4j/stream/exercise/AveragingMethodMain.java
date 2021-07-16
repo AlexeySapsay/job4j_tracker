@@ -62,7 +62,6 @@ public class AveragingMethodMain {
                         worker -> worker.getCompany().getName(),
                         Collectors.averagingDouble(Worker::getAge)
                 ));
-
         System.out.println(averageAge);
     }
 }
