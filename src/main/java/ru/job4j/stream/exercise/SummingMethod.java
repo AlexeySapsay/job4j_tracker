@@ -63,6 +63,7 @@ public class SummingMethod {
                 .flatMap(List::stream)
                 .collect(Collectors.groupingBy(
                         pair -> pair.getUser().getName(),
-                        Collectors.summingInt(pair -> pair.getBill().getBalance())));
+                        Collectors.summingInt(
+                                pair -> pair.getBill().getBalance())));
     }
 }
