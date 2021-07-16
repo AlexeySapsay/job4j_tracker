@@ -64,6 +64,5 @@ public class SummingMethod {
                 .collect(Collectors.groupingBy(
                         pair -> pair.getUser().getName(),
                         Collectors.summingInt(pair -> pair.getBill().getBalance())));
-
     }
 }
