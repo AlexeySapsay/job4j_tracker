@@ -2,17 +2,17 @@ package ru.job4j.tracker;
 
 public class TrackerSingle3 {
     /* статическое финальное поле*/
-    private static final Tracker INSTANCE = new Tracker();
+    private static final MemTracker INSTANCE = new MemTracker();
 
     private TrackerSingle3() {
     }
 
-    public static Tracker getInstance() {
+    public static MemTracker getInstance() {
         return INSTANCE;
     }
 
     public static void main(String[] args) {
 
-        Tracker tracker = TrackerSingle3.getInstance();
+        MemTracker tracker = TrackerSingle3.getInstance();
     }
 }

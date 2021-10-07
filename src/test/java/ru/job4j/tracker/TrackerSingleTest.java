@@ -10,8 +10,8 @@ import static org.hamcrest.Matchers.is;
 public class TrackerSingleTest {
     @Test
     public void whenTestSingletonEnum() {
-        Tracker tracker = TrackerSingle.INSTANCE.getTracker();
-        Tracker tracker1 = TrackerSingle.INSTANCE.getTracker();
+        MemTracker tracker = TrackerSingle.INSTANCE.getTracker();
+        MemTracker tracker1 = TrackerSingle.INSTANCE.getTracker();
 
         assertSame(tracker, tracker1);
     }

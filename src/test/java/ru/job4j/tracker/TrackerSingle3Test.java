@@ -7,8 +7,8 @@ import static org.junit.Assert.*;
 public class TrackerSingle3Test {
     @Test
     public void whenTestSingletonLazyFieldLoading() {
-        Tracker tracker = TrackerSingle3.getInstance();
-        Tracker tracker1 = TrackerSingle3.getInstance();
+        MemTracker tracker = TrackerSingle3.getInstance();
+        MemTracker tracker1 = TrackerSingle3.getInstance();
 
         assertSame(tracker, tracker1);
     }

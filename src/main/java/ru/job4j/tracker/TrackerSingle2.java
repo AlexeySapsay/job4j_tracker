@@ -1,17 +1,15 @@
 package ru.job4j.tracker;
 
-import ru.job4j.tracker.Item;
-
 public class TrackerSingle2 {
-    private static Tracker instance;
+    private static MemTracker instance;
 
     /* статичная ленивая загрузка через поля*/
     TrackerSingle2() {
     }
 
-    public static Tracker getInstance() {
+    public static MemTracker getInstance() {
         if (instance == null) {
-            instance = new Tracker();
+            instance = new MemTracker();
         }
         return instance;
     }
