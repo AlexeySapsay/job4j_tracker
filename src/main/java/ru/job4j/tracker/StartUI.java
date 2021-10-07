@@ -1,9 +1,16 @@
 package ru.job4j.tracker;
 
-import java.io.Console;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
+/**
+ * https://job4j.ru/profile/exercise/55/task-view/348
+ * Изучение работы с JDBC. Подключение JDBC и чтение файла app.properties
+ * в качестве настроечного файла.
+ * Рефакторинг проекта Tracker
+ *
+ * @author AlexSapsay (sapsayalexey@gmail.com)
+ * @version 1.0
+ * @since 05.10.2021
+ */
 
 public class StartUI {
     private final Output out;
