@@ -13,7 +13,9 @@ public class AttachmentSort {
                 new Attachment("image 2", 34)
         );
 
-        //anonymize class
+        /**
+         *anonymize class
+         */
         Comparator<Attachment> comparator = new Comparator<Attachment>() {
             @Override
             public int compare(Attachment left, Attachment right) {
@@ -24,7 +26,9 @@ public class AttachmentSort {
         attachments.sort(comparator);
         System.out.println(attachments);
 
-        //anonymize class for compare names of attachments by lexicographically
+        /**
+         * anonymize class for compare names of attachments by lexicographically
+         */
         Comparator<Attachment> comparator2 = new Comparator<Attachment>() {
             @Override
             public int compare(Attachment left, Attachment right) {

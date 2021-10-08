@@ -2,17 +2,17 @@ package ru.job4j.stream.exercise;
 
 import java.util.List;
 import java.util.stream.Collectors;
-//https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html
 
-// just for test
+/**
+ *https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html
+ */
+
 public class Task2 {
     public static void main(String[] args) {
         List<Person> people = List.of(
                 new Person("Alex", "Stanslavskogo107/19"),
                 new Person("Youra", "Zapadniy100"),
                 new Person("Sania", "Center300"));
-        //System.out.println(people);
-
         List<String> peopleName = people.stream()
                 .map(Person::getName).collect(Collectors.toList());
         System.out.println(peopleName);

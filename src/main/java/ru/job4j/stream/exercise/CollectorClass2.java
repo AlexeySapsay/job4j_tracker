@@ -7,21 +7,24 @@ import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
-//https://job4j.ru/profile/topics/3/task_code/98/solution/new_task
+/**
+ *https://job4j.ru/profile/topics/3/task_code/98/solution/new_task
+ */
+
 public class CollectorClass2 {
     public static void main(String[] args) {
-        // сюда сложим элементы
+        /*сюда сложим элементы*/
         Supplier<List<Integer>> supplier = LinkedList::new;
-        // говорим, как добавлять элементы
+        /* говорим, как добавлять элементы*/
         BiConsumer<List<Integer>, Integer> consumer = List::add;
-        // не вдаемся в подробности. Просто нужно
+        /* не вдаемся в подробности. Просто нужно*/
         BinaryOperator<List<Integer>> merger = (xs, ys) -> {
             xs.addAll(ys);
             return xs;
         };
 
-        // это функция, которая обработает наш список после сборки
-        // здесь вся логика
+        /*это функция, которая обработает наш список после сборки
+         здесь вся логика*/
         Function<List<Integer>, Integer> function = (ns) -> {
             int number = 100;
             for (Integer n : ns) {

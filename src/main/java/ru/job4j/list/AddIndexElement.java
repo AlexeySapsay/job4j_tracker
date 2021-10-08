@@ -6,7 +6,7 @@ import java.util.List;
 public class AddIndexElement {
     public static boolean addNewElement(List<String> list, int index, String str) {
         List<String> check = new ArrayList<>(list);
-        //checking element in collection
+
         if (check.contains(str)) {
             return false;
         } else {

@@ -10,15 +10,8 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        //Calc calc = new Calc();
-
-        //System.out.println(Test.Calc.class);
-        //System.out.println();
-        //Test.CalcNotStatic calcNotStatic = new CalcNotStatic();
         method(100);
         Test test = new Test();
-        //System.out.println(test.methodNest("asdfasdf"));
-        //CalcNotStatic calcNotStatic = new CalcNotStatic();
         System.out.println();
     }
 
@@ -28,7 +21,6 @@ public class Test {
 
     public void methodNest() {
         CalcNotStatic calcNotStatic = new CalcNotStatic(333);
-        //Test test = new Test();
         System.out.println();
     }
 }

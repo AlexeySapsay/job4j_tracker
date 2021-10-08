@@ -1,5 +1,5 @@
 package ru.job4j.comparator;
-//https://job4j.ru/edu/task_code?topicId=30&taskCodeId=143&solutionId=new_task
+/*https://job4j.ru/edu/task_code?topicId=30&taskCodeId=143&solutionId=new_task*/
 
 public class CompareMethod {
     public static int ascendingCompare(int first, int second) {

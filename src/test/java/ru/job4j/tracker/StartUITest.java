@@ -65,7 +65,8 @@ public class StartUITest {
 
         assertThat(out.toString(), is("Menu." + LN + "0 . Show "
                 + LN + "1 . Exit" + LN + " === Show all items === "
-                + LN + "Item{id=1, name='Item1'}" + LN + "Item{id=2, name='Item2'}"
+                + LN + "Item{id=1, name='Item1', created: 09-10-2021 02:29:59}" + LN
+                + "Item{id=2, name='Item2',created: 09-10-2021 02:29:59}"
                 + LN + "Menu." + LN + "0 . Show " + LN + "1 . Exit" + LN + ""));
     }
 

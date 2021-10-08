@@ -20,18 +20,24 @@ public class Weather {
         Set<String> citySetStr = new LinkedHashSet<String>();
         Map<String, Integer> cityRainfallMap = new HashMap<String, Integer>();
 
-        // add city from Info to citySetStr
+        /**
+         * add city from Info to citySetStr
+         */
         for (Info element : list) {
             citySetStr.add(element.getCity());
         }
 
-        // make a key from citySet to cityRainfallMap
-        // put a key and make Integer value == 0;
+        /**
+         * make a key from citySet to cityRainfallMap
+         *   put a key and make Integer value == 0;
+         */
         for (String key : citySetStr) {
             cityRainfallMap.put(key, 0);
         }
 
-        //put value to rainfall value
+        /**
+         *put value to rainfall value
+         */
         for (String key : citySetStr) {
             int rainfall = 0;
             for (int i = 0; i < list.size(); i++) {
@@ -48,7 +54,9 @@ public class Weather {
             System.out.println(key + " , " + value);
         }
 
-        // convert cityRainfallMap to rsl ArrayList
+        /**
+         * convert cityRainfallMap to rsl ArrayList
+         */
         for (Map.Entry<String, Integer> entry : cityRainfallMap.entrySet()) {
             String key = entry.getKey();
             Integer value = entry.getValue();

@@ -19,12 +19,12 @@ public class ReplaceAction implements UserAction {
         Item item = new Item(name);
         item.setId(id);
 
-        //2. Для методов replace/delete сделать вывод в виде:
+        /*2. Для методов replace/delete сделать вывод в виде:*/
         if (tracker.replace(id, item)) {
-            // вывод об успешности операции
+            /*вывод об успешности операции*/
             out.println("замена элемента по id выполненна успешно");
         } else {
-            // вывод об ошибке
+            /*вывод об ошибке*/
             out.println("возникла ошибка при попытке замены элемента"
                     + "возможно элемента с таким id не существует"
                     + "попробуйте снова");

@@ -33,8 +33,7 @@ import java.util.List;
 
 public class SubList {
     public static List<String> getElementsBetweenIndexes(List<String> list, String el) {
-        //1. Элемента нет в списке - возвращает пустой список.
-        //2. Элемент в списке встречается 1 раз - возвращает пустой список.
+
         List<String> list1 = new ArrayList<String>();
         int firstIndex = 0;
         int lastIndex = 0;
@@ -43,11 +42,13 @@ public class SubList {
         if (firstIndex == lastIndex || firstIndex == -1) {
             return list1;
         } else {
-            //3. Элемент встречается более одного - возвращается список, начиная
-            // с первого вхождения элемента и
-            // заканчивая предшествующим последнему вхождению элемента
-            // в исходной коллекции.
 
+/**
+ * 3. Элемент встречается более одного - возвращается список, начиная
+ с первого вхождения элемента и
+ заканчивая предшествующим последнему вхождению элемента
+ в исходной коллекции.
+ */
             list = list.subList(firstIndex, lastIndex);
             return list;
         }

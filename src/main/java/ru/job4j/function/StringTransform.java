@@ -1,6 +1,5 @@
 package ru.job4j.function;
 
-import java.util.function.Predicate;
 import java.util.function.Function;
 
 public class StringTransform {
@@ -16,8 +15,6 @@ public class StringTransform {
         System.out.println("Строка просле преобразования: " + stringTransform.transform(
                 str -> str.trim(), "    aBC dEfghK Lmnp RstU        "));
 
-//        System.out.println("Строка просле преобразования: " + stringTransform.transform(
-//                str -> str.equals(str), "Строка просле преобразования: "));
         System.out.println("Строка просле преобразования: "
                 + stringTransform.transform(str -> str.replaceAll("a", "Z"),
                 "aBC dEfgaK amna RstU  aaa"));

@@ -26,37 +26,13 @@ public class AveragingMethodMain {
                 "Amazon", 27.5D,
                 "Microsoft", 40D
         );
-        //System.out.println(expect);
 
         List<Worker> workers = List.of(w1, w2, w3, w4, w5, w6);
-        //System.out.println(workers);
-//        for (int i = 0; i < workers.size(); i++) {
-//            System.out.println(workers.get(i));
-//        }
-
-        //workers ages
+        /*workers ages*/
         List<Integer> ages = workers.stream()
                 .map(Worker::getAge).collect(Collectors.toList());
-        //System.out.println("Workers ages is: " + ages);
 
-        //workers company
-//        List<String> companies = workers.stream()
-//                .map(Worker::getCompany)
-//                .map(Company::getName)
-//                .collect(Collectors.toList());
-//        System.out.println(companies);
-
-        // counting workers in particular company
-//        Map<String, Long> groupAndCount = workers.stream()
-//                .map(Worker::getCompany)
-//                .map(Company::getName)
-//                .collect(Collectors.groupingBy(
-//                        Function.identity(),
-//                        Collectors.counting()
-//                ));
-//        System.out.println(groupAndCount);
-
-        //calculate average age of workers
+        /*calculate average age of workers*/
         Map<String, Double> averageAge = workers.stream()
                 .collect(Collectors.groupingBy(
                         worker -> worker.getCompany().getName(),

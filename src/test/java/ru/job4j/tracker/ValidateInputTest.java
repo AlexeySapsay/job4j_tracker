@@ -6,8 +6,6 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 public class ValidateInputTest {
-
-    // невалидный ввод
     @Test
     public void whenInvalidInput() {
         Output out = new StubOutput();
@@ -18,7 +16,6 @@ public class ValidateInputTest {
 
     }
 
-    //правильный ввод
     @Test
     public void whenValidInput() {
         Output out = new StubOutput();
@@ -29,7 +26,6 @@ public class ValidateInputTest {
 
     }
 
-    //многократный правильный ввод
     @Test
     public void whenValidInputMoreTimes() {
         Output out = new StubOutput();
@@ -39,7 +35,6 @@ public class ValidateInputTest {
         assertThat(selected, is(1));
     }
 
-    //ввод отрицательного числа
     @Test
     public void whenInvalidInputMinusOne() {
         Output out = new StubOutput();

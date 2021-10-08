@@ -8,13 +8,6 @@ import java.util.stream.Collectors;
  * In order to get a stream of unique elements, we can use the distinct () method.
  * If we use a stream of primitives, then the comparison of elements goes through
  * ==, if we stream objects, then through the equals method.
- *
- * For example,
- *
- * Arrays.stream (new int [] {1, 2, 1}). Distinct () // only 1, 2 will remain in
- * the stream
- *
- * Your task is to collect the unique numbers of the array into a list
  */
 
 public class DistinctForPrimitive {

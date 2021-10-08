@@ -41,19 +41,19 @@ public class BankService {
      * добавим новый счет к ним.
      * В этом методе должна быть проверка, что такого счета у пользователя еще нет.
      * <p>
-     * //+1. Нашли юзера по паспорту
-     * //+2. Проверяем найденного юзера на null
-     * //+3. Получаем список аккаунтов по найденному юзеру
-     * //+4. Если список не содержит аккаунт
-     * // который мы хотим добавить - то добавляем его с помощью add
+     * +1. Нашли юзера по паспорту
+     * +2. Проверяем найденного юзера на null
+     * +3. Получаем список аккаунтов по найденному юзеру
+     * +4. Если список не содержит аккаунт
+     * который мы хотим добавить - то добавляем его с помощью add
      *
      * @param passport - паспорт user
      * @param account  - счет, аккаунт user
      */
     public void addAccount(String passport, Account account) {
-        //Optional<User> user = findByPassport(passport);
+        /*Optional<User> user = findByPassport(passport);*/
         Optional<User> user = findByPassport(passport);
-        //if (user != null) {
+        /*if (user != null) {*/
         if (user.isPresent()) {
             List<Account> userAccount = users.get(user.get());
             if (!userAccount.contains(account)) {
@@ -70,7 +70,7 @@ public class BankService {
      * по заданному @param passport
      */
 
-    //maked method findByPassport like a pro by stream!
+    /*maked method findByPassport like a pro by stream!*/
     public Optional<User> findByPassport(String passport) {
         return users.keySet()
                 .stream()

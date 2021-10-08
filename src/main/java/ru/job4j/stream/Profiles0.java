@@ -3,8 +3,9 @@ package ru.job4j.stream;
 import java.util.List;
 import java.util.stream.Collectors;
 
-//https://job4j.ru/profile/exercise/3/task-view/252/solutionId/165733
-// первая задача!
+/**
+ * https://job4j.ru/profile/exercise/3/task-view/252/solutionId/165733
+ */
 
 public class Profiles0 {
     public List<Adress0> collect(List<Profile0> profiles) {

@@ -9,16 +9,12 @@ import java.util.stream.Collectors;
 public class StreamTest1 {
     public static void main(String[] args) {
         int[] array = {1, 9, 4, 5, 67, 18};
-        //Arrays.stream(array).map(num -> num * 2).collect(Collectors.);
-
         int[] array1 = Arrays.stream(array).map(element -> {
             if (element % 3 == 0) {
                 element = element / 3;
             }
             return element;
         }).toArray();
-
-        //System.out.println(Arrays.toString(array1));
 
         Set<String> stringSet = new TreeSet<>();
         stringSet.add("Privet");
@@ -36,6 +32,5 @@ public class StreamTest1 {
                 .collect(Collectors.toList());
 
         System.out.println(listLenght);
-
     }
 }

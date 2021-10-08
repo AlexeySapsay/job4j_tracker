@@ -1,9 +1,10 @@
 package ru.job4j.list;
 
 import java.util.List;
-//https://job4j.ru/edu/task_code?topicId=27&taskCodeId=126&solutionId=new_task
 
 /**
+ * https://job4j.ru/edu/task_code?topicId=27&taskCodeId=126&solutionId=new_task
+ * <p>
  * Продолжим модифицировать список, познакомимся с
  * методами для удаления элементов в списке и замены
  * элемента по индексу. Для этого предназначены методы set() и remove():
@@ -27,7 +28,6 @@ import java.util.List;
 
 public class RepositionElement {
     public static List<String> changePosition(List<String> list, int index) {
-        //validate index data
         if (index > list.size() - 1) {
             String removedElem = list.remove(list.size() - 1);
             return list;

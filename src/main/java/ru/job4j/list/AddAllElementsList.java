@@ -43,7 +43,10 @@ import java.util.List;
 
 public class AddAllElementsList {
     public static int containsElement(List<String> left, List<String> right, String str) {
-        // if element contains in left and right list, then remove element from left
+        /**
+         *if element contains in left and right list, then remove element from left
+          */
+
         int indexLeft = left.indexOf(str);
         int indexRight = right.indexOf(str);
         int indexTotal = 0;

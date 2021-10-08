@@ -13,10 +13,8 @@ public class IteratorTry {
         cars.add("Mazda");
 
         Iterator<String> it = cars.iterator();
-        //System.out.println(it.next());
         while (it.hasNext()) {
             System.out.println(it.next());
         }
     }
-
 }

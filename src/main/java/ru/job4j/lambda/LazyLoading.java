@@ -5,7 +5,6 @@ import java.util.Arrays;
 
 public class LazyLoading {
     public static void main(String[] args) {
-        //String[] names = {"Alex"};
         String[] names = {"Alex", "Kostia", "Jenia"};
 
         Comparator<String> lengthComp = (left, right) -> {

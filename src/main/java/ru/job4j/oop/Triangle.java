@@ -14,12 +14,12 @@ public class Triangle {
         this.third = cp;
     }
 
-    // half of perimeter
+    /* half of perimeter*/
     public double period(double a, double b, double c) {
         return (a + b + c) / 2;
     }
 
-    // existing of triangle
+    /* existing of triangle*/
     public boolean exist(double ab, double ac, double bc) {
         return (((ab + ac) > bc) && ((ac + bc) > ab) && ((ab + bc) > ac));
     }
@@ -32,7 +32,7 @@ public class Triangle {
         double p = period(ab, ac, bc);
 
         if (this.exist(ab, ac, bc)) {
-            // write a equation for triangle area calculating
+            /* write a equation for triangle area calculating*/
             rsl = Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
         }
         return rsl;

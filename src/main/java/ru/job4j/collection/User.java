@@ -22,12 +22,12 @@ public class User implements Comparable<User> {
 
     @Override
     public int compareTo(User o) {
-        // сравниваем по именам используая стандартную реализацию
-        // compareTo из String
+            /* сравниваем по именам используая стандартную реализацию
+            compareTo из String */
         int res = this.name.compareTo(o.name);
-
-        //если имена совпадают, используем стандартную реализацию
-        // compareTo из Integer
+        
+          /*если имена совпадают, используем стандартную реализацию
+           compareTo из Integer*/
         if (res == 0) {
             res = Integer.compare(this.age, o.age);
         }

@@ -28,17 +28,7 @@ import java.util.Set;
  */
 public class UniqueName {
     public static int collectUniqueName(List<User> users) {
-        //Set<User> uniqueUsers = new HashSet<User>();
-        // first solution
         Set<User> uniqueUsers = new HashSet<User>(users);
-        // or second solution
-
-//        for(User user : users){
-//            if(!uniqueUsers.contains(user.getName())){
-//                uniqueUsers.add(user);
-//            }
-//        }
-
         return uniqueUsers.size();
     }
 

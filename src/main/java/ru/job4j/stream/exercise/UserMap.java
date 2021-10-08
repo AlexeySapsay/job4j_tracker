@@ -21,7 +21,7 @@ public class UserMap {
 
     public static List<User> map(List<Integer> ages) {
         return ages.stream()
-                //.map(age -> new User(age)).collect(Collectors.toList());
+                /*.map(age -> new User(age)).collect(Collectors.toList());*/
                 .map(User::new).collect(Collectors.toList());
     }
 }

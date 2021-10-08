@@ -38,12 +38,11 @@ public class JobSorterComplexComparatorTest {
                 new Job("X task", 0)
         );
 
-        //создаем кобинированный компаратор
-        // name ascending and priority ascending
+        /*создаем кобинированный компаратор
+        name ascending and priority ascending*/
         Comparator<Job> comb1 = new SortJobByNameAndAscending()
                 .thenComparing(new SortJobByPriorityAndAscending());
         jobs.sort(comb1);
-        //System.out.println(jobs);
 
         List<Job> sortedJobs = Arrays.asList(
                 new Job("Fix bug", 1),
@@ -65,12 +64,10 @@ public class JobSorterComplexComparatorTest {
                 new Job("X task", 0)
         );
 
-        //создаем кобинированный компаратор
-        // name ascending and priority descending
+        /*создаем кобинированный компаратор name ascending and priority descending*/
         Comparator<Job> comb2 = new SortJobByNameAndAscending()
                 .thenComparing(new SortJobByPriorityAndDescending());
         jobs.sort(comb2);
-        //System.out.println(jobs);
 
         List<Job> sortedJobs = Arrays.asList(
                 new Job("Fix bug", 4),
@@ -92,12 +89,10 @@ public class JobSorterComplexComparatorTest {
                 new Job("X task", 0)
         );
 
-        //создаем кобинированный компаратор
-        // name descending  and priority ascending
+        /*создаем кобинированный компаратор name descending  and priority ascending*/
         Comparator<Job> comb3 = new SortJobByNameAndDescending()
                 .thenComparing(new SortJobByPriorityAndAscending());
         jobs.sort(comb3);
-        //System.out.println(jobs);
 
         List<Job> sortedJobs = Arrays.asList(
                 new Job("X task", 0),
@@ -119,8 +114,7 @@ public class JobSorterComplexComparatorTest {
                 new Job("X task", 0)
         );
 
-        //создаем кобинированный компаратор
-        // name descending  and priority ascending
+        /*создаем кобинированный компаратор  name descending  and priority ascending*/
         Comparator<Job> comb4 = new SortJobByNameAndDescending()
                 .thenComparing(new SortJobByPriorityAndDescending());
         jobs.sort(comb4);

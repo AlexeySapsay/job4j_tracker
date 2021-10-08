@@ -1,6 +1,14 @@
 package ru.job4j.map;
 
-//https://job4j.ru/edu/task_code?topicId=29&taskCodeId=162&solutionId=new_task
+/**
+ * https://job4j.ru/edu/task_code?topicId=29&taskCodeId=162&solutionId=new_task
+ * Необходимо обновить информацию - если такой пользователь уже существует
+ * (проверять по ключу) - то необходимо к имени добавить фамилию,
+ * <p>
+ * если нет - то сначала добавить пользователя - ключ id, значение
+ * - имя пользователя, а потом только обновить и добавить фамилию.
+ * При решении используйте методы putIfAbsent() и merge().
+ */
 
 import java.util.List;
 import java.util.Map;
@@ -8,25 +16,13 @@ import java.util.Objects;
 
 public class Merge {
     public static Map<Integer, String> collectData(Map<Integer, String> names, List<User> users) {
-        // Необходимо обновить информацию - если такой пользователь уже существует
-        // (проверять по ключу) - то необходимо к имени добавить фамилию,
-        //System.out.println("old HashMap" + names);
-
-        //если нет - то сначала добавить пользователя - ключ id, значение
-        // - имя пользователя, а потом только обновить и добавить фамилию.
-        // При решении используйте методы putIfAbsent() и merge().
-
         for (User user : users) {
             names.putIfAbsent(user.getId(), user.name);
         }
-        //System.out.println("New HashMap + name" + names);
-
         for (User user : users) {
             names.merge(user.getId(), user.getSurname(), (oldValue, newValue) ->
                     oldValue + " " + newValue);
         }
-        //System.out.println("New HashMap + name + surname " + names);
-
         return names;
     }
 

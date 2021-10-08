@@ -1,5 +1,7 @@
 package ru.job4j.collection;
-//https://job4j.ru/edu/task_code?topicId=5&taskCodeId=16&solutionId=new_task
+/*
+*https://job4j.ru/edu/task_code?topicId=5&taskCodeId=16&solutionId=new_task
+* */
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -12,30 +14,25 @@ import java.util.HashSet;
 
 public class Article {
     public static void main(String[] args) {
-        /**
-         * main for manual testing
-         */
+        /*String origin = "Мама мыла раму и окно";*/
+        String line = "мыла окно";
 
-//        String origin = "Мама мыла раму и окно";
-//        String line = "мыла окно";
-
-//        String origin = "Мой дядя самых честных правил, "
-//                + "Когда не в шутку занемог, "
-//                + "Он уважать себя заставил "
-//                + "И лучше выдумать не мог. "
-//                + "Его пример другим наука; "
-//                + "Но, боже мой, какая скука "
-//                + "С больным сидеть и день и ночь, "
-//                + "Не отходя ни шагу прочь! "
-//                + "Какое низкое коварство "
-//                + "Полуживого забавлять, "
-//                + "Ему подушки поправлять, "
-//                + "Печально подносить лекарство, "
-//                + "Вздыхать и думать про себя: "
-//                + "Когда же черт возьмет тебя!";
-//        String line = "Мой дядя мог думать про тебя и день и ночь";
-
-        //System.out.println(generatedBy(origin, line));
+        String origin = "Мой дядя самых честных правил, "
+                + "Когда не в шутку занемог, "
+                + "Он уважать себя заставил "
+                + "И лучше выдумать не мог. "
+                + "Его пример другим наука; "
+                + "Но, боже мой, какая скука "
+                + "С больным сидеть и день и ночь, "
+                + "Не отходя ни шагу прочь! "
+                + "Какое низкое коварство "
+                + "Полуживого забавлять, "
+                + "Ему подушки поправлять, "
+                + "Печально подносить лекарство, "
+                + "Вздыхать и думать про себя: "
+                + "Когда же черт возьмет тебя!";
+        /* String line = "Мой дядя мог думать про тебя и день и ночь";*/
+        /*System.out.println(generatedBy(origin, line));*/
     }
 
     /**
@@ -63,7 +60,7 @@ public class Article {
 
         setRight.addAll(Arrays.asList(line.replaceAll("[-+.^:,!]", "").
                 toLowerCase().trim().split("\\s")));
-        // возвращаю true- если setRight содержится в setLeft
+        /*возвращаю true- если setRight содержится в setLeft*/
         return setLeft.containsAll(setRight);
     }
 }

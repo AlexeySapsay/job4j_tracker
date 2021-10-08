@@ -4,13 +4,18 @@ import java.util.function.Consumer;
 
 public class MethodReference {
     public void applyByInstance() {
-        // запись через не статический метод
-        // Т.е создается объект класса и у него вызывается необходимый метод
+        /*
+         запись через не статический метод
+         Т.е создается объект класса и у него вызывается необходимый метод
+        */
+
         Consumer<String> consumer = new MethodReference()::consumerByInstance;
         consumer.accept("Hello");
     }
 
-    // через обращение к классу
+    /*
+     через обращение к классу
+     */
     public static void applyByClass() {
         Consumer<String> consumer = MethodReference::consumerByClass;
         consumer.accept("Hello");

@@ -43,15 +43,12 @@ public class StreamUsage {
                 .map(task -> task.spent)
                 .collect(Collectors.toList());
 
-        // упрощение
-        //Давайте теперь посчитаем общее время,
-        // потраченное на все задачи.
+        /*Давайте теперь посчитаем общее время, потраченное на все задачи.*/
         long total = tasks.stream()
                 .map(task -> task.spent)
                 .reduce(0L, Long::sum);
+        /*4. Аккумуляция.Аккумуляция - это запись элементов потока в коллекцию.*/
 
-        //4. Аккумуляция.
-        //Аккумуляция - это запись элементов потока в коллекцию.
         List<Task> bugs1 = tasks.stream()
                 .filter(task -> task.name.contains("Bug"))
                 .collect(Collectors.toList());

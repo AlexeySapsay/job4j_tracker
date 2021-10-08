@@ -3,9 +3,8 @@ package ru.job4j.collection;
 import java.util.HashMap;
 import java.util.Map;
 
-//https://job4j.ru/edu/task_code?topicId=5&taskCodeId=20&solutionId=new_task
-
 /**
+ * https://job4j.ru/edu/task_code?topicId=5&taskCodeId=20&solutionId=new_task
  * Даны две строки. Нужно проверить, что вторая
  * строка получилась методом перестановок символов в первой строке.
  */

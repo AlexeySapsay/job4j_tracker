@@ -1,11 +1,12 @@
 package ru.job4j.map;
 
-//https://job4j.ru/edu/task_code?topicId=29&taskCodeId=155&solutionId=new_task
+
 
 import java.util.Map;
 import java.util.Objects;
 
 /**
+ * https://job4j.ru/edu/task_code?topicId=29&taskCodeId=155&solutionId=new_task
  * Задание: вам необходимо реализовать метод
  * boolean addNewElement(User u), который осуществит
  * добавление нового элемента только при условии,

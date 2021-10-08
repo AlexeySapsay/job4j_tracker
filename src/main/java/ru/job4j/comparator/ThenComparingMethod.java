@@ -1,15 +1,17 @@
 package ru.job4j.comparator;
-//https://job4j.ru/edu/task_code?topicId=30&taskCodeId=144&solutionId=new_task
+/**
+ * https://job4j.ru/edu/task_code?topicId=30&taskCodeId=144&solutionId=new_task
+ */
 
 import java.io.OutputStream;
 import java.util.*;
 
 public class ThenComparingMethod {
     public static void main(String[] args) {
-//        User user1 = new User("Alex", 100);
-//        User user2 = new User("Bichail", 200);
-//        User user3 = new User("Catia", 300);
-//        User user4 = new User("Blexander", 400);
+        /*User user1 = new User("Alex", 100);*/
+        /*User user2 = new User("Bichail", 200);*/
+        /*User user3 = new User("Catia", 300);*/
+        /*User user4 = new User("Blexander", 400);*/
 
         User user1 = new User("Alex", 100);
         User user2 = new User("Alex", 200);
@@ -74,7 +76,7 @@ public class ThenComparingMethod {
             return Objects.hash(name, age);
         }
 
-        // метод- затычка, т.к его переопределяем уже в компараторах
+        /* метод- затычка, т.к его переопределяем уже в компараторах*/
         @Override
         public int compareTo(User anotherUser) {
             return 0;
@@ -96,7 +98,7 @@ public class ThenComparingMethod {
         };
     }
 
-    // remove it after all
+    /* remove it after all*/
     public static Comparator<User> descByName() {
         return new Comparator<User>() {
             @Override
@@ -106,7 +108,7 @@ public class ThenComparingMethod {
         };
     }
 
-    // remove it after all
+    /*remove it after all*/
     public static Comparator<User> ascByAge() {
         return new Comparator<User>() {
             @Override

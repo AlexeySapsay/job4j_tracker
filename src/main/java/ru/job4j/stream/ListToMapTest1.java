@@ -11,9 +11,8 @@ public class ListToMapTest1 {
                         Collectors.toMap(
                                 element -> element,
                                 element -> element
-                                //element -> element * 10
+                                /*element -> element * 10*/
                         ));
-
         System.out.println(map);
     }
 }

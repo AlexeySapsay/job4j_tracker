@@ -6,11 +6,11 @@ import java.util.Collections;
 
 public class TreeSort {
     public static void main(String[] args) {
-        //Set<Integer> numbers = new TreeSet<>();
+        /*Set<Integer> numbers = new TreeSet<>();*/
         Set<Integer> numbers = new TreeSet<>(Collections.reverseOrder());
         numbers.add(10);
         numbers.add(1);
-        //numbers.add(null);
+        /*numbers.add(null);*/
         numbers.add(100000);
         System.out.println(numbers);
     }

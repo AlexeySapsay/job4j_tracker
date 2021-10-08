@@ -15,30 +15,6 @@ public class User {
 
     private String gender;
 
-//    @Override
-//    public String toString() {
-//        return "User{"
-//                + "name='" + name + '\''
-//                + ", surname='" + surname + '\''
-//                + ", age=" + age
-//                + ", login='" + login + '\''
-//                + ", password='" + password + '\''
-//                + ", activated=" + activated
-//                + ", gender='" + gender + '\''
-//                + '}';
-//    }
-//    public User(String name, String surname, byte age,
-//                String login, String password, boolean activated,
-//                String gender) {
-//        this.name = name;
-//        this.surname = surname;
-//        this.age = age;
-//        this.login = login;
-//        this.password = password;
-//        this.activated = activated;
-//        this.gender = gender;
-//    }
-
     static class Builder {
         private String name;
 

@@ -9,10 +9,6 @@ public class ConvertArrayIntegerToList {
                 List.of(1, 2),
                 List.of(3, 4)
         );
-//        System.out.println(matrix.stream().
-//                flatMap(e -> e.stream())
-//                .collect(Collectors.toList()));
-
         System.out.println(matrix.stream().
                 flatMap(List::stream)
                 .collect(Collectors.toList()));

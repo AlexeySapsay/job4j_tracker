@@ -1,8 +1,9 @@
 package ru.job4j.map;
 
-// https://job4j.ru/edu/task_code?topicId=29&taskCodeId=158&solutionId=new_task
-
 import java.util.Map;
+/**
+ *  https://job4j.ru/edu/task_code?topicId=29&taskCodeId=158&solutionId=new_task
+ */
 
 public class ComputeIfPresent {
     public static Map<Integer, String> collectData(
