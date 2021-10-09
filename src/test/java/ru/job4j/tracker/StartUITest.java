@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,10 +19,10 @@ public class StartUITest {
         Output out = new StubOutput();
         Input in = new StubInput(new String[]{"0", "Item name", "1"});
         MemTracker tracker = new MemTracker();
-        //UserAction[] actions = {new CreateAction(out), new Exit()};
+
         List<UserAction> actions = Arrays.asList(new CreateAction(out), new ExitAction());
         new StartUI(out).init(in, tracker, actions);
-        //assertThat(tracker.findAll()[0].getName(), is("Item name"));
+
         assertThat(tracker.findAll().get(0).getName(), is("Item name"));
     }
 
@@ -32,7 +34,7 @@ public class StartUITest {
         /* Входные данные должны содержать ID добавленной заявки item.getId() */
         String replaceName = "New item name";
         Input in = new StubInput(new String[]{"0", "1", "New item name", "1"});
-        //UserAction[] actions = {new ReplaceAction(out), new Exit()};
+
         List<UserAction> actions = Arrays.asList(new ReplaceAction(out), new ExitAction());
         new StartUI(out).init(in, tracker, actions);
         assertThat(tracker.findById(item.getId()).getName(), is(replaceName));
@@ -45,7 +47,7 @@ public class StartUITest {
         Item item = tracker.add(new Item("Delete item"));
         /* Входные данные должны содержать ID добавленной заявки item.getId() */
         Input in = new StubInput(new String[]{"0", "1", "1"});
-        //UserAction[] actions = {new DeleteAction(out), new Exit()};
+
         List<UserAction> actions = Arrays.asList(new DeleteAction(out), new ExitAction());
         new StartUI(out).init(in, tracker, actions);
         assertThat(tracker.findById(item.getId()), is(nullValue()));
@@ -59,14 +61,21 @@ public class StartUITest {
         Item item2 = tracker.add(new Item("Item2"));
 
         Input in = new StubInput(new String[]{"0", "1"});
-        //UserAction[] actions = {new ShowItemAction(out), new Exit()};
         List<UserAction> actions = Arrays.asList(new FindAllAction(out), new ExitAction());
         new StartUI(out).init(in, tracker, actions);
 
+        LocalDateTime localDateTime1 = tracker.findById(1).getCreated();
+        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String formatDateTime1 = localDateTime1.format(formatter1);
+
+        LocalDateTime localDateTime2 = tracker.findById(1).getCreated();
+        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String formatDateTime2 = localDateTime2.format(formatter2);
+
         assertThat(out.toString(), is("Menu." + LN + "0 . Show "
                 + LN + "1 . Exit" + LN + " === Show all items === "
-                + LN + "Item{id=1, name='Item1', created: 09-10-2021 02:29:59}" + LN
-                + "Item{id=2, name='Item2',created: 09-10-2021 02:29:59}"
+                + LN + "id: 1, name: Item1, created: " + formatDateTime1
+                + LN + "id: 2, name: Item2, created: " + formatDateTime2
                 + LN + "Menu." + LN + "0 . Show " + LN + "1 . Exit" + LN + ""));
     }
 
@@ -78,7 +87,6 @@ public class StartUITest {
         MemTracker tracker = new MemTracker();
         tracker.add(item);
 
-        //UserAction[] actions = {new FindByIdAction(out), new Exit()};
         List<UserAction> actions = Arrays.asList(new FindByIdAction(out), new ExitAction());
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is("Menu." + LN + "0 . Find item by Id"
@@ -94,14 +102,22 @@ public class StartUITest {
         Input in = new StubInput(new String[]{"0", "Item", "1"});
         MemTracker tracker = new MemTracker();
         tracker.add(item);
-        //UserAction[] actions = {new FindByNameAction(out), new Exit()};
-        List<UserAction> actions = Arrays.asList(new FindByNameAction(out), new ExitAction());
 
+        List<UserAction> actions = Arrays.asList(new FindByNameAction(out), new ExitAction());
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("Menu." + LN + "0 . Find item by Name"
-                + LN + "1 . Exit" + LN + " === Find item by Name === " + LN
-                + "Item{id=1, name='Item'}" + LN + "Menu." + LN
-                + "0 . Find item by Name" + LN + "1 . Exit" + LN));
+        System.out.println(out.toString());
+
+        LocalDateTime localDateTime = tracker.findById(1).getCreated();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String formatDateTime = localDateTime.format(formatter);
+
+        assertThat(out.toString(), is("Menu."
+                + LN + "0 . Find item by Name"
+                + LN + "1 . Exit" + LN + " === Find item by Name === "
+                + LN + "id: 1, name: Item, created: " + formatDateTime
+                + LN + "Menu."
+                + LN + "0 . Find item by Name"
+                + LN + "1 . Exit" + LN));
     }
 
     @Test
@@ -109,7 +125,7 @@ public class StartUITest {
         Output out = new StubOutput();
         Input in = new StubInput(new String[]{"0"});
         MemTracker tracker = new MemTracker();
-        //UserAction[] actions = {new Exit()};
+
         List<UserAction> actions = Arrays.asList(new ExitAction());
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is("Menu." + LN
@@ -122,7 +138,6 @@ public class StartUITest {
         Input in = new StubInput(new String[]{"8", "0"});
         MemTracker tracker = new MemTracker();
 
-        //UserAction[] actions = {new Exit()};
         List<UserAction> actions = Arrays.asList(new ExitAction());
 
         new StartUI(out).init(in, tracker, actions);

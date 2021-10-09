@@ -25,7 +25,7 @@ public class User implements Comparable<User> {
             /* сравниваем по именам используая стандартную реализацию
             compareTo из String */
         int res = this.name.compareTo(o.name);
-        
+
           /*если имена совпадают, используем стандартную реализацию
            compareTo из Integer*/
         if (res == 0) {
