@@ -6,7 +6,8 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-//https://job4j.ru/profile/topics/3/task_code/191/solution/new_task
+/*https://job4j.ru/profile/topics/3/task_code/191/solution/new_task*/
+
 public class CountingMethod {
     public static class Company {
         private String name;
@@ -39,11 +40,11 @@ public class CountingMethod {
     }
 
     /**
+     * method for counting worker and company with this worker
      *
-     * @param workers
-     * @return
+     * @param workers contains Worker
+     * @return Map String Long with worker and counting or company
      */
-
     public static Map<String, Long> groupAndCount(List<Worker> workers) {
         return workers.stream()
                 .map(Worker::getCompany)

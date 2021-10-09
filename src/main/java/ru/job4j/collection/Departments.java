@@ -13,9 +13,16 @@ public class Departments {
             String start = "";
             for (String el : value.split("/")) {
                 tmp.add(start + "/" + el);
+                //tmp.add(start + el);
             }
         }
         return new ArrayList<>(tmp);
+
+//        ArrayList<String> arrayList = new ArrayList<>();
+//        for (String element : tmp) {
+//            arrayList.add(element);
+//        }
+//        return arrayList;
     }
 
     public static void sortAsc(List<String> orgs) {
