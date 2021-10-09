@@ -1,30 +1,29 @@
 package ru.job4j.collection;
 
 import org.junit.Test;
-import ru.job4j.tracker.Item;
+import ru.job4j.tracker.Item2;
 
-import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
-import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 public class ItemSorterForwardTest {
     @Test
     public void whenCompareForward() {
-        List<Item> items = Arrays.asList(
-                new Item("Ivan"),
-                new Item("Bolvan"),
-                new Item("Alex")
+        List<Item2> items = Arrays.asList(
+                new Item2("Ivan"),
+                new Item2("Bolvan"),
+                new Item2("Alex")
         );
         Collections.sort(items, new ItemSorterForward());
 
-        List<Item> sortedItems = Arrays.asList(
-                new Item("Alex"),
-                new Item("Bolvan"),
-                new Item("Ivan"));
-
+        List<Item2> sortedItems = Arrays.asList(
+                new Item2("Alex"),
+                new Item2("Bolvan"),
+                new Item2("Ivan"));
         assertThat(sortedItems, is(items));
     }
 }

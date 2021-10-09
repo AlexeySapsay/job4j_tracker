@@ -1,7 +1,7 @@
 package ru.job4j.collection;
 
 import org.junit.Test;
-import ru.job4j.tracker.Item;
+import ru.job4j.tracker.Item2;
 
 import java.util.List;
 import java.util.Arrays;
@@ -12,17 +12,17 @@ import org.junit.Assert;
 public class ItemSorterBackwardTest {
     @Test
     public void whenCompareBackward() {
-        List<Item> items = Arrays.asList(
-                new Item("Felix"),
-                new Item("Alex"),
-                new Item("Ivan")
+        List<Item2> items = Arrays.asList(
+                new Item2("Felix"),
+                new Item2("Alex"),
+                new Item2("Ivan")
         );
         Collections.sort(items, new ItemSorterBackward());
 
-        List<Item> sortedItems = Arrays.asList(
-                new Item("Ivan"),
-                new Item("Felix"),
-                new Item("Alex")
+        List<Item2> sortedItems = Arrays.asList(
+                new Item2("Ivan"),
+                new Item2("Felix"),
+                new Item2("Alex")
         );
         Assert.assertEquals(sortedItems, items);
     }
