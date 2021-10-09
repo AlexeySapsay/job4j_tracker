@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  *
  * For example,
  *
- * List.of (3, 2, 1) .stream (). Sorted () // get a stream from 1, 2, 3
+ * List.of (3, 2, 1) .stream (). Sorted ()
  *
  * Your task is to get a list of sorted strings
  *

@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 /**
  * *EasyStream работает только с типом Integer.
- * * //https://job4j.ru/TrackStudio/staticframeset.html#401629
+ * * https://job4j.ru/TrackStudio/staticframeset.html#401629
  * *В нем есть четыре метода
  * <p>
  * of-получает исходные данные.

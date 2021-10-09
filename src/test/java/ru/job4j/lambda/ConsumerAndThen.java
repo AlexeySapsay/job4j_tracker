@@ -9,7 +9,7 @@ import java.util.function.Consumer;
  * Например,
  * <p>
  * Consumer<Integer> con = (num) -> System.out.println(num + 1);
- * // при вызове метода accept(1) выведется 2
+ *  при вызове метода accept(1) выведется 2
  * <p>
  * Consumer также содержит метод andThen(consumer), в который мы можем
  * передать еще один Consumer,
@@ -19,7 +19,7 @@ import java.util.function.Consumer;
  * <p>
  * Consumer<Integer> con2 = (num) -> System.out.println(num * num);
  * <p>
- * con.andThen(con2); // con.apply(2) выведет 3 и 4
+ * con.andThen(con2); con.apply(2) выведет 3 и 4
  * <p>
  * Ваша задача совместить два Consumer, первый выводит строку через
  * System.out.print,

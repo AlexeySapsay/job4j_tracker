@@ -1,6 +1,7 @@
 package ru.job4j.map;
-//https://job4j.ru/edu/task_code?topicId=29&taskCodeId=181&solutionId=new_task
+
 /**
+ * https://job4j.ru/edu/task_code?topicId=29&taskCodeId=181&solutionId=new_task
  * В данном задании необходимо реализовать словарь.
  * Метод принимает массив строк. Необходимо перебрать
  * массив и добавить строки в карту таким образом, чтобы
@@ -20,7 +21,7 @@ public class Dictionary {
                 "three", "four", "five", "six", "seven"}));
     }
 
-    // решение парня из чата, красивое и элегантное, с лямбдами
+    /* решение парня из чата, красивое и элегантное, с лямбдами*/
     public static Map<String, List<String>> collectData(String[] strings) {
         Map<String, List<String>> map = new HashMap<>();
         for (String s : strings) {
