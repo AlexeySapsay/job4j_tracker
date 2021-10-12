@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import ru.job4j.tracker.model.Item;
+
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
@@ -18,6 +20,13 @@ import java.util.Properties;
  */
 public class SqlTracker implements Store {
     private Connection connection;
+
+    public SqlTracker(Connection connection) {
+    }
+
+    public SqlTracker() {
+
+    }
 
     /**
      * Метод реализует подключение к базе данных
