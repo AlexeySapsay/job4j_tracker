@@ -18,6 +18,7 @@ import static org.junit.Assert.assertThat;
  * @since 13.10.2021
  */
 public class DepartmentsTest {
+
     @Test
     public void whenSplittingWithoutGaps() {
         List<String> input = Arrays.asList("k1/sk1");

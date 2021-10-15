@@ -10,6 +10,7 @@ import java.util.*;
  * @version 1.0
  * @since 13.10.2021
  */
+
 public class Departments {
     public static List<String> fillGaps(List<String> deps) {
         TreeSet<String> tmp = new TreeSet<>();
