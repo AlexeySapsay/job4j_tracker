@@ -7,12 +7,12 @@ import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
-        List<Message> messages = new ArrayList();
+        List<Message> messages = new ArrayList<>();
         messages.add(new Message("Hello, World!"));
         messages.add(new Message("Hello, Sun!"));
         System.out.println(messages);
 
-        Comparator<Message> comparator = new Comparator<Message>() {
+        Comparator<Message> comparator = new Comparator<>() {
             public int compare(Message obj1, Message obj2) {
                 return obj1.getId().compareTo(obj2.getId());
             }

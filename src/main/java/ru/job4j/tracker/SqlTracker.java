@@ -21,11 +21,12 @@ import java.util.Properties;
 public class SqlTracker implements Store {
     private Connection connection;
 
-    public SqlTracker(Connection connection) {
-    }
-
     public SqlTracker() {
 
+    }
+
+    public SqlTracker(Connection connection) {
+        this.connection = connection;
     }
 
     /**
