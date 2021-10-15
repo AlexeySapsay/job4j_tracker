@@ -16,11 +16,7 @@ import java.util.List;
 import java.util.Properties;
 
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.nullValue;
-//import static org.junit.Assert.assertThat;
-
 import static org.hamcrest.MatcherAssert.assertThat;
-//import static org.hamcrest.Matchers.is;
 
 public class SqlTrackerTest {
 
