@@ -89,7 +89,7 @@
             <plugin>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>4.2.2</version>
                 <configuration>
                     <changeLogFile>${basedir}/db/master.xml</changeLogFile>
                     <url>${db.url}</url>
@@ -154,13 +154,15 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.6</version>
                 <executions>
-                    <!--                    2. Эти настройки запускают задачу анализа кода на покрытие.-->
+                    <!-- 2. Эти настройки запускают задачу
+                    анализа кода на покрытие.-->
                     <execution>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
-                    <!--                    3. Эти настройки запускают задачу проверки кода после запуска команды mvn test.-->
+                    <!-- 3. Эти настройки запускают задачу проверки
+                    кода после запуска команды mvn test.-->
                     <execution>
                         <id>report</id>
                         <phase>test</phase>
