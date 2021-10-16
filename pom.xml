@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-<!--https://job4j.ru/edu/task?action=task&taskId=0873958f758d0d5301758d8a561c2e3d&number=402102-->
+    <!--https://job4j.ru/edu/task?action=task&taskId=0873958f758d0d5301758d8a561c2e3d&number=402102-->
     <modelVersion>4.0.0</modelVersion>
     <groupId>ru.job4j</groupId>
     <artifactId>junior</artifactId>
@@ -77,7 +77,8 @@
                         <configuration>
                             <finalName>tracker</finalName>
                             <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>ru.job4j.tracker.StartUI</mainClass>
                                 </transformer>
                             </transformers>
@@ -88,7 +89,7 @@
             <plugin>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
-                <version>3.6.2</version>
+                <version>3.8.0</version>
                 <configuration>
                     <changeLogFile>${basedir}/db/master.xml</changeLogFile>
                     <url>${db.url}</url>
@@ -139,9 +140,9 @@
                     </execution>
                 </executions>
             </plugin>
-<!--            Плагин, который поможет отрисовать страницу HTML
-                и поместить извлекаемые элементы
-                в необходимые места генерируемой JavaDoc документации.-->
+            <!--            Плагин, который поможет отрисовать страницу HTML
+                            и поместить извлекаемые элементы
+                            в необходимые места генерируемой JavaDoc документации.-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -153,13 +154,13 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.6</version>
                 <executions>
-<!--                    2. Эти настройки запускают задачу анализа кода на покрытие.-->
+                    <!--                    2. Эти настройки запускают задачу анализа кода на покрытие.-->
                     <execution>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
-<!--                    3. Эти настройки запускают задачу проверки кода после запуска команды mvn test.-->
+                    <!--                    3. Эти настройки запускают задачу проверки кода после запуска команды mvn test.-->
                     <execution>
                         <id>report</id>
                         <phase>test</phase>
