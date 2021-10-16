@@ -18,6 +18,17 @@ import java.util.Properties;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+/**
+ * https://job4j.ru/profile/exercise/55/task-view/348
+ * Изучение работы с JDBC. Подключение JDBC и чтение файла app.properties
+ * в качестве настроечного файла.
+ * Рефакторинг проекта Tracker
+ *
+ * @author AlexSapsay (sapsayalexey@gmail.com)
+ * @version 1.0
+ * @since 05.10.2021
+ */
+
 public class SqlTrackerTest {
 
     private static Connection connection;
