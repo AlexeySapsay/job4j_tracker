@@ -53,10 +53,60 @@ public class SqlTrackerTest {
     }
 
     @Test
-    public void whenSaveItemAndFindByGeneratedIdThenMustBeTheSame() {
+    public void whenAddItemAndFindByGeneratedIdThenMustBeTheSame() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item = new Item("item");
         tracker.add(item);
-        assertThat(tracker.findById(item.getId()), is(item));
+        assertThat(tracker.findById(item.getId()).getName(), is("item"));
+    }
+
+    @Test
+    public void whenReplaceItemAndFindByGeneratedIdThenMustBeTheSame() {
+        SqlTracker tracker = new SqlTracker(connection);
+        Item item = new Item("item1");
+        tracker.add(item);
+        item.setName("item2");
+        tracker.replace(item.getId(), item);
+        assertThat(tracker.findById(item.getId()).getName(), is("item2"));
+    }
+
+    @Test
+    public void whenDeleteThenTrue() {
+        SqlTracker tracker = new SqlTracker(connection);
+        Item item = new Item("item3");
+        tracker.add(item);
+        assertThat(tracker.delete(
+                tracker.findById(item.getId()).getId()), is(true));
+    }
+
+    @Test
+    public void whenFindAll() {
+        SqlTracker tracker = new SqlTracker(connection);
+        Item item1 = new Item("item1");
+        Item item2 = new Item("item2");
+        tracker.add(item1);
+        tracker.add(item2);
+        List<Item> items = tracker.findAll();
+        assertThat(items.size(), is(2));
+    }
+
+    @Test
+    public void whenFindByName() {
+        SqlTracker tracker = new SqlTracker(connection);
+        Item item1 = new Item("item1");
+        Item item2 = new Item("item2");
+        tracker.add(item1);
+        tracker.add(item2);
+        List<Item> items = tracker.findByName("item1");
+        assertThat(items.size(), is(1));
+    }
+
+    @Test
+    public void whenFindById() {
+        SqlTracker tracker = new SqlTracker(connection);
+        Item item1 = new Item("item1");
+        tracker.add(item1);
+        Item itemRsl = tracker.findById(item1.getId());
+        assertThat(itemRsl.getName(), is(item1.getName()));
     }
 }
