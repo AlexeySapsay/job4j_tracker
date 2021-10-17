@@ -17,7 +17,6 @@ import java.util.Properties;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-
 /**
  * https://job4j.ru/profile/exercise/55/task-view/348
  * Изучение работы с JDBC. Подключение JDBC и чтение файла app.properties

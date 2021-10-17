@@ -22,12 +22,13 @@ import java.util.List;
  */
 
 public class AnalyzeTest {
-/*
+    /*
     @Test
     public void whenSinglePupil() {
         double average = Analyze.averageScore(
                 List.of(
-                        new Pupil("Ivanov", List.of(new Subject("Math", 100)))
+                        new Pupil("Ivanov",
+                                List.of(new Subject("Math", 100)))
                 ).stream()
         );
         assertThat(average, is(100D));
@@ -111,5 +112,6 @@ public class AnalyzeTest {
         );
         assertThat(best, is(new Tuple("Math", 160D)));
     }
-    */
+
+     */
 }

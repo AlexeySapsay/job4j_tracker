@@ -20,23 +20,30 @@ import java.util.stream.Stream;
 public class Analyze {
     /**
      * Метод averageScore вычисляет общий средний балл.
+     * Это сумма баллов всех учеников по всем предметам/ количество учеников?
      *
      * @param stream входной стрим
      * @return среднее арифметическое значение оценки
      */
     public static double averageScore(Stream<Pupil> stream) {
-        return 0D;
+        return stream.flatMap(pupil -> pupil.getSubject().stream())
+                .mapToInt(Subject::getScore)
+                .average().orElse(-1D);
     }
 
     /**
      * Метод averageScoreBySubject вычисляет средний
-     *
      * балл ученика по его предметам.
+     *
      * @param stream входной стрим
      * @return Возвращает список из объекта Tuple (имя ученика и средний балл).
      */
     public static List<Tuple> averageScoreBySubject(Stream<Pupil> stream) {
         return List.of();
+//        return stream.flatMap(pupil->pupil.getSubject().stream())
+//                .mapToInt(Subject::getScore)
+//                .average().getAsDouble();
+
     }
 
     /**
@@ -51,7 +58,8 @@ public class Analyze {
         return List.of();
     }
 
-    /**Метод bestStudent - возвращает лучшего ученика.
+    /**
+     * Метод bestStudent - возвращает лучшего ученика.
      *
      * @param stream входной стрим
      * @return Лучшим считается ученик с наибольшим баллом по всем предметам.
