@@ -1,6 +1,7 @@
 package ru.job4j.stream;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -39,11 +40,12 @@ public class Analyze {
      * @return Возвращает список из объекта Tuple (имя ученика и средний балл).
      */
     public static List<Tuple> averageScoreBySubject(Stream<Pupil> stream) {
-        return List.of();
-//        return stream.flatMap(pupil->pupil.getSubject().stream())
-//                .mapToInt(Subject::getScore)
-//                .average().getAsDouble();
-
+        return stream.
+                map(pupil -> new Tuple(pupil.getName(),
+                        pupil.getSubject().stream()
+                                .mapToInt(Subject::getScore)
+                                .average().orElse(-1D)))
+                .collect(Collectors.toList());
     }
 
     /**
