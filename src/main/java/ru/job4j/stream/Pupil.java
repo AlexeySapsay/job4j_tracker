@@ -27,7 +27,7 @@ public class Pupil {
         return name;
     }
 
-    public List<Subject> getSubject() {
+    public List<Subject> getSubjects() {
         return subjects;
     }
 }
