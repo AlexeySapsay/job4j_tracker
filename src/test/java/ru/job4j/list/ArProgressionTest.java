@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ArProgressionTest {
     @Test
@@ -27,5 +27,4 @@ public class ArProgressionTest {
         int rsl = ArProgression.checkData(data);
         assertThat(rsl, is(0));
     }
-
 }

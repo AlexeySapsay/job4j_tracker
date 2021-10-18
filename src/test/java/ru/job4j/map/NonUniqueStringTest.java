@@ -1,12 +1,11 @@
 package ru.job4j.map;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import java.util.Map;
 
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class NonUniqueStringTest {
     @Test

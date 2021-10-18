@@ -5,7 +5,7 @@ import ru.job4j.tracker.model.Item;
 
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class TrackerTest {
     @Test

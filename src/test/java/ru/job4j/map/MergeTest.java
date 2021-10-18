@@ -7,9 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
-
 import static ru.job4j.map.Merge.User;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class MergeTest {
 

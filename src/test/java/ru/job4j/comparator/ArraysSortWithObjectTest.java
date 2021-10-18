@@ -1,7 +1,5 @@
 package ru.job4j.comparator;
 
-import static org.junit.Assert.*;
-
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -7,6 +7,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.junit.Assert.*;
+
 public class OptionalIfPresentTest {
     @Test
     public void whenExist() {

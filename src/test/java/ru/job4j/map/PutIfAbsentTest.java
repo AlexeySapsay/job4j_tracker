@@ -6,9 +6,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 
 import ru.job4j.map.PutIfAbsent.User;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class PutIfAbsentTest {
     @Test

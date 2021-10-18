@@ -18,5 +18,4 @@ public class CollectToMapWhenDublicateTest {
                 collect(data.stream());
         assertEquals(expect, result);
     }
-
 }

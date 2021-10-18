@@ -8,8 +8,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import static org.junit.Assert.*;
-
 public class SortBySetUsingComparatorTest {
     @Test
     public void test() {

@@ -1,7 +1,6 @@
 package ru.job4j.lambda;
 
 import static org.junit.Assert.*;
-
 import java.util.function.Function;
 
 import org.junit.Test;

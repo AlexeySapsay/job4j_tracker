@@ -25,5 +25,4 @@ public class CollectToAnyMapTest {
         String resultClass = CollectToAnyMap.collect(data.stream()).getClass().getName();
         assertEquals(expectClass, resultClass);
     }
-
 }

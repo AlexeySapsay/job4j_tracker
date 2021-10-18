@@ -1,7 +1,5 @@
 package ru.job4j.stream.exercise;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;

@@ -11,7 +11,7 @@ public class OptionalGetAndIsPresentTest {
         assertEquals(
                 1,
                 OptionalGetAndIsPresent.get(
-                        new int[] {1, 2, 3},
+                        new int[]{1, 2, 3},
                         2
                 )
         );
@@ -22,7 +22,7 @@ public class OptionalGetAndIsPresentTest {
         assertEquals(
                 -1,
                 OptionalGetAndIsPresent.get(
-                        new int[] {1, 2, 3},
+                        new int[]{1, 2, 3},
                         4
                 )
         );

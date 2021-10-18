@@ -2,10 +2,9 @@ package ru.job4j.bank;
 
 import org.junit.Test;
 
-import java.util.Optional;
-
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class BankServiceTest {
     @Test

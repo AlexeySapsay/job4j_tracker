@@ -18,5 +18,4 @@ public class CollectToMapTest {
         Map<Integer, Integer> result = CollectToMap.collect(data.stream());
         assertEquals(expect, result);
     }
-
 }

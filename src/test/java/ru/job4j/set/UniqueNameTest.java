@@ -5,8 +5,7 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
-
+import static org.hamcrest.MatcherAssert.assertThat;
 import static ru.job4j.set.UniqueName.User;
 
 public class UniqueNameTest {
@@ -23,5 +22,4 @@ public class UniqueNameTest {
         int expected = 4;
         assertThat(rsl, is(expected));
     }
-
 }

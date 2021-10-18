@@ -1,14 +1,13 @@
 package ru.job4j.list;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 
 public class ListIteratorUsageTest {
 

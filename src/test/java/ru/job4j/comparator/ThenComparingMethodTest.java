@@ -1,11 +1,11 @@
 package ru.job4j.comparator;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static junit.framework.TestCase.assertEquals;
 
 public class ThenComparingMethodTest {
     @Test

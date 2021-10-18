@@ -1,16 +1,14 @@
 package ru.job4j.collection;
 
-import static org.junit.Assert.*;
-
 import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
-@Ignore
+//@Ignore
 public class ConvertList2ArrayTest {
     @Test
     public void when7Elemntsthen9() {

@@ -3,9 +3,10 @@ package ru.job4j.collection;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
 
 import java.util.*;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class SortJobByNameAndDescendingTest {
     @Test

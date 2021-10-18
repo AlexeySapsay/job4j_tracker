@@ -1,13 +1,11 @@
 package ru.job4j.collection;
 
 import org.junit.Test;
-
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * https://job4j.ru/profile/exercise/32/task-view/235
@@ -17,6 +15,7 @@ import static org.junit.Assert.assertThat;
  * @version 1.0
  * @since 13.10.2021
  */
+
 public class DepartmentsTest {
 
     @Test

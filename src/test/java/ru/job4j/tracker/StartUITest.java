@@ -10,7 +10,7 @@ import ru.job4j.tracker.model.Item;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class StartUITest {
     private static final String LN = System.lineSeparator();

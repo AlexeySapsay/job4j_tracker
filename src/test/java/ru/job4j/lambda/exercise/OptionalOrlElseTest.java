@@ -13,5 +13,4 @@ public class OptionalOrlElseTest {
         assertEquals(Integer.valueOf(-1), OptionalOrlElse.orElse(Optional.empty()));
         assertEquals(Integer.valueOf(1), OptionalOrlElse.orElse(Optional.of(1)));
     }
-
 }

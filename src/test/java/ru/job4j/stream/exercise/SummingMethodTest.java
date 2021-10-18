@@ -2,7 +2,6 @@ package ru.job4j.stream.exercise;
 
 import org.junit.Test;
 
-import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 

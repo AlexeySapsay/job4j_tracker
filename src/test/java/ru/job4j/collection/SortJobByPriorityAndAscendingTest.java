@@ -2,13 +2,12 @@ package ru.job4j.collection;
 
 /*https://job4j.ru/edu/task?action=task&taskId=0873958f758d0d5301758d8a572a2e4a&number=402115*/
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-
 import java.util.*;
+
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class SortJobByPriorityAndAscendingTest {
     @Test
