@@ -5,7 +5,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 /**
  * https://job4j.ru/profile/exercise/36/task-view/267
  * <p>
