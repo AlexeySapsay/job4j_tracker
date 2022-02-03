@@ -1,9 +1,5 @@
 package ru.job4j.comparator;
 
-/*
-
- */
-
 import java.util.Arrays;
 
 public class ArraysSort {
