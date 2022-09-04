@@ -1,9 +1,6 @@
 package ru.job4j.tracker.store;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import ru.job4j.tracker.SqlTracker;
 import ru.job4j.tracker.model.Item;
 
@@ -28,7 +25,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * @version 1.0
  * @since 05.10.2021
  */
-
+@Ignore
 public class SqlTrackerTest {
 
     private static Connection connection;

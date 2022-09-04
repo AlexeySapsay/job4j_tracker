@@ -6,7 +6,6 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-
 public class BankServiceTest {
     @Test
     public void addUser() {
@@ -45,7 +44,7 @@ public class BankServiceTest {
         assertThat(bank.findByRequisite(user.getPassport(), "113").get().getBalance(), is(200D));
     }
 
-    /*дополнительный тест на проверку второго аккаунта к уже   созданному аккуаунту*/
+    /*дополнительный тест на проверку второго аккаунта к уже созданному аккаунту*/
     @Test
     public void add2Accounts() {
         User user = new User("3434", "Petr Arsentev");
