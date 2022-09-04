@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 /**
- * https://job4j.ru/profile/exercise/55/task-view/348
+ * https:\\job4j.ru/profile/exercise/55/task-view/348
  * Изучение работы с JDBC. Подключение JDBC и чтение файла app.properties
  * в качестве настроечного файла.
  * Рефакторинг проекта Tracker

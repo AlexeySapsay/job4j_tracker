@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-/*https://job4j.ru/profile/topics/3/task_code/191/solution/new_task*/
+/*https:\\job4j.ru/profile/topics/3/task_code/191/solution/new_task*/
 
 public class CountingMethod {
     public static class Company {

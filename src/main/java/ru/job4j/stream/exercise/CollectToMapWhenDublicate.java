@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * https://job4j.ru/profile/topics/3/task_code/66/solution/new_task
+ * https:\\job4j.ru/profile/topics/3/task_code/66/solution/new_task
  * Метод собирает map из стрима с повторяющимися значениями
  */
 public class CollectToMapWhenDublicate {

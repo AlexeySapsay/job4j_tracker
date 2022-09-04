@@ -3,7 +3,7 @@ package ru.job4j.map;
 import java.util.*;
 
 /**
- * https://job4j.ru/edu/task_code?topicId=29&taskCodeId=161&solutionId=new_task
+ * https:\\job4j.ru/edu/task_code?topicId=29&taskCodeId=161&solutionId=new_task
  */
 
 public class MostUsedCharacter {

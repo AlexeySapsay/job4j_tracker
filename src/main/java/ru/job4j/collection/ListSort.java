@@ -1,6 +1,6 @@
 package ru.job4j.collection;
 /**
- * https://job4j.ru/edu/task?action=task&taskId=0873958f758d0d5301758d8a573e2e4b&number=402116
+ * https:\\job4j.ru/edu/task?action=task&taskId=0873958f758d0d5301758d8a573e2e4b&number=402116
  */
 
 import java.util.Arrays;

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-/**https://job4j.ru/edu/task_code?topicId=29&taskCodeId=159&solutionId=new_task
+/**https:\\job4j.ru/edu/task_code?topicId=29&taskCodeId=159&solutionId=new_task
  *
  */
 

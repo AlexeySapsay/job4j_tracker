@@ -6,7 +6,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import org.junit.Test;
 import java.util.List;
 /**
- * https://job4j.ru/profile/exercise/36/task-view/267
+ * https:\\job4j.ru/profile/exercise/36/task-view/267
  * <p>
  * В этом задании необходимо реализовать класс для подсчета
  * статистики по аттестатам учеников

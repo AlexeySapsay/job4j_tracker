@@ -8,7 +8,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
 /**
- *https://job4j.ru/profile/topics/3/task_code/98/solution/new_task
+ *https:\\job4j.ru/profile/topics/3/task_code/98/solution/new_task
  */
 
 public class CollectorClass2 {

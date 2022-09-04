@@ -1,5 +1,5 @@
 package ru.job4j.comparator;
-/*https://job4j.ru/edu/task_code?topicId=30&taskCodeId=153&solutionId=32945*/
+/*https:\\job4j.ru/edu/task_code?topicId=30&taskCodeId=153&solutionId=32945*/
 
 import java.util.Comparator;
 import java.util.Map;

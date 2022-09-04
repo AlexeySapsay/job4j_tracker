@@ -8,7 +8,7 @@ import java.util.function.BinaryOperator;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
 /**
- * https://job4j.ru/profile/topics/3/task_code/97/solution/new_task
+ * https:\\job4j.ru/profile/topics/3/task_code/97/solution/new_task
  * Ваша задача прописать создание коллекции и добавление элемента.
  * Коллекцией будет LinkedList, для добавление нужно использовать метод add()
  * <p>

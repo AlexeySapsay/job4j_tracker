@@ -8,7 +8,7 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
- * https://job4j.ru/profile/exercise/32/task-view/235
+ * https:\\job4j.ru/profile/exercise/32/task-view/235
  * Отсортировать департаменты
  *
  * @author AlexSapsay (sapsayalexey@gmail.com)

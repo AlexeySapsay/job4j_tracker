@@ -1,6 +1,6 @@
 package ru.job4j.collection;
 
-/*https://job4j.ru/edu/task?action=task&taskId=0873958f758d0d5301758d8a572a2e4a&number=402115*/
+/*https:\\job4j.ru/edu/task?action=task&taskId=0873958f758d0d5301758d8a572a2e4a&number=402115*/
 
 import org.junit.Test;
 import java.util.*;

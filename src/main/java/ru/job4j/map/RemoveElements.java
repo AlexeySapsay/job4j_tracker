@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * https://job4j.ru/edu/task_code?topicId=29&taskCodeId=167&solutionId=new_task
+ * https:\\job4j.ru/edu/task_code?topicId=29&taskCodeId=167&solutionId=new_task
  */
 
 public class RemoveElements {

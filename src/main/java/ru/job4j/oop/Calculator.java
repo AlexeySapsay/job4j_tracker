@@ -1,7 +1,7 @@
 package ru.job4j.oop;
 
 /**
- * https://job4j.ru/profile/exercise/20/task-view/801
+ * https:\\job4j.ru/profile/exercise/20/task-view/801
  * Изучение работы со статик методами
  *
  * @author AlexSapsay (sapsayalexey@gmail.com)

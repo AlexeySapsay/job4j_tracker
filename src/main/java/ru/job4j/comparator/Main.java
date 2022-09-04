@@ -1,5 +1,5 @@
 package ru.job4j.comparator;
-/*https://javarush.ru/groups/posts/1939-comparator-v-java*/
+/*https:\\javarush.ru/groups/posts/1939-comparator-v-java*/
 
 import java.util.ArrayList;
 import java.util.List;

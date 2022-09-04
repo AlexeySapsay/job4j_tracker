@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * https://job4j.ru/edu/task_code?topicId=4&taskCodeId=15&solutionId=new_task
+ * https:\\job4j.ru/edu/task_code?topicId=4&taskCodeId=15&solutionId=new_task
  * Реализовать метод проверки корректности открытых и закрытых скобок.
  * Например, ()(()((()))) - true, ()) - false
  */

@@ -1,6 +1,6 @@
 package ru.job4j.collection;
 /*
-*https://job4j.ru/edu/task_code?topicId=5&taskCodeId=16&solutionId=new_task
+*https:\\job4j.ru/edu/task_code?topicId=5&taskCodeId=16&solutionId=new_task
 * */
 
 import java.util.Arrays;

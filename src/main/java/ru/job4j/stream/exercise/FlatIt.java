@@ -5,9 +5,9 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- *https://job4j.ru/profile/topics/3/task_code/14/solution/new_task
+ *https:\\job4j.ru/profile/topics/3/task_code/14/solution/new_task
  * подсказку к задаче взял с сайта стэковерфлов
- * https://stackoverflow.com/questions/41877611/integer-
+ * https:\\stackoverflow.com/questions/41877611/integer-
  *  sequences-in-iterator-of-iterators-java
  */
 

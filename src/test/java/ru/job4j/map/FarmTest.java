@@ -1,7 +1,7 @@
 package ru.job4j.map;
 
 /**
- * https://job4j.ru/edu/task_code?topicId=29&taskCodeId=216&solutionId=new_task
+ * https:\\job4j.ru/edu/task_code?topicId=29&taskCodeId=216&solutionId=new_task
  */
 
 import org.junit.Test;

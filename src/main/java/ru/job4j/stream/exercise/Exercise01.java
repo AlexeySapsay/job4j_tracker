@@ -1,7 +1,7 @@
 package ru.job4j.stream.exercise;
 
 /**
- * https://job4j.ru/profile/topics/3/task_code/97/solution/new_task
+ * https:\\job4j.ru/profile/topics/3/task_code/97/solution/new_task
  * 0.1. Понятие редукции. Произвольный Collector для сборки в коллекцию
  */
 

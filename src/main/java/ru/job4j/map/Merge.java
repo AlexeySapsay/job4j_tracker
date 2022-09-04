@@ -1,7 +1,7 @@
 package ru.job4j.map;
 
 /**
- * https://job4j.ru/edu/task_code?topicId=29&taskCodeId=162&solutionId=new_task
+ * https:\\job4j.ru/edu/task_code?topicId=29&taskCodeId=162&solutionId=new_task
  * Необходимо обновить информацию - если такой пользователь уже существует
  * (проверять по ключу) - то необходимо к имени добавить фамилию,
  * <p>

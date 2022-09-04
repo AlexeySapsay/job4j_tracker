@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- *https://job4j.ru/profile/topics/3/task_code/96/solution/new_task
+ *https:\\job4j.ru/profile/topics/3/task_code/96/solution/new_task
  */
 
 public class GroupMethod {

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * https://job4j.ru/profile/exercise/3/task-view/252/solutionId/165733
+ * https:\\job4j.ru/profile/exercise/3/task-view/252/solutionId/165733
  */
 
 public class Profiles0 {
