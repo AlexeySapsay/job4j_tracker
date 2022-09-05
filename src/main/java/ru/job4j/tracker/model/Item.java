@@ -2,6 +2,8 @@ package ru.job4j.tracker.model;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
+
 /**
  * https:\\job4j.ru/profile/exercise/55/task-view/348
  * Изучение работы с JDBC. Подключение JDBC и чтение файла app.properties
@@ -76,23 +78,14 @@ public class Item {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-
         Item item = (Item) o;
-
-        if (id != item.id) {
-            return false;
-        }
-        if (name != null ? !name.equals(item.name) : item.name != null) {
-            return false;
-        }
-        return created != null ? created.equals(item.created) : item.created == null;
+        return id == item.id
+                && Objects.equals(name, item.name)
+                && Objects.equals(created, item.created);
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (created != null ? created.hashCode() : 0);
-        return result;
+        return Objects.hash(id, name, created);
     }
 }

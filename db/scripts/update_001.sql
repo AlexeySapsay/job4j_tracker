@@ -4,4 +4,4 @@ create table if not exists items (
    created timestamp
 );
 
-select version();
+
