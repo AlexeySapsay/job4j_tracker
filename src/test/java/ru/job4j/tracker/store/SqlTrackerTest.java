@@ -25,7 +25,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * @version 1.0
  * @since 05.10.2021
  */
-@Ignore
 public class SqlTrackerTest {
 
     private static Connection connection;
