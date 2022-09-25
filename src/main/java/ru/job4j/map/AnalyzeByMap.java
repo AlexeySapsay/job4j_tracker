@@ -3,8 +3,6 @@ package ru.job4j.map;
 import java.util.*;
 
 public class AnalyzeByMap {
-    private AnalyzeByMap() {
-    }
 
     /**
      * Вычисляет общий средний балл в этом методе. Необходимо найти сумму баллов
@@ -45,11 +43,11 @@ public class AnalyzeByMap {
     public static List<Label> averageScoreByPupil(List<Pupil> pupils) {
         List<Label> labelList = new ArrayList<>();
         for (Pupil pupil : pupils) {
-            double averageTotalScore = 0;
+            double avg = 0;
             for (var student : pupil.subjects()) {
-                averageTotalScore += student.getScore();
+                avg += student.getScore();
             }
-            labelList.add(new Label(pupil.name(), averageTotalScore / pupil.subjects().size()));
+            labelList.add(new Label(pupil.name(), avg / pupil.subjects().size()));
         }
         return labelList;
     }
@@ -73,19 +71,17 @@ public class AnalyzeByMap {
      */
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
         List<Label> labelList = new ArrayList<>();
-        HashMap<String, Double> subjectScoreAverageTotal = new LinkedHashMap<>();
+        HashMap<String, Double> subjectAVG = new LinkedHashMap<>();
 
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                if (!subjectScoreAverageTotal.containsKey(subject.getName())) {
-                    subjectScoreAverageTotal.put(subject.getName(), (double) subject.getScore());
-                } else {
-                    subjectScoreAverageTotal.put(subject.getName(),  subject.getScore()
-                            + subjectScoreAverageTotal.get(subject.getName()));
-                }
+                subjectAVG.merge(
+                        subject.getName(),
+                        (double) subject.getScore(), (oldValue, newValue) ->
+                                subject.getScore() + subjectAVG.get(subject.getName()));
             }
         }
-        for (var entry : subjectScoreAverageTotal.entrySet()) {
+        for (var entry : subjectAVG.entrySet()) {
             labelList.add(new Label(entry.getKey(), entry.getValue() / pupils.size()));
         }
         return labelList;
@@ -136,19 +132,17 @@ public class AnalyzeByMap {
      */
     public static Label bestSubject(List<Pupil> pupils) {
         List<Label> labelList = new ArrayList<>();
-        HashMap<String, Double> subjectScoreAverageTotal = new LinkedHashMap<>();
+        HashMap<String, Double> subjectAVG = new LinkedHashMap<>();
 
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                if (!subjectScoreAverageTotal.containsKey(subject.getName())) {
-                    subjectScoreAverageTotal.put(subject.getName(), (double) subject.getScore());
-                } else {
-                    subjectScoreAverageTotal.put(subject.getName(), subject.getScore()
-                            + subjectScoreAverageTotal.get(subject.getName()));
-                }
+                subjectAVG.merge(
+                        subject.getName(),
+                        (double) subject.getScore(), (oldValue, newValue) ->
+                                subject.getScore() + subjectAVG.get(subject.getName()));
             }
         }
-        for (var entry : subjectScoreAverageTotal.entrySet()) {
+        for (var entry : subjectAVG.entrySet()) {
             labelList.add(new Label(entry.getKey(), entry.getValue()));
         }
         labelList.sort(Comparator.naturalOrder());
