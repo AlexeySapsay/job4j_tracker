@@ -139,7 +139,7 @@ public class AnalyzeByMap {
                 subjectAVG.merge(
                         subject.getName(),
                         (double) subject.getScore(), (oldValue, newValue) ->
-                                subject.getScore() + subjectAVG.get(subject.getName()));
+                                oldValue + subject.getScore());
             }
         }
         for (var entry : subjectAVG.entrySet()) {
