@@ -24,7 +24,6 @@ public class StartUITest {
         StartUI.createItem(input, tracker);
         Item created = tracker.findAll()[0];
         Item expected = new Item("Fix PC");
-//        assertThat(created.getName()).isEqualTo(expected.getName());
     }
 
     @Test
