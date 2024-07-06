@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import ru.job4j.tracker.action.*;
+
 import java.util.List;
 /**
  * https:\\job4j.ru/profile/exercise/55/task-view/348
@@ -16,6 +18,9 @@ public class StartUI {
 
     public StartUI(Output out) {
         this.out = out;
+    }
+
+    public static void createItem(Input input, Tracker tracker) {
     }
 
     public void init(Input input, Store tracker, List<UserAction> actions) {
@@ -45,13 +50,13 @@ public class StartUI {
         try (Store tracker = new SqlTracker()) {
             tracker.init();
             List<UserAction> actions = List.of(
-                    new CreateAction(output),
-                    new ReplaceAction(output),
-                    new DeleteAction(output),
-                    new FindAllAction(output),
-                    new FindByIdAction(output),
-                    new FindByNameAction(output),
-                    new ExitAction()
+                    new Create(output),
+                    new Replace(output),
+                    new Delete(output),
+                    new FindAll(output),
+                    new FindById(output),
+                    new FindByName(output),
+                    new Exit()
             );
             new StartUI(output).init(input, tracker, actions);
         } catch (Exception e) {

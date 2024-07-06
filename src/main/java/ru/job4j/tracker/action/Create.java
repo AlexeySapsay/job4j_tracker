@@ -1,11 +1,14 @@
-package ru.job4j.tracker;
+package ru.job4j.tracker.action;
 
+import ru.job4j.tracker.Input;
+import ru.job4j.tracker.Output;
+import ru.job4j.tracker.Store;
 import ru.job4j.tracker.model.Item;
 
-public class CreateAction implements UserAction {
+public class Create implements UserAction {
     private final Output out;
 
-    public CreateAction(Output out) {
+    public Create(Output out) {
         this.out = out;
     }
 
