@@ -50,13 +50,13 @@ public class StartUI {
         try (Store tracker = new SqlTracker()) {
             tracker.init();
             List<UserAction> actions = List.of(
-                    new Create(output),
-                    new Replace(output),
-                    new Delete(output),
-                    new FindAll(output),
-                    new FindById(output),
-                    new FindByName(output),
-                    new Exit()
+                    new CreateAction(output),
+                    new ReplaceAction(output),
+                    new DeleteAction(output),
+                    new FindAllAction(output),
+                    new FindByIdAction(output),
+                    new FindByNameAction(output),
+                    new ExitAction()
             );
             new StartUI(output).init(input, tracker, actions);
         } catch (Exception e) {

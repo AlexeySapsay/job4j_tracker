@@ -5,10 +5,10 @@ import ru.job4j.tracker.Output;
 import ru.job4j.tracker.Store;
 import ru.job4j.tracker.model.Item;
 
-public class Replace implements UserAction {
+public class ReplaceAction implements UserAction {
     private final Output out;
 
-    public Replace(Output out) {
+    public ReplaceAction(Output out) {
         this.out = out;
     }
 

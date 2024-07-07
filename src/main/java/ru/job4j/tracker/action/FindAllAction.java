@@ -1,28 +1,30 @@
 package ru.job4j.tracker.action;
-
 import ru.job4j.tracker.Input;
 import ru.job4j.tracker.Output;
 import ru.job4j.tracker.Store;
 import ru.job4j.tracker.model.Item;
 
-public class Create implements UserAction {
+import java.util.List;
+
+public class FindAllAction implements UserAction {
     private final Output out;
 
-    public Create(Output out) {
+    public FindAllAction(Output out) {
         this.out = out;
     }
 
     @Override
     public String name() {
-        return "Create";
+        return "Show ";
     }
 
     @Override
     public boolean execute(Input input, Store tracker) {
-        out.println("=== Create a new Item ====");
-        String name = input.askStr("Enter name: ");
-        Item item = new Item(name);
-        tracker.add(item);
+        out.println(" === Show all items === ");
+        List<Item> itemsArray = tracker.findAll();
+        for (Item elements : itemsArray) {
+            out.println(elements);
+        }
         return true;
     }
 }
