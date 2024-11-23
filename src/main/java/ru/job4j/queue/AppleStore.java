@@ -14,17 +14,19 @@ public class AppleStore {
 
     public String getLastHappyCustomer() {
         for (int i = 1; i < count; i++) {
-            queue.remove();
+            queue.poll();
         }
-        assert queue.peek() != null;
-        return queue.peek().name();
+        Customer customer = queue.peek();
+        assert customer != null;
+        return customer.name();
     }
 
     public String getFirstUpsetCustomer() {
         for (int i = 0; i < count; i++) {
-            queue.remove();
+            queue.poll();
         }
-        assert queue.peek() != null;
-        return queue.peek().name();
+        Customer customer = queue.peek();
+        assert customer != null;
+        return customer.name();
     }
 }
