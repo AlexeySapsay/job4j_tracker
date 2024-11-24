@@ -17,7 +17,6 @@ public class AppleStore {
             queue.poll();
         }
         Customer customer = queue.peek();
-        assert customer != null;
         return customer.name();
     }
 
@@ -26,7 +25,6 @@ public class AppleStore {
             queue.poll();
         }
         Customer customer = queue.peek();
-        assert customer != null;
         return customer.name();
     }
 }
